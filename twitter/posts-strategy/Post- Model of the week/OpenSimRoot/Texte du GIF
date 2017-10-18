@@ -1,17 +1,17 @@
-OpenSimRoot is a functional-structural open-source model. It simulates the root system architecture over time and is coupled 
+OpenSimRoot is a functional-structural open-source model
+
+It simulates the root system architecture over time and is coupled 
 to a soil model. This model computes the nutrients and water uptakes of the plant. 
 
-OpenSimRoot contains a command line interface, minimodels and plugins. The design of OpenSimRoot allows the implementation
+OpenSimRoot contains a command line interface, minimodels and plugins.
+
+The design of OpenSimRoot allows the implementation
 of new minimodels without a deepknowledge of the C++ code wich is an asset for developers and scientists who want to use OpenSimRoot in
 their own ways.
 
 This model has an enormous range of applications such as geometric analysis of root system form and function, simulation of processes too 
-difficult to measure empirically, sensitivity analyses,... 
-
-petit phrase qui explique qu'on continuera de travailler sur le modèle: 
+difficult to measure empirically, sensitivity analyses,...  
 
 In the incomming weeks we are going to dig further in this model and show you the roaps of it ! 
 
-Bribri, la longueur du texte est suffisante ? je ne sais pas trop ce que peut contenir un GIF :/ 
 
-ça m'a l'air bon je crée le GIF mtn et je te montre quand c'est fini (je suis en cours donc je serai plus lent ;) )
