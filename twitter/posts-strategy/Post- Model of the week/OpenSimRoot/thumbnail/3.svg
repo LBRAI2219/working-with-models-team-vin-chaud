@@ -158,6 +158,72 @@
          in2="offset"
          in="fbSourceGraphic"
          operator="over"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix4166" />
+      <feFlood
+         id="feFlood4168"
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         in="fbSourceGraphic" />
+      <feComposite
+         id="feComposite4170"
+         in2="fbSourceGraphic"
+         in="flood"
+         operator="in"
+         result="composite1" />
+      <feGaussianBlur
+         id="feGaussianBlur4172"
+         in="composite1"
+         stdDeviation="2.5"
+         result="blur" />
+      <feOffset
+         id="feOffset4174"
+         dx="2"
+         dy="3"
+         result="offset" />
+      <feComposite
+         id="feComposite4176"
+         in2="offset"
+         in="fbSourceGraphic"
+         operator="over"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix4178" />
+      <feFlood
+         id="feFlood4180"
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         in="fbSourceGraphic" />
+      <feComposite
+         id="feComposite4182"
+         in2="fbSourceGraphic"
+         in="flood"
+         operator="in"
+         result="composite1" />
+      <feGaussianBlur
+         id="feGaussianBlur4184"
+         in="composite1"
+         stdDeviation="2.5"
+         result="blur" />
+      <feOffset
+         id="feOffset4186"
+         dx="2"
+         dy="3"
+         result="offset" />
+      <feComposite
+         id="feComposite4188"
+         in2="offset"
+         in="fbSourceGraphic"
+         operator="over"
          result="composite2" />
     </filter>
   </defs>
@@ -168,7 +234,7 @@
      guidetolerance="10"
      id="base"
      inkscape:current-layer="layer1"
-     inkscape:cx="661.8753"
+     inkscape:cx="363.8753"
      inkscape:cy="538.29539"
      inkscape:document-units="px"
      inkscape:pageopacity="0.0"
