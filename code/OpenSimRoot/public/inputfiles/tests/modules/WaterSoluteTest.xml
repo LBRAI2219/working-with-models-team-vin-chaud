@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright © 2016 Forschungszentrum Jülich GmbH All rights reserved. 
+	Redistribution and use in source and binary forms, with or without modification, 
+	are permitted under the GNU General Public License v3 and provided that the 
+	following conditions are met: 1. Redistributions of source code must retain 
+	the above copyright notice, this list of conditions and the following disclaimer. 
+	2. Redistributions in binary form must reproduce the above copyright notice, 
+	this list of conditions and the following disclaimer in the documentation 
+	and/or other materials provided with the distribution. 3. Neither the name 
+	of the copyright holder nor the names of its contributors may be used to 
+	endorse or promote products derived from this software without specific prior 
+	written permission. Disclaimer THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT 
+	HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, 
+	BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS 
+	FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+	HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, 
+	EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT 
+	OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
+	INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, 
+	STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN 
+	ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
+	OF SUCH DAMAGE. You should have received the GNU GENERAL PUBLIC LICENSE v3 
+	with this file in license.txt but can also be found at http://www.gnu.org/licenses/gpl-3.0.en.html -->
+
+<!-- Runs only the water and solute module -->
+
+
+<SimulationModel>
+
+	<SimulaBase name="plants">
+		<SimulaTable name_column1="time" unit_column1="day"
+			name="rootWaterUptake" unit="cm3">
+			0 0.
+			30 0.
+		</SimulaTable>
+		<SimulaBase name="potassium">
+			<SimulaTable name_column1="time" unit_column1="day"
+				name="plantNutrientUptake" unit="umol">
+				0 0.
+				30 0.
+			</SimulaTable>
+		</SimulaBase>
+	</SimulaBase>
+
+	<SimulaBase name="soil">
+		<SimulaExternal name="Swms3d" unit="noUnit" function="Swms3d"
+			maxTimeStep="0.1" minTimeStep="0.00001" preferredTimeStep="0.001" />
+
+		<SimulaBase name="potassium">
+			<SimulaConstant name="includeThisNutrientInSWMSSimulation"
+				type="bool">true</SimulaConstant>
+
+			<SimulaConstant name="meshRefinementFactor" type="int">1
+			</SimulaConstant>
+
+			<SimulaTable name_colum1="time" unit_colum1="day"
+				name_colum2="totalSoluteInColumn" unit_colum2="umol"
+				function="getValuesFromSWMS" />
+			<SimulaTable name_colum1="time" unit_colum1="day"
+				name_colum2="totalDissolvedSoluteInColumn" unit_colum2="umol"
+				function="getValuesFromSWMS" />
+			<SimulaTable name_colum1="time" unit_colum1="day"
+				name_colum2="totalAbsorbedSoluteInColumn" unit_colum2="umol"
+				function="getValuesFromSWMS" />
+			<SimulaTable name_colum1="time" unit_colum1="day"
+				name_colum2="totalSoluteChange" unit_colum2="umol" function="getValuesFromSWMS" />
+
+			<SimulaTable name_colum1="time" unit_colum1="day"
+				name_colum2="topBoundaryFluxRate" unit_colum2="umol/day" function="getValuesFromSWMS" />
+			<SimulaTable name_colum1="time" unit_colum1="day"
+				name_colum2="bottomBoundaryFluxRate" unit_colum2="umol/day"
+				function="getValuesFromSWMS" />
+			<SimulaTable name_colum1="time" unit_colum1="day"
+				name_colum2="totalSinkRate" unit_colum2="umol/day" function="getValuesFromSWMS" />
+			<!-- SimulaTable name_colum1="time" unit_colum1="day" name_colum2="totalMineralizationRate" 
+				unit_colum2="umol/day" function="getValuesFromSWMS" / -->
+
+			<SimulaVariable name="topBoundaryFlux" unit="umol"
+				function="usePath">
+				0 0
+				<SimulaConstant name="path" type="string">topBoundaryFluxRate
+				</SimulaConstant>
+			</SimulaVariable>
+			<SimulaVariable name="bottomBoundaryFlux" unit="umol"
+				function="usePath">
+				0 0
+				<SimulaConstant name="path" type="string">bottomBoundaryFluxRate
+				</SimulaConstant>
+			</SimulaVariable>
+			<SimulaVariable name="totalSink" unit="umol" function="usePath"
+				integrationFunction="ForwardEuler">
+				0 0
+				<SimulaConstant name="path" type="string">totalSinkRate
+				</SimulaConstant>
+			</SimulaVariable>
+
+			<SimulaTable name_colum1="time" unit_colum1="day"
+				name_colum2="massBalanceError" unit_colum2="umol" function="usePath">
+				0 0
+				<SimulaConstant name="path" type="string">
+					relativeMassBalanceError
+				</SimulaConstant>
+			</SimulaTable>
+			<SimulaDerivative name="relativeMassBalanceError"
+				unit="umol" function="soluteMassBalanceTest" />
+
+			<SimulaTable name_colum1="time" unit_colum1="day"
+				name_colum2="D90" unit_colum2="cm" function="getValuesFromSWMS" />
+		</SimulaBase>
+		<SimulaBase name="water">
+			<SimulaTable name_colum1="time" unit_colum1="day"
+				name_colum2="totalWaterInColumn" unit_colum2="cm3" function="getValuesFromSWMS" />
+			<SimulaTable name_colum1="time" unit_colum1="day"
+				name_colum2="totalWaterChangeInColumn" unit_colum2="cm3"
+				function="getValuesFromSWMS" />
+			<SimulaTable name_colum1="time" unit_colum1="day"
+				name_colum2="topBoundaryFluxRate" unit_colum2="cm3/day" function="getValuesFromSWMS" />
+			<SimulaTable name_colum1="time" unit_colum1="day"
+				name_colum2="bottomBoundaryFluxRate" unit_colum2="cm3/day" function="getValuesFromSWMS" />
+			<SimulaVariable name="topBoundaryFlux" unit="cm3"
+				function="usePath">
+				0 0
+				<SimulaConstant name="path" type="string">topBoundaryFluxRate
+				</SimulaConstant>
+			</SimulaVariable>
+			<SimulaVariable name="bottomBoundaryFlux" unit="cm3"
+				function="usePath">
+				0 0
+				<SimulaConstant name="path" type="string">bottomBoundaryFluxRate
+				</SimulaConstant>
+			</SimulaVariable>
+			<SimulaTable name_colum1="time" unit_colum1="day"
+				name_colum2="totalSinkRate" unit_colum2="cm3/day" function="getValuesFromSWMS" />
+			<SimulaVariable name="totalSink" unit="cm3" function="usePath">
+				0 0
+				<SimulaConstant name="path" type="string">totalSinkRate
+				</SimulaConstant>
+			</SimulaVariable>
+			<SimulaDerivative name="massBalanceError" unit="cm3"
+				function="waterMassBalanceTest" />
+			<SimulaTable name_colum1="time" unit_colum1="day"
+				name_colum2="relativeMassBalanceError" unit_colum2="100%"
+				function="waterMassBalanceTest">0 0</SimulaTable>
+
+		</SimulaBase>
+
+	</SimulaBase>
+
+	<SimulaBase name="simulationControls">
+		<SimulaBase name="integrationParameters">
+
+			<SimulaConstant name="defaultSpatialIntegrationLength"
+				unit="cm">0.</SimulaConstant>
+		</SimulaBase>
+		<SimulaBase name="outputParameters">
+			<SimulaBase name="defaults">
+				<!-- optional section - if an export module section does not list end/start/interval 
+					times than you can specify a default here -->
+				<SimulaConstant name="startTime" type="time"> 0.
+				</SimulaConstant>
+				<SimulaConstant name="endTime" type="time"> 30.
+				</SimulaConstant>
+				<SimulaConstant name="timeInterval" type="time"> 0.2
+				</SimulaConstant>
+			</SimulaBase>
+			<SimulaBase name="VTU">
+				<SimulaConstant name="run" type="bool"> 1  </SimulaConstant>
+				<SimulaConstant name="timeInterval" type="time"> 0.2
+				</SimulaConstant>
+				<SimulaConstant name="includeShoots" type="bool"> 0
+				</SimulaConstant>
+				<SimulaConstant name="includeRoots" type="bool"> 0
+				</SimulaConstant>
+				<SimulaConstant name="includeVTUForDepletionZones"
+					type="bool"> 1 </SimulaConstant>
+				<SimulaConstant name="includePointData" type="bool"> 1
+				</SimulaConstant>
+			</SimulaBase>
+			<SimulaBase name="table">
+				<SimulaConstant name="run" type="bool"> 1 </SimulaConstant>
+				<!--SimulaConstant name="timeInterval" type="time"> 1.0 </SimulaConstant -->
+				<SimulaConstant name="searchingDepth" type="int"> 8
+				</SimulaConstant>
+				<SimulaConstant name="skipTheseVariables" type="string">
+					primaryRoot, hypocotyl
+				</SimulaConstant>
+
+			</SimulaBase>
+		</SimulaBase>
+	</SimulaBase>
+
+
+	<!--DataPointTemplate -->
+	<SimulaBase name="dataPointTemplate" type="Coordinate">
+	</SimulaBase>
+
+	<SimulaBase name="environment">
+		<SimulaConstant name="startDay" unit="noUnit" type="int"> 22
+		</SimulaConstant>
+		<SimulaConstant name="startMonth" unit="noUnit" type="int"> 6
+		</SimulaConstant>
+		<SimulaBase name="dimensions">
+			<SimulaConstant name="minCorner" type="Coordinate">
+				<!-- -13.33 -30 -30 -->
+				-4.5 -160 -4.5
+			</SimulaConstant>
+			<SimulaConstant name="maxCorner" type="Coordinate">
+				<!-- 13.33 0 30 -->
+				4.5 0 4.5
+			</SimulaConstant>
+			<SimulaConstant name="roundPot" type="bool">
+				0
+			</SimulaConstant>
+			<SimulaConstant name="resolution" type="Coordinate">
+				2 2 2 
+			</SimulaConstant>
+		</SimulaBase>
+		<SimulaBase name="soil">
+
+
+			<SimulaBase name="potassium">
+				<SimulaTable name_colum1="depth" unit_colum1="cm"
+					name_colum2="concentration" unit_colum2="umol/ml">
+					10 0.046
+					-300 0.046
+				</SimulaTable>
+				<SimulaConstant name="saturatedDiffusionCoefficient"
+					unit="cm2/day">
+					<!-- Lobo VMM, Ribeiro ACF, Verissimo LMP. 1998. Diffusion coefficients 
+						in aqueous solutions of potassium chloride at high and low concentrations. 
+						Journal of molecular Liquids 78: 139-149. 1.8e-9 m2/sec = 1.56 cm2/day -->
+					1.56
+				</SimulaConstant>
+				<SimulaConstant name="longitudinalDispersivity" unit="cm">
+					1.
+				</SimulaConstant>
+				<SimulaConstant name="transverseDispersivity" unit="cm">
+					0.5
+				</SimulaConstant>
+				<SimulaConstant name="adsorptionCoefficient" unit="umol/cm">
+				  33.
+				</SimulaConstant>
+
+			</SimulaBase>
+
+			<SimulaBase name="water">
+				<SimulaTable name_colum2="initialHydraulicHead"
+					name_colum1="depth" unit_colum1="cm" unit_colum2="cm">
+					0 -300
+					-200 -100
+				</SimulaTable>
+				<SimulaTable name_colum2="residualWaterContent"
+					name_colum1="depth" unit_colum1="cm" unit_colum2="100%">
+					0 0.07
+					-300 0.07
+				</SimulaTable>
+				<SimulaTable name_colum2="saturatedWaterContent"
+					name_colum1="depth" unit_colum1="cm" unit_colum2="100%"
+					TinterpolationMethod="step">
+					0 0.30
+					-300 0.30
+				</SimulaTable>
+				<SimulaTable name_colum2="vanGenuchten:alpha"
+					name_colum1="depth" unit_colum1="cm" unit_colum2="1/cm">
+					0 0.03
+					-300 0.03
+				</SimulaTable>
+				<SimulaTable name_colum2="vanGenuchten:n" name_colum1="depth"
+					unit_colum1="cm" unit_colum2="noUnit">
+					0 2.
+					-300 2.
+				</SimulaTable>
+				<SimulaTable name_colum2="saturatedConductivity"
+					name_colum1="depth" unit_colum1="cm" unit_colum2="cm/day"
+					TinterpolationMethod="step">
+					0 10
+					-30 4
+					-300 4
+				</SimulaTable>
+			</SimulaBase>
+			<SimulaTable name_colum1="depth" unit_colum1="cm"
+				name_colum2="bulkDensity" unit_colum2="g/cm3">
+				0 1.24
+				-300 1.24
+			</SimulaTable>
+		</SimulaBase>
+
+
+		<SimulaBase name="atmosphere">
+
+			<SimulaTable name_column1="time" unit_column1="day"
+				name="evaporation" unit="cm/day">
+				0 0.0
+				100 0.0
+			</SimulaTable>
+			<SimulaTable name_colum2="precipitation" name_colum1="time"
+				unit_colum1="day" unit_colum2="cm/day" interpolationMethod="step">
+				0 0.0
+				<!-- 1
+				0.1
+				2 0.2
+				3 0.3
+				4 0.4
+				5 0.3
+				6 0.2
+				7 0.1
+				8 0.0
+				13 0.1-->
+				14 0.0
+				30 0.0
+			</SimulaTable>
+
+		</SimulaBase>
+
+
+	</SimulaBase>
+
+</SimulationModel>
+
+
