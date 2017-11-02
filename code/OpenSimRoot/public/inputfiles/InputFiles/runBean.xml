@@ -48,6 +48,9 @@
 	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeGeometry.xml" />
 	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeDryweight.xml" />
 	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeNitrateBC.xml" />
+	<SimulaIncludeFile fileName="templates/plantTemplate.IncludePotassium3D.xml" />
+	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeRootHairs.xml" />
+
 	<!--
 	If leaving out water and nitrate, enable this to have a rough estimate of carbon cost of nitrate fixation and uptake
 	-->
@@ -58,13 +61,14 @@
 	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeNitrate3D.xml"/>
 	<SimulaIncludeFile fileName="templates/plantTemplate.IncludePotassium3D.xml" />
 	<SimulaIncludeFile fileName="templates/configurationCarbon.xml" />
-	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeRootHairs.xml" />
+
 	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeRootLengthProfile.xml" />
 	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeAerenchyma.xml" />
 	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeStress.xml" /-->
 
 	<!--SimulaIncludeFile fileName="environments/Rocksprings/Rocksprings-bean.xml" /-->
-	<SimulaIncludeFile fileName="environments/WageningseBovenBuurt/WageningseBovenBuurt-bean.xml"/>
+	<!--<SimulaIncludeFile fileName="environments/pots/pot.xml"/> /--> 
+	<SimulaIncludeFile fileName="environments/pots/pot.xml" /> 
 
 	<SimulaBase name="rootTypeParameters">
 		<SimulaIncludeFile fileName="plantParameters/Bean/Carioca/carioca.xml" />

@@ -53,8 +53,8 @@
 1
 				</SimulaConstant>
 				<SimulaTable garbageCollectionOff="true" interpolationMethod="linear" name_column1="time" name_column2="actualDurationofSunshine" prettyName="actual durationof sunshine" unit_column1="day" unit_column2="hour">
-0	6
-60	6
+0	0
+60	0
 
 				</SimulaTable>
 				<SimulaConstant name="albedoCrop" prettyName="albedo crop" type="double" unit="noUnit">
@@ -73,8 +73,48 @@
 				</SimulaTable>
 				<SimulaTable garbageCollectionOff="true" interpolationMethod="linear" name_column1="time" name_column2="evaporation" prettyName="evaporation" unit_column1="day" unit_column2="cm/day">
 0	0
-10	0
-100	0
+1	0.05
+2	0.1
+3	0.1
+4	0.05
+5	0.05
+6	0.1
+7	0.05
+8	0.05
+9	0.1
+10	0.1
+11	0.05
+12	0.1
+13	0.1
+14	0.05
+15	0.04
+16	0.03
+17	0.02
+18	0.09
+19	0.09
+20	0.04
+21	0.09
+22	0.09
+23	0.04
+24	0.03
+25	0.02
+26	0.02
+27	0.08
+28	0.03
+29	0.08
+30	0.03
+31	0.08
+32	0.07
+33	0.07
+34	0.07
+35	0.03
+36	0.02
+37	0.01
+38	0
+39	0
+40	0
+41	0
+42	0.06
 
 				</SimulaTable>
 				<SimulaConstant name="irradiation" prettyName="irradiation" type="double" unit="umol/cm2/day">
@@ -84,10 +124,10 @@
 50.8
 				</SimulaConstant>
 				<SimulaConstant name="netRadiation" prettyName="net radiation" type="double" unit="W/m2">
-150
+50
 				</SimulaConstant>
 				<SimulaConstant name="netRadiationSoil" prettyName="net radiation soil" type="double" unit="W/m2">
-150
+0
 				</SimulaConstant>
 				<SimulaTable garbageCollectionOff="true" interpolationMethod="linear" name_column1="time" name_column2="precipitation" prettyName="precipitation" unit_column1="day" unit_column2="cm/day">
 0	0
@@ -151,10 +191,10 @@
 			<SimulaBase name="dimensions" prettyName="dimensions" unit="noUnit">
 
 				<SimulaConstant name="maxCorner" prettyName="max corner" type="Coordinate" unit="cm">
-13.33	0	30
+11	0	15
 				</SimulaConstant>
 				<SimulaConstant name="minCorner" prettyName="min corner" type="Coordinate" unit="cm">
--13.33	-30	-30
+-11	-150	-15
 				</SimulaConstant>
 				<SimulaConstant name="resolution" prettyName="resolution" type="Coordinate" unit="cm">
 1	1	1
@@ -196,12 +236,15 @@
 
 					</SimulaTable>
 					<SimulaTable garbageCollectionOff="true" interpolationMethod="step" name_column1="depth" name_column2="diffusionCoefficient" prettyName="diffusion coefficient" unit_column1="cm" unit_column2="cm2/day">
--1000	0.216
--0	0.216
+-1000	0.07
+-0	0.07
 1e-05	1e-08
 1000	1e-08
 
 					</SimulaTable>
+					<SimulaConstant name="increaseTimeStep" prettyName="increase time step" type="double" unit="noUnit">
+1
+					</SimulaConstant>
 					<SimulaConstant name="longitudinalDispersivity" prettyName="longitudinal dispersivity" type="double" unit="cm">
 1
 					</SimulaConstant>
@@ -217,12 +260,12 @@
 				</SimulaBase>
 				<SimulaBase name="organic" prettyName="organic" unit="noUnit">
 
-					<SimulaConstant name="CNRatioMicrobes" prettyName="CNRatio microbes" type="double" unit="umol/umol">
+					<SimulaConstant name="CNRatioMicrobes" prettyName="CNRatio microbes" type="double" unit="g/g">
 10
 					</SimulaConstant>
 					<SimulaTable garbageCollectionOff="true" interpolationMethod="step" name_column1="depth" name_column2="CNratio" prettyName="CNratio" unit_column1="cm" unit_column2="g/g">
--10000	10
-0	10
+-10000	13
+0	13
 
 					</SimulaTable>
 					<SimulaConstant name="assimilationEfficiencyMicrobes" prettyName="assimilation efficiency microbes" type="double" unit="noUnit">
@@ -236,7 +279,7 @@
 0	0.02
 
 					</SimulaTable>
-					<SimulaTable garbageCollectionOff="true" interpolationMethod="step" name_column1="depth" name_column2="initialRelativeMineralisationRate" prettyName="initial relative mineralisation rate" unit_column1="cm" unit_column2="noUnit">
+					<SimulaTable garbageCollectionOff="true" interpolationMethod="step" name_column1="depth" name_column2="initialRelativeMineralisationRate" prettyName="initial relative mineralisation rate" unit_column1="cm" unit_column2="g/g/year">
 -1000	0
 -25	0
 -10	0.037
@@ -252,35 +295,48 @@
 				</SimulaBase>
 				<SimulaBase name="phosphorus" prettyName="phosphorus" unit="noUnit">
 
+					<SimulaConstant name="adsorptionCoefficient" prettyName="adsorption coefficient" type="double" unit="umol/cm">
+1333.3
+					</SimulaConstant>
 					<SimulaTable garbageCollectionOff="true" interpolationMethod="step" name_column1="depth" name_column2="bufferPower" prettyName="buffer power" unit_column1="cm" unit_column2="noUnit">
 -1000	400
 1000	400
 
 					</SimulaTable>
 					<SimulaTable garbageCollectionOff="true" interpolationMethod="step" name_column1="depth" name_column2="concentration" prettyName="concentration" unit_column1="cm" unit_column2="umol/ml">
--1000	0.001
-0	0.001
-1e-05	0
+-1000	0.00024
+-30	0.00025
+-29	0.00175
+0	0.00175
+0.0001	0
 1000	0
 
 					</SimulaTable>
 					<SimulaTable garbageCollectionOff="true" interpolationMethod="step" name_column1="depth" name_column2="diffusionCoefficient" prettyName="diffusion coefficient" unit_column1="cm" unit_column2="cm2/day">
 -1000	0.00019872
--0	0.00019872
 1000	0.00019872
 
 					</SimulaTable>
 					<SimulaConstant name="increaseTimeStep" prettyName="increase time step" type="double" unit="noUnit">
 1.1
 					</SimulaConstant>
+					<SimulaConstant name="longitudinalDispersivity" prettyName="longitudinal dispersivity" type="double" unit="cm">
+0
+					</SimulaConstant>
 					<SimulaConstant name="r1-r0" prettyName="r1-r0" type="double" unit="cm">
 0.3
+					</SimulaConstant>
+					<SimulaConstant name="saturatedDiffusionCoefficient" prettyName="saturated diffusion coefficient" type="double" unit="cm2/day">
+0.00495
+					</SimulaConstant>
+					<SimulaConstant name="transverseDispersivity" prettyName="transverse dispersivity" type="double" unit="cm">
+0
 					</SimulaConstant>
 				</SimulaBase>
 				<SimulaBase name="potassium" prettyName="potassium" unit="noUnit">
 
 					<SimulaConstant name="adsorptionCoefficient" prettyName="adsorption coefficient" type="double" unit="umol/cm">
-10
+33.3
 					</SimulaConstant>
 					<SimulaTable garbageCollectionOff="true" interpolationMethod="step" name_column1="depth" name_column2="bufferPower" prettyName="buffer power" unit_column1="cm" unit_column2="noUnit">
 -1000	10
@@ -288,18 +344,22 @@
 
 					</SimulaTable>
 					<SimulaTable garbageCollectionOff="true" interpolationMethod="step" name_column1="depth" name_column2="concentration" prettyName="concentration" unit_column1="cm" unit_column2="umol/ml">
--1000	0.1
-0	0.1
+-1000	0.05
+-30	0.05
+-29	0.15
+0	0.15
 1e-05	0
 1000	0
 
 					</SimulaTable>
 					<SimulaTable garbageCollectionOff="true" interpolationMethod="step" name_column1="depth" name_column2="diffusionCoefficient" prettyName="diffusion coefficient" unit_column1="cm" unit_column2="cm2/day">
--1000	0.0143
--0	0.0143
-1000	0.0143
+-1000	0.067
+1000	0.067
 
 					</SimulaTable>
+					<SimulaConstant name="increaseTimeStep" prettyName="increase time step" type="double" unit="noUnit">
+1.01
+					</SimulaConstant>
 					<SimulaConstant name="longitudinalDispersivity" prettyName="longitudinal dispersivity" type="double" unit="cm">
 1
 					</SimulaConstant>
@@ -316,48 +376,45 @@
 				<SimulaBase name="water" prettyName="water" unit="noUnit">
 
 					<SimulaTable garbageCollectionOff="true" interpolationMethod="step" name_column1="depth" name_column2="initialHydraulicHead" prettyName="initial hydraulic head" unit_column1="cm" unit_column2="cm">
--200	-0
--90	-110
--32	-168
--28	-172
--0	-200
+-200	-10
+-150	-52
+-60	-143
+0	-215
 
 					</SimulaTable>
 					<SimulaTable garbageCollectionOff="true" interpolationMethod="step" name_column1="depth" name_column2="residualWaterContent" prettyName="residual water content" unit_column1="cm" unit_column2="100%">
--300	0.057
-0	0.057
+-300	0.067
+0	0.067
 
 					</SimulaTable>
 					<SimulaTable garbageCollectionOff="true" interpolationMethod="step" name_column1="depth" name_column2="saturatedConductivity" prettyName="saturated conductivity" unit_column1="cm" unit_column2="cm/day">
--200	10
--150	10
--140	400
-0	400
+-300	1
+-150	1
+-140	10.8
+0	10.8
 
 					</SimulaTable>
 					<SimulaTable garbageCollectionOff="true" interpolationMethod="step" name_column1="depth" name_column2="saturatedWaterContent" prettyName="saturated water content" unit_column1="cm" unit_column2="100%">
--200	0.339
--32	0.339
--28	0.399
-0	0.399
+-300	0.39
+-65	0.39
+-35	0.39
+-25	0.43
+-15	0.45
+0	0.46
 
 					</SimulaTable>
 					<SimulaTable garbageCollectionOff="true" interpolationMethod="step" name_column1="depth" name_column2="vanGenuchten:alpha" prettyName="van genuchten:alpha" unit_column1="cm" unit_column2="1/cm">
--300	0.033
--30	0.033
--28	0.038
-0	0.038
+-300	0.02
+0	0.02
 
 					</SimulaTable>
 					<SimulaTable garbageCollectionOff="true" interpolationMethod="step" name_column1="depth" name_column2="vanGenuchten:n" prettyName="van genuchten:n" unit_column1="cm" unit_column2="noUnit">
--200	1.6024
--32	1.6024
--28	1.3757
-0	1.3757
+-300	1.41
+0	1.41
 
 					</SimulaTable>
 					<SimulaConstant name="volumetricWaterContentInBarberCushman" prettyName="volumetric water content in barber cushman" type="double" unit="cm3/cm3">
-0.18
+0.3
 					</SimulaConstant>
 				</SimulaBase>
 			</SimulaBase>
@@ -501,7 +558,7 @@
 					<SimulaDerivative function="plantTotal" name="plantMinimalNutrientContent" prettyName="plant minimal nutrient content" unit="umol"/>
 					<SimulaVariable function="plantTotal" integrationFunction="RungeKutta4" name="plantNutrientUptake" prettyName="plant nutrient uptake" unit="umol">
 0	714	0
-0.2	714.057	0.569528
+0.2	714.03	0.303525
 
 					</SimulaVariable>
 					<SimulaDerivative function="plantTotal" name="plantOptimalNutrientContent" prettyName="plant optimal nutrient content" unit="umol"/>
@@ -527,25 +584,63 @@
 									<SimulaLink name="minimalNutrientConcentration" prettyName="minimal nutrient concentration"/>
 									<SimulaLink name="optimalNutrientConcentration" prettyName="optimal nutrient concentration"/>
 									<SimulaTable function="radiusDepletionZoneBarberCushman" interpolationMethod="step" name_column1="time" name_column2="radiusDepletionZone" prettyName="radius depletion zone" unit_column1="day" unit_column2="cm">
-0	0.587097
+0	0.458065
 
 									</SimulaTable>
 									<SimulaDerivative function="rootSegmentOptimalNutrientContent" name="rootSegmentMinimalNutrientContent" prettyName="root segment minimal nutrient content" unit="umol"/>
 									<SimulaVariable function="barber_cushman_1981_nutrient_uptake_explicit" integrationFunction="BarberCushmanSolver" name="rootSegmentNutrientUptake" prettyName="root segment nutrient uptake" unit="umol">
 0	0	0
-0.02	0	0
-0.04	0.000479827	0.0479827
-0.076094	0.00307932	0.0960575
-0.1	0.00640116	0.181852
-0.121393	0.0106605	0.216346
-0.142786	0.0152925	0.216698
-0.148564	0.0167012	0.270908
-0.154342	0.0182963	0.281219
-0.165898	0.0215611	0.283821
-0.174293	0.0240209	0.302196
-0.182688	0.0266059	0.313657
-0.19587	0.0307529	0.315501
-0.2	0.032117	0.345134
+0.0295363	0	0
+0.0557405	0.000874046	0.0667105
+0.0611679	0.00133674	0.103793
+0.0649379	0.00165153	0.0632031
+0.0687079	0.0018479	0.0409695
+0.0714358	0.00202153	0.0863336
+0.0741636	0.00222407	0.0621607
+0.0784953	0.00249278	0.0619112
+0.0822901	0.00276023	0.0790415
+0.0854904	0.00298892	0.0638739
+0.0886907	0.00323653	0.0908681
+0.0917817	0.00347566	0.0638603
+0.0948728	0.00375266	0.115368
+0.0976303	0.00401396	0.0741495
+0.1	0.00419122	0.0754522
+0.102757	0.00441127	0.0841506
+0.106172	0.00467822	0.0722081
+0.10897	0.00494009	0.11498
+0.111768	0.00521242	0.0796853
+0.114613	0.00548359	0.110973
+0.117457	0.0057641	0.0862435
+0.120715	0.00612237	0.133679
+0.123367	0.00641664	0.0882458
+0.126019	0.00667709	0.108171
+0.129956	0.0070241	0.0681059
+0.132299	0.00728527	0.154858
+0.134642	0.00759024	0.105505
+0.138743	0.00806858	0.127751
+0.141905	0.0083889	0.0748728
+0.144026	0.00861984	0.142897
+0.146147	0.00889623	0.117737
+0.149361	0.00928225	0.122424
+0.153959	0.00960133	0.0163739
+0.15568	0.0097606	0.168708
+0.157402	0.0100173	0.129616
+0.160223	0.0103846	0.13072
+0.163932	0.0108484	0.11933
+0.167339	0.0113576	0.179651
+0.169848	0.0117224	0.111158
+0.172357	0.0120678	0.164193
+0.175151	0.0124365	0.0996754
+0.177478	0.0127764	0.192499
+0.179805	0.0131488	0.127557
+0.182805	0.01361	0.179923
+0.185435	0.0139919	0.110395
+0.187745	0.0143356	0.187302
+0.190054	0.0147098	0.1368
+0.193421	0.0153091	0.219172
+0.195936	0.0157262	0.112519
+0.198175	0.0160751	0.199069
+0.2	0.0163997	0.156777
 
 									</SimulaVariable>
 									<SimulaDerivative function="rootSegmentOptimalNutrientContent" name="rootSegmentOptimalNutrientContent" prettyName="root segment optimal nutrient content" unit="umol"/>
@@ -577,20 +672,58 @@
 							</SimulaConstant>
 						</SimulaBase>
 						<SimulaPoint function="rootGrowthDirection" garbageCollectionOff="true" integrationFunction="RungeKutta4" name="growthpoint" prettyName="growthpoint" unit="cm">
-0	0	0	0	0.0136219	0.999883	0.0069752	
-0.02	0.000215578	0.0203985	0.000114783	0.00491905	1.03999	-0.000906627	
-0.04	0.000293451	0.0415983	5.9286e-05	0.00847878	1.07996	-0.00218101	
-0.076094	0.000605653	0.0818814	1.37058e-06	0.00435127	1.15218	-0.00144432	
-0.1	0.000735181	0.109997	-3.27302e-05	0.00907787	1.19996	0.0039254	
-0.121393	0.000946218	0.136125	8.80286e-05	0.0101576	1.24272	0.0084064	
-0.142786	0.00112959	0.163168	0.000236578	0.0122263	1.28545	0.0130965	
-0.148564	0.00118436	0.170629	0.000279126	0.0141889	1.29704	0.00397659	
-0.154342	0.00122805	0.178157	0.000295849	0.00890571	1.30865	0.00417083	
-0.165898	0.00131161	0.193414	0.000345902	0.00295815	1.33179	-0.00267098	
-0.174293	0.00134004	0.204664	0.000324192	-0.00141154	1.34858	-0.00212051	
-0.182688	0.00131204	0.216056	0.000320514	-0.00581574	1.36536	-0.00343869	
-0.19587	0.00128347	0.234229	0.000284674	-0.0119202	1.39169	-0.00134924	
-0.2	0.00126248	0.239994	0.000279787	-0.000290414	1.4	-0.00122171	
+0	0	0	0	-0.0464378	0.99474	-0.0913048	
+0.0295363	-0.0010207	0.0303315	-0.00190945	-0.0318891	1.0569	-0.059842	
+0.0557405	-0.00166441	0.0587441	-0.00294604	-0.0183623	1.11061	-0.0400899	
+0.0611679	-0.00171783	0.0648035	-0.00311065	-0.00980818	1.12194	-0.0281715	
+0.0649379	-0.00174931	0.0690484	-0.00317546	-0.00555039	1.1298	-0.0122361	
+0.0687079	-0.00177035	0.0733222	-0.0032004	-0.000827087	1.1374	-0.00543877	
+0.0714358	-0.00177293	0.0764323	-0.00321115	-0.00391929	1.14286	0.00365196	
+0.0741636	-0.00178052	0.0795573	-0.00320049	-0.00371579	1.14832	-0.00202635	
+0.0784953	-0.00178797	0.0845501	-0.00320315	0.00128317	1.15698	-0.00550477	
+0.0822901	-0.00179143	0.0889551	-0.00322235	-0.000325153	1.16456	-0.0070881	
+0.0854904	-0.00178563	0.0926923	-0.00323836	-0.00284574	1.17096	-0.00711649	
+0.0886907	-0.00178601	0.09645	-0.00324894	0.00240619	1.17738	-0.00184405	
+0.0917817	-0.00177245	0.100099	-0.00324892	0.00883243	1.18353	-0.000163261	
+0.0948728	-0.00175701	0.103767	-0.00324899	0.00879919	1.1897	0.00441913	
+0.0976303	-0.00174299	0.107055	-0.00323578	0.001737	1.19525	0.00426023	
+0.1	-0.00174278	0.109893	-0.00323606	0.00100479	1.2	-0.00119338	
+0.102757	-0.00175548	0.11321	-0.0032406	-0.00709677	1.20549	-0.00408245	
+0.106172	-0.00177692	0.117338	-0.00324272	-0.00719497	1.21232	0.000704045	
+0.10897	-0.00178269	0.120738	-0.00324854	-0.00453703	1.21792	-0.00573161	
+0.111768	-0.00179639	0.124153	-0.00325627	-0.00428087	1.22351	-0.00647415	
+0.114613	-0.00180199	0.127642	-0.00327376	0.000207687	1.22919	-0.0090443	
+0.117457	-0.00179328	0.131146	-0.00329139	0.00359286	1.23491	-0.000508225	
+0.120715	-0.00178755	0.13518	-0.00329502	0.00405084	1.24141	0.00662673	
+0.123367	-0.00178774	0.13848	-0.00327669	0.000705054	1.24673	0.00259538	
+0.126019	-0.00178878	0.141793	-0.00326343	0.00719237	1.25202	0.000974602	
+0.129956	-0.00178648	0.146738	-0.00324854	0.00848254	1.25988	0.00280968	
+0.132299	-0.00177843	0.149695	-0.00325462	0.00128122	1.26459	-0.00360654	
+0.134642	-0.0017777	0.152663	-0.0032511	0.00316098	1.26928	0.00164134	
+0.138743	-0.00177267	0.157886	-0.00324201	0.00547758	1.27747	0.000746621	
+0.141905	-0.00174741	0.161935	-0.00324426	0.00432405	1.28379	-0.00605107	
+0.144026	-0.00173867	0.164662	-0.00325091	0.0104676	1.28801	-0.000540193	
+0.146147	-0.0017201	0.167398	-0.00324617	0.00125434	1.29229	0.0042992	
+0.149361	-0.00172708	0.171563	-0.00323578	-0.00190033	1.2987	0.00662716	
+0.153959	-0.00172383	0.177555	-0.00320394	-0.00513811	1.30788	0.00829123	
+0.15568	-0.00172442	0.179809	-0.00319394	0.00348391	1.31128	0.0136806	
+0.157402	-0.00171961	0.182069	-0.00317748	0.00466309	1.31479	0.00264714	
+0.160223	-0.00170662	0.185787	-0.00316444	0.0112515	1.32038	0.00628753	
+0.163932	-0.00169245	0.190699	-0.00315767	0.00713755	1.32784	-0.00415413	
+0.167339	-0.00167788	0.195234	-0.00317644	0.00911076	1.33464	-0.00372647	
+0.169848	-0.00166437	0.198588	-0.00318942	0.0133858	1.33962	0.0059645	
+0.172357	-0.00164191	0.201956	-0.0031823	0.00990331	1.34466	0.00641139	
+0.175151	-0.00163321	0.205721	-0.003166	0.00570824	1.35028	0.00346947	
+0.177478	-0.00162185	0.208868	-0.00317068	0.0108145	1.35491	0.000517172	
+0.179805	-0.00160613	0.212027	-0.00316994	0.0073743	1.35958	0.00586687	
+0.182805	-0.00159058	0.216115	-0.00315511	0.00193398	1.3656	-0.00493138	
+0.185435	-0.00158219	0.219714	-0.00315786	-0.0063531	1.37081	-0.0116766	
+0.187745	-0.00160275	0.222885	-0.00317544	-0.00426809	1.37545	-0.00999843	
+0.190054	-0.00161261	0.226066	-0.00319596	0.00115274	1.38005	-0.0130274	
+0.193421	-0.00161648	0.230724	-0.00324595	0.00208484	1.38676	-0.0149149	
+0.195936	-0.00161487	0.234218	-0.00326206	0.0026415	1.39186	-0.00362547	
+0.198175	-0.00161864	0.23734	-0.00326483	-0.00317492	1.39632	-0.00824949	
+0.2	-0.00162717	0.239891	-0.00327432	-0.00143631	1.4	0.00128385	
 
 							<SimulaBase name="nitrate" prettyName="nitrate" unit="noUnit">
 
@@ -616,35 +749,111 @@
 							<SimulaDerivative function="rootDiameter" name="rootDiameter" prettyName="root diameter" unit="cm"/>
 							<SimulaVariable function="scaledRootGrowthRate" garbageCollectionOff="true" integrationFunction="RungeKutta4" name="rootLongitudinalGrowth" prettyName="root longitudinal growth" unit="cm">
 0	0	1
-0.02	0.0204	1.04
-0.04	0.0416	1.08
-0.076094	0.0818844	1.15219
+0.0295363	0.0304087	1.05907
+0.0557405	0.0588475	1.11148
+0.0611679	0.0649094	1.12234
+0.0649379	0.0691548	1.12988
+0.0687079	0.0734287	1.13742
+0.0714358	0.0765389	1.14287
+0.0741636	0.0796639	1.14833
+0.0784953	0.0846568	1.15699
+0.0822901	0.0890617	1.16458
+0.0854904	0.092799	1.17098
+0.0886907	0.0965567	1.17738
+0.0917817	0.100206	1.18356
+0.0948728	0.103874	1.18975
+0.0976303	0.107162	1.19526
 0.1	0.11	1.2
-0.121393	0.136129	1.24279
-0.142786	0.163174	1.28557
-0.148564	0.170635	1.29713
-0.154342	0.178163	1.30868
-0.165898	0.19342	1.3318
-0.174293	0.204671	1.34859
-0.182688	0.216063	1.36538
-0.19587	0.234236	1.39174
+0.102757	0.113317	1.20551
+0.106172	0.117445	1.21234
+0.10897	0.120844	1.21794
+0.111768	0.12426	1.22354
+0.114613	0.127749	1.22923
+0.117457	0.131253	1.23491
+0.120715	0.135288	1.24143
+0.123367	0.138587	1.24673
+0.126019	0.1419	1.25204
+0.129956	0.146845	1.25991
+0.132299	0.149802	1.2646
+0.134642	0.15277	1.26928
+0.138743	0.157993	1.27749
+0.141905	0.162042	1.28381
+0.144026	0.164769	1.28805
+0.146147	0.167506	1.29229
+0.149361	0.17167	1.29872
+0.153959	0.177663	1.30792
+0.15568	0.179917	1.31136
+0.157402	0.182177	1.3148
+0.160223	0.185895	1.32045
+0.163932	0.190806	1.32786
+0.167339	0.195341	1.33468
+0.169848	0.198696	1.3397
+0.172357	0.202064	1.34471
+0.175151	0.205829	1.3503
+0.177478	0.208976	1.35496
+0.179805	0.212135	1.35961
+0.182805	0.216223	1.36561
+0.185435	0.219822	1.37087
+0.187745	0.222993	1.37549
+0.190054	0.226175	1.38011
+0.193421	0.230833	1.38684
+0.195936	0.234327	1.39187
+0.198175	0.237449	1.39635
 0.2	0.24	1.4
 
 							</SimulaVariable>
 							<SimulaVariable function="potentialRootGrowthRate" integrationFunction="RungeKutta4" name="rootPotentialLongitudinalGrowth" prettyName="root potential longitudinal growth" unit="cm">
 0	0	1
-0.02	0.0204	1.04
-0.04	0.0416	1.08
-0.076094	0.0818844	1.15219
+0.0295363	0.0304087	1.05907
+0.0557405	0.0588475	1.11148
+0.0611679	0.0649094	1.12234
+0.0649379	0.0691548	1.12988
+0.0687079	0.0734287	1.13742
+0.0714358	0.0765389	1.14287
+0.0741636	0.0796639	1.14833
+0.0784953	0.0846568	1.15699
+0.0822901	0.0890617	1.16458
+0.0854904	0.092799	1.17098
+0.0886907	0.0965567	1.17738
+0.0917817	0.100206	1.18356
+0.0948728	0.103874	1.18975
+0.0976303	0.107162	1.19526
 0.1	0.11	1.2
-0.121393	0.136129	1.24279
-0.142786	0.163174	1.28557
-0.148564	0.170635	1.29713
-0.154342	0.178163	1.30868
-0.165898	0.19342	1.3318
-0.174293	0.204671	1.34859
-0.182688	0.216063	1.36538
-0.19587	0.234236	1.39174
+0.102757	0.113317	1.20551
+0.106172	0.117445	1.21234
+0.10897	0.120844	1.21794
+0.111768	0.12426	1.22354
+0.114613	0.127749	1.22923
+0.117457	0.131253	1.23491
+0.120715	0.135288	1.24143
+0.123367	0.138587	1.24673
+0.126019	0.1419	1.25204
+0.129956	0.146845	1.25991
+0.132299	0.149802	1.2646
+0.134642	0.15277	1.26928
+0.138743	0.157993	1.27749
+0.141905	0.162042	1.28381
+0.144026	0.164769	1.28805
+0.146147	0.167506	1.29229
+0.149361	0.17167	1.29872
+0.153959	0.177663	1.30792
+0.15568	0.179917	1.31136
+0.157402	0.182177	1.3148
+0.160223	0.185895	1.32045
+0.163932	0.190806	1.32786
+0.167339	0.195341	1.33468
+0.169848	0.198696	1.3397
+0.172357	0.202064	1.34471
+0.175151	0.205829	1.3503
+0.177478	0.208976	1.35496
+0.179805	0.212135	1.35961
+0.182805	0.216223	1.36561
+0.185435	0.219822	1.37087
+0.187745	0.222993	1.37549
+0.190054	0.226175	1.38011
+0.193421	0.230833	1.38684
+0.195936	0.234327	1.39187
+0.198175	0.237449	1.39635
 0.2	0.24	1.4
 
 							</SimulaVariable>
@@ -676,14 +885,14 @@
 							<SimulaDerivative function="rootTotal.v2" name="rootMinimalNutrientContent" prettyName="root minimal nutrient content" unit="umol"/>
 							<SimulaVariable function="rootTotal.v2" integrationFunction="RungeKutta4" name="rootNutrientUptake" prettyName="root nutrient uptake" unit="umol">
 0	0	0
-0.2	0.0357513	0.345134
+0.2	0.0152862	0.156777
 
 							</SimulaVariable>
 							<SimulaDerivative function="rootTotal.v2" name="rootOptimalNutrientContent" prettyName="root optimal nutrient content" unit="umol"/>
 							<SimulaDerivative function="rootSystemTotal" name="rootSystemMinimalNutrientContent" prettyName="root system minimal nutrient content" unit="umol"/>
 							<SimulaVariable function="rootSystemTotal" integrationFunction="RungeKutta4" name="rootSystemNutrientUptake" prettyName="root system nutrient uptake" unit="umol">
 0	0	0
-0.2	0.0345134	0.345134
+0.2	0.0156777	0.156777
 
 							</SimulaVariable>
 							<SimulaDerivative function="rootSystemTotal" name="rootSystemOptimalNutrientContent" prettyName="root system optimal nutrient content" unit="umol"/>
@@ -728,16 +937,28 @@ hypocotyl
 									<SimulaDerivative function="rootSegmentOptimalNutrientContent" name="rootSegmentMinimalNutrientContent" prettyName="root segment minimal nutrient content" unit="umol"/>
 									<SimulaVariable function="barber_cushman_1981_nutrient_uptake_explicit" integrationFunction="BarberCushmanSolver" name="rootSegmentNutrientUptake" prettyName="root segment nutrient uptake" unit="umol">
 0	0	0
-0.0112976	0	0
-0.0225952	7.99843e-05	0.0141595
-0.0399089	0.000447381	0.0282804
-0.0608165	0.00126457	0.0498913
-0.0876764	0.00295435	0.0759299
-0.1	0.00409633	0.109404
-0.12686	0.00723947	0.124635
-0.15372	0.0110344	0.157935
-0.18058	0.0157228	0.191166
-0.2	0.0197579	0.224394
+0.02	0	0
+0.04	0.00024592	0.024592
+0.0598954	0.000943338	0.0455163
+0.0715064	0.00154619	0.0583247
+0.0831174	0.00225225	0.0632956
+0.0886855	0.00263546	0.0743469
+0.0942537	0.00306146	0.0786663
+0.1	0.00352492	0.0826426
+0.111136	0.00446276	0.0857865
+0.123932	0.00562277	0.0955301
+0.129514	0.00617707	0.103067
+0.135096	0.00676176	0.106418
+0.144355	0.00776866	0.111085
+0.151056	0.00852901	0.115827
+0.157758	0.00932096	0.120514
+0.166143	0.010344	0.123524
+0.174937	0.0114731	0.133254
+0.179372	0.012067	0.134587
+0.183806	0.0126688	0.136836
+0.191381	0.0137241	0.141774
+0.196689	0.0144821	0.143834
+0.2	0.0149631	0.146748
 
 									</SimulaVariable>
 									<SimulaDerivative function="rootSegmentOptimalNutrientContent" name="rootSegmentOptimalNutrientContent" prettyName="root segment optimal nutrient content" unit="umol"/>
@@ -769,17 +990,29 @@ hypocotyl
 							</SimulaConstant>
 						</SimulaBase>
 						<SimulaPoint function="rootGrowthDirection" garbageCollectionOff="true" integrationFunction="RungeKutta4" name="growthpoint" prettyName="growthpoint" unit="cm">
-0	0	0	0	-0.0334028	-2.34593	0.225686	
-0.0112976	-0.00071531	-0.0264427	0.00305655	-0.0927871	-2.32912	0.349373	
-0.0225952	-0.00216979	-0.0527647	0.00681263	-0.149418	-2.32633	0.348288	
-0.0399089	-0.00488432	-0.0930041	0.0130377	-0.160136	-2.31699	0.401685	
-0.0608165	-0.00820061	-0.141145	0.0230309	-0.0625858	-2.30233	0.500824	
-0.0876764	-0.0107985	-0.202639	0.0378575	-0.142329	-2.28893	0.544033	
-0.1	-0.0124194	-0.230896	0.044386	-0.139937	-2.30386	0.477588	
-0.12686	-0.0150304	-0.292686	0.0579217	-0.0848352	-2.31735	0.422094	
-0.15372	-0.015988	-0.354659	0.0708194	4.07477e-05	-2.30698	0.483018	
-0.18058	-0.0158586	-0.416931	0.0822343	0.075426	-2.30299	0.495975	
-0.2	-0.01361	-0.461743	0.0912871	-0.0065227	-2.31939	0.419318	
+0	0	0	0	0.0911739	-2.34967	-0.161873	
+0.02	0.00147046	-0.0469709	-0.00370804	0.0126246	-2.35147	-0.160906	
+0.04	0.000421725	-0.0939889	-0.00693109	0.00102827	-2.35194	-0.154376	
+0.0598954	0.00177138	-0.140761	-0.0100191	0.0679048	-2.3494	-0.17657	
+0.0715064	0.00250622	-0.168041	-0.0120819	0.0238842	-2.34769	-0.207931	
+0.0831174	0.00228984	-0.195276	-0.0147562	-0.0827956	-2.34045	-0.26624	
+0.0886855	0.00196774	-0.208298	-0.0163581	-0.0832008	-2.33251	-0.328484	
+0.0942537	0.00140581	-0.221249	-0.0184079	-0.203601	-2.30862	-0.429267	
+0.1	-3.34049e-05	-0.234476	-0.0209371	-0.238703	-2.3198	-0.342055	
+0.111136	-0.00267733	-0.260291	-0.0248861	-0.214098	-2.32635	-0.312552	
+0.123932	-0.00574645	-0.290107	-0.0282218	-0.17095	-2.32864	-0.321948	
+0.129514	-0.00688803	-0.303099	-0.0299562	-0.222792	-2.33592	-0.222053	
+0.135096	-0.00807663	-0.316146	-0.0311705	-0.198821	-2.34185	-0.177972	
+0.144355	-0.00960417	-0.337836	-0.0330301	-0.103874	-2.34536	-0.209669	
+0.151056	-0.0105294	-0.353547	-0.0343746	-0.154506	-2.33135	-0.310447	
+0.157758	-0.0117036	-0.369142	-0.0365954	-0.224738	-2.32927	-0.281821	
+0.166143	-0.0134186	-0.388656	-0.0392083	-0.134705	-2.33427	-0.297486	
+0.174937	-0.0144722	-0.409135	-0.0422388	-0.169368	-2.33907	-0.235612	
+0.179372	-0.0152064	-0.419482	-0.0435192	-0.25935	-2.33296	-0.2133	
+0.183806	-0.0162793	-0.429833	-0.0445001	-0.185244	-2.34433	-0.158868	
+0.191381	-0.017355	-0.447581	-0.0461116	-0.0679411	-2.34435	-0.234168	
+0.196689	-0.0177356	-0.460049	-0.0470877	-0.10911	-2.33987	-0.261857	
+0.2	-0.0180313	-0.467799	-0.0479488	-0.155756	-2.33452	-0.285004	
 
 							<SimulaBase name="nitrate" prettyName="nitrate" unit="noUnit">
 
@@ -805,29 +1038,53 @@ hypocotyl
 							<SimulaDerivative function="rootDiameter" name="rootDiameter" prettyName="root diameter" unit="cm"/>
 							<SimulaVariable function="scaledRootGrowthRate" garbageCollectionOff="true" integrationFunction="RungeKutta4" name="rootLongitudinalGrowth" prettyName="root longitudinal growth" unit="cm">
 0	0	2.357
-0.0112976	0.0266284	2.357
-0.0225952	0.0532568	2.357
-0.0399089	0.0940652	2.357
-0.0608165	0.143344	2.357
-0.0876764	0.206653	2.357
+0.02	0.04714	2.357
+0.04	0.09428	2.357
+0.0598954	0.141174	2.357
+0.0715064	0.168541	2.357
+0.0831174	0.195908	2.357
+0.0886855	0.209032	2.357
+0.0942537	0.222156	2.357
 0.1	0.2357	2.357
-0.12686	0.299009	2.357
-0.15372	0.362318	2.357
-0.18058	0.425627	2.357
+0.111136	0.261948	2.357
+0.123932	0.292107	2.357
+0.129514	0.305264	2.357
+0.135096	0.318421	2.357
+0.144355	0.340244	2.357
+0.151056	0.35604	2.357
+0.157758	0.371836	2.357
+0.166143	0.391598	2.357
+0.174937	0.412327	2.357
+0.179372	0.422779	2.357
+0.183806	0.433231	2.357
+0.191381	0.451085	2.357
+0.196689	0.463597	2.357
 0.2	0.4714	2.357
 
 							</SimulaVariable>
 							<SimulaVariable function="potentialRootGrowthRate" integrationFunction="RungeKutta4" name="rootPotentialLongitudinalGrowth" prettyName="root potential longitudinal growth" unit="cm">
 0	0	2.357
-0.0112976	0.0266284	2.357
-0.0225952	0.0532568	2.357
-0.0399089	0.0940652	2.357
-0.0608165	0.143344	2.357
-0.0876764	0.206653	2.357
+0.02	0.04714	2.357
+0.04	0.09428	2.357
+0.0598954	0.141174	2.357
+0.0715064	0.168541	2.357
+0.0831174	0.195908	2.357
+0.0886855	0.209032	2.357
+0.0942537	0.222156	2.357
 0.1	0.2357	2.357
-0.12686	0.299009	2.357
-0.15372	0.362318	2.357
-0.18058	0.425627	2.357
+0.111136	0.261948	2.357
+0.123932	0.292107	2.357
+0.129514	0.305264	2.357
+0.135096	0.318421	2.357
+0.144355	0.340244	2.357
+0.151056	0.35604	2.357
+0.157758	0.371836	2.357
+0.166143	0.391598	2.357
+0.174937	0.412327	2.357
+0.179372	0.422779	2.357
+0.183806	0.433231	2.357
+0.191381	0.451085	2.357
+0.196689	0.463597	2.357
 0.2	0.4714	2.357
 
 							</SimulaVariable>
@@ -859,14 +1116,14 @@ hypocotyl
 							<SimulaDerivative function="rootTotal.v2" name="rootMinimalNutrientContent" prettyName="root minimal nutrient content" unit="umol"/>
 							<SimulaVariable function="rootTotal.v2" integrationFunction="RungeKutta4" name="rootNutrientUptake" prettyName="root nutrient uptake" unit="umol">
 0	0	0
-0.2	0.022067	0.224394
+0.2	0.0159106	0.146748
 
 							</SimulaVariable>
 							<SimulaDerivative function="rootTotal.v2" name="rootOptimalNutrientContent" prettyName="root optimal nutrient content" unit="umol"/>
 							<SimulaDerivative function="rootSystemTotal" name="rootSystemMinimalNutrientContent" prettyName="root system minimal nutrient content" unit="umol"/>
 							<SimulaVariable function="rootSystemTotal" integrationFunction="RungeKutta4" name="rootSystemNutrientUptake" prettyName="root system nutrient uptake" unit="umol">
 0	0	0
-0.2	0.0224394	0.224394
+0.2	0.0146748	0.146748
 
 							</SimulaVariable>
 							<SimulaDerivative function="rootSystemTotal" name="rootSystemOptimalNutrientContent" prettyName="root system optimal nutrient content" unit="umol"/>
