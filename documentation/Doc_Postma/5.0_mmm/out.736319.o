@@ -1,0 +1,19 @@
+/home/johannes/.bashrc: line 14: /opt/centos/devtoolset-1.1/enable: No such file or directory
+ 
+working dir = /mnt/data/johannes/scratch/nitrogen4bHybrid/Output/5.0_mmm 
+Job started on galway.plabipd.de at Wed Jul 20 16:54:52 CEST 2016
+[30;47mTrying to load model from file: [30;47m
+Running modules: [30;47mRunning modules: [s0.0/40.0 days. Mem 2042 mB. #obj.=1915 x64b/obj.=139814[u[s1.0/40.0 days. Mem 2051 mB. #obj.=3946 x64b/obj.=68158[u[s2.0/40.0 days. Mem 2051 mB. #obj.=4938 x64b/obj.=54466[u[s3.0/40.0 days. Mem 2051 mB. #obj.=8887 x64b/obj.=30263[u[s4.0/40.0 days. Mem 2047 mB. #obj.=16535 x64b/obj.=16230[u[s5.0/40.0 days. Mem 2057 mB. #obj.=31511 x64b/obj.=8558[u[s6.0/40.0 days. Mem 2093 mB. #obj.=80591 x64b/obj.=3405[u[s7.0/40.0 days. Mem 2115 mB. #obj.=130354 x64b/obj.=2127[u[s8.0/40.0 days. Mem 2168 mB. #obj.=182538 x64b/obj.=1557[u[s9.0/40.0 days. Mem 2219 mB. #obj.=245082 x64b/obj.=1186[u[s10.0/40.0 days. Mem 2286 mB. #obj.=321393 x64b/obj.=932[u[s11.0/40.0 days. Mem 2368 mB. #obj.=413362 x64b/obj.=750[u[s12.0/40.0 days. Mem 2473 mB. #obj.=536390 x64b/obj.=604[u[s13.0/40.0 days. Mem 2590 mB. #obj.=646267 x64b/obj.=525[u[s14.0/40.0 days. Mem 2713 mB. #obj.=755881 x64b/obj.=470[u[s15.0/40.0 days. Mem 2839 mB. #obj.=864907 x64b/obj.=430[u[s16.0/40.0 days. Mem 2962 mB. #obj.=979774 x64b/obj.=396[u[s17.0/40.0 days. Mem 3096 mB. #obj.=1103661 x64b/obj.=367[u[s18.0/40.0 days. Mem 3244 mB. #obj.=1240409 x64b/obj.=342[u[s19.0/40.0 days. Mem 3408 mB. #obj.=1396036 x64b/obj.=320[u[s20.0/40.0 days. Mem 3588 mB. #obj.=1584803 x64b/obj.=296[u[s21.0/40.0 days. Mem 3803 mB. #obj.=1825092 x64b/obj.=273[u[s22.0/40.0 days. Mem 4058 mB. #obj.=2105498 x64b/obj.=252[u[s23.0/40.0 days. Mem 4357 mB. #obj.=2415283 x64b/obj.=236[u[s24.0/40.0 days. Mem 4697 mB. #obj.=2754260 x64b/obj.=223[u[s25.0/40.0 days. Mem 5079 mB. #obj.=3141548 x64b/obj.=211[u[s26.0/40.0 days. Mem 5494 mB. #obj.=3543267 x64b/obj.=203[u[s27.0/40.0 days. Mem 5948 mB. #obj.=3973467 x64b/obj.=196[u[s28.0/40.0 days. Mem 6441 mB. #obj.=4461540 x64b/obj.=189[u[s29.0/40.0 days. Mem 6988 mB. #obj.=4988093 x64b/obj.=183[u[s30.0/40.0 days. Mem 7568 mB. #obj.=5531300 x64b/obj.=179[u[s31.0/40.0 days. Mem 8201 mB. #obj.=6105601 x64b/obj.=176[u[s32.0/40.0 days. Mem 8875 mB. #obj.=6716635 x64b/obj.=173[u[s33.0/40.0 days. Mem 9585 mB. #obj.=7349988 x64b/obj.=170[u[s34.0/40.0 days. Mem 10345 mB. #obj.=8034651 x64b/obj.=168[u[s35.0/40.0 days. Mem 11152 mB. #obj.=8749377 x64b/obj.=167[u[s36.0/40.0 days. Mem 11998 mB. #obj.=9486066 x64b/obj.=165[u[s37.0/40.0 days. Mem 12885 mB. #obj.=10234835 x64b/obj.=165[u[s38.0/40.0 days. Mem 13818 mB. #obj.=10965398 x64b/obj.=165[u[s39.0/40.0 days. Mem 14808 mB. #obj.=11455482 x64b/obj.=169[u[s40.0/40.0 days. Mem 15730 mB. #obj.=11806631 x64b/obj.=174[u[32;47m[800C[1DOK[30;47m
+Finalizing output:[32;47m[800C[1DOK[30;47m[34;47m
+THE MODEL PUT OUT WARNINGS:
+RelativeCarbonAllocation2ShootPotentialGrowth: Not enough carbon for potential growth. Setting shoot growth to max available carbon.[800C[7D105x
+ReservesSinkBased: Expiring seed reserves at 12.000000 d.a.g. with 23.266642% of the initial 0.150000g left.[800C[7D1x
+ReservesSinkBased: Expiring seed reserves at 12.000000 d.a.g. with 27.029465% of the initial 0.150000g left.[800C[7D1x
+ReservesSinkBased: Expiring seed reserves at 12.000000 d.a.g. with 29.227528% of the initial 0.150000g left.[800C[7D1x
+RootGrowth: lateral Growing above the ground[800C[7D378x
+Solute::updateLists: nutrientConcentrationAtTheRootSurface not found[800C[7D82116x
+Swms3d::getTimeStepSWMS: Ignoring Peclet courant criteria for timestep, as it reduces the timestep below minimum dt[800C[7D401x[30;47m
+Simulation took (hours:minutes:seconds): 6:54:8[0m
+ 
+Job Ended at Wed Jul 20 23:49:47 CEST 2016
+ 

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+RCA distribution for genotype H99, according to data Burton 2010 of non-stressed plants
+H99 is one of the parents of the NYH lines
+
+Data burton H99:
+class	basal	middle
+1-Crown	0.00629582074036327	0.0598960024731063
+2-Crown	0.00312323615295093	0.0431336270271526
+3-Crown	0.0223509279632226	0.0747250530426387
+Brace		0.0230829999339376
+Primary	0.0808469015792986	0.0880988547575949
+Seminal	0.0515463306688613	0.0826035701548033
+
+
+	
+-->
+<SimulationModelIncludeFile>			
+		<SimulaDirective path="shoot">
+			<SimulaConstant name="aerenchymaPhotosynthesisMitigation" unit="100%">
+			   0.5 <!--0 is no effect, 1 is full effect-->
+			</SimulaConstant>
+		</SimulaDirective>
+		<SimulaDirective path="hypocotyl">
+						<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="aerenchymaFormation" unit_colum2="100%">
+							 0 0.0
+							 100 0.0
+						</SimulaTable>
+						<SimulaTable name_colum1="aerenchymaFormation" unit_colum1="100%" name_colum2="reductionInRespirationDueToAerenchyma" unit_colum2="100%">
+							 0.0 0.0
+							 0.30 0.70
+							 0.60 1.
+						</SimulaTable>
+		</SimulaDirective>
+		<SimulaDirective path="primaryRoot">
+			<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="aerenchymaFormation" unit_colum2="100%">
+				 0 0.0
+				 3 0.0
+				 5 0.045
+				 10 0.088
+				 1000 0.088
+			</SimulaTable>
+			<SimulaTable name_colum1="aerenchymaFormation" unit_colum1="100%" name_colum2="reductionInRespirationDueToAerenchyma" unit_colum2="100%">
+				 0.0 0.0
+				 0.30 0.70
+				 0.60 1.
+			</SimulaTable>
+		</SimulaDirective>
+		<SimulaDirective path="braceroots">
+			<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="aerenchymaFormation" unit_colum2="100%">
+				 0 0.0
+				 3 0.0
+				 5 0.05
+				 10 0.11
+				 1000 0.11
+			</SimulaTable>
+			<SimulaTable name_colum1="aerenchymaFormation" unit_colum1="100%" name_colum2="reductionInRespirationDueToAerenchyma" unit_colum2="100%">
+				 0.0 0.0
+				 0.30 0.70
+				 0.60 1.
+			</SimulaTable>
+		</SimulaDirective>
+		<SimulaDirective path="braceroots2">
+			<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="aerenchymaFormation" unit_colum2="100%">
+				 0 0.0
+				 3 0.0
+				 5 0.03
+				 10 0.03
+				 1000 0.03
+			</SimulaTable>
+			<SimulaTable name_colum1="aerenchymaFormation" unit_colum1="100%" name_colum2="reductionInRespirationDueToAerenchyma" unit_colum2="100%">
+				 0.0 0.0
+				 0.30 0.70
+				 0.60 1.
+			</SimulaTable>
+		</SimulaDirective>
+		<SimulaDirective path="seminal">
+			<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="aerenchymaFormation" unit_colum2="100%">
+				 0 0.0
+				 3 0.0
+				 5 0.042
+				 10 0.083
+				 1000 0.083
+			</SimulaTable>
+			<SimulaTable name_colum1="aerenchymaFormation" unit_colum1="100%" name_colum2="reductionInRespirationDueToAerenchyma" unit_colum2="100%">
+				 0.0 0.0
+				 0.30 0.70
+				 0.60 1.
+			</SimulaTable>
+		</SimulaDirective>
+		<SimulaDirective path="nodalroots">
+			<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="aerenchymaFormation" unit_colum2="100%">
+				 0 0.0
+				 3 0.0
+				 5 0.03
+				 10 0.060
+				 20 0.060
+				 1000 0.060
+			</SimulaTable>
+			<SimulaTable name_colum1="aerenchymaFormation" unit_colum1="100%" name_colum2="reductionInRespirationDueToAerenchyma" unit_colum2="100%">
+				 0.0 0.0
+				 0.30 0.70
+				 0.60 1.
+			</SimulaTable>
+		</SimulaDirective>
+		<SimulaDirective path="nodalroots2">
+			<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="aerenchymaFormation" unit_colum2="100%">
+				 0 0.0
+				 3 0.0
+				 5 0.02
+				 10 0.043
+				 1000 0.043
+			</SimulaTable>
+			<SimulaTable name_colum1="aerenchymaFormation" unit_colum1="100%" name_colum2="reductionInRespirationDueToAerenchyma" unit_colum2="100%">
+				 0.0 0.0
+				 0.30 0.70
+				 0.60 1.
+			</SimulaTable>
+		</SimulaDirective>
+		<SimulaDirective path="nodalroots3">
+			<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="aerenchymaFormation" unit_colum2="100%">
+				 0 0.0
+				 3 0.0
+				 5 0.04
+				 10 0.077
+				 1000 0.077
+			</SimulaTable>
+			<SimulaTable name_colum1="aerenchymaFormation" unit_colum1="100%" name_colum2="reductionInRespirationDueToAerenchyma" unit_colum2="100%">
+				 0.0 0.0
+				 0.30 0.70
+				 0.60 1.
+			</SimulaTable>
+		</SimulaDirective>
+		<SimulaDirective path="nodalroots4">
+			<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="aerenchymaFormation" unit_colum2="100%">
+				 0 0.0
+				 3 0.0
+				 5 0.04
+				 10 0.077
+				 1000 0.077
+			</SimulaTable>
+			<SimulaTable name_colum1="aerenchymaFormation" unit_colum1="100%" name_colum2="reductionInRespirationDueToAerenchyma" unit_colum2="100%">
+				 0.0 0.0
+				 0.30 0.70
+				 0.60 1.
+			</SimulaTable>
+		</SimulaDirective>
+		<SimulaDirective path="lateralOfCrownRoots">
+			<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="aerenchymaFormation" unit_colum2="100%">
+				 0 0.0
+				 100 0.0
+			</SimulaTable>
+			<SimulaTable name_colum1="aerenchymaFormation" unit_colum1="100%" name_colum2="reductionInRespirationDueToAerenchyma" unit_colum2="100%">
+				 0.0 0.0
+				 0.30 0.70
+				 0.60 1.
+			</SimulaTable>
+		</SimulaDirective>
+		<SimulaDirective path="lateral">
+			<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="aerenchymaFormation" unit_colum2="100%">
+				 0 0.0
+				 100 0.0
+			</SimulaTable>
+			<SimulaTable name_colum1="aerenchymaFormation" unit_colum1="100%" name_colum2="reductionInRespirationDueToAerenchyma" unit_colum2="100%">
+				 0.0 0.0
+				 0.30 0.70
+				 0.60 1.
+			</SimulaTable>
+		</SimulaDirective>
+		<SimulaDirective path="finelateral">
+			<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="aerenchymaFormation" unit_colum2="100%">
+				 0 0.0
+				 100 0.0
+			</SimulaTable>
+			<SimulaTable name_colum1="aerenchymaFormation" unit_colum1="100%" name_colum2="reductionInRespirationDueToAerenchyma" unit_colum2="100%">
+				 0.0 0.0
+				 0.30 0.70
+				 0.60 1.
+			</SimulaTable>
+		</SimulaDirective>
+		<SimulaDirective path="finelateral2">
+			<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="aerenchymaFormation" unit_colum2="100%">
+				 0 0.0
+				 100 0.0
+			</SimulaTable>
+			<SimulaTable name_colum1="aerenchymaFormation" unit_colum1="100%" name_colum2="reductionInRespirationDueToAerenchyma" unit_colum2="100%">
+				 0.0 0.0
+				 0.30 0.70
+				 0.60 1.
+			</SimulaTable>
+		</SimulaDirective>
+</SimulationModelIncludeFile>
+

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SimulationModelIncludeFile>
+
+	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeCarbonModule.xml" />
+	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeCarbonSinks.xml"/>
+	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeCarbonAllocation.xml"/>
+	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeRespiration.xml"/>
+	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeCarbonCosts.xml"/>
+
+</SimulationModelIncludeFile>

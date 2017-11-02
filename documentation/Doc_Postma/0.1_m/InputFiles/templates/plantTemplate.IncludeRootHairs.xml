@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Simulation file for SimRoot version 5. 
+
+	Author: Jouke Postma
+	Note: For including roothairs in P uptake 
+-->
+
+<SimulationModelIncludeFile>
+<!--PlantTemplate-->
+	<SimulaDirective path="/plantTemplate">
+	</SimulaDirective>	
+
+<!--ShootTemplate-->
+	<SimulaDirective path="/shootTemplate">
+	</SimulaDirective>
+
+<!--HypocotylTemplate-->
+	<SimulaDirective path="/hypocotylTemplate">
+		<SimulaDirective path="growthpoint">
+		</SimulaDirective>
+	</SimulaDirective>
+
+<!--Sibling root template-->
+	<SimulaDirective path="/siblingRootTemplate">
+		<SimulaDirective path="growthpoint">
+		</SimulaDirective>
+	</SimulaDirective>
+
+<!--DataPointTemplate-->
+	<SimulaDirective path="/dataPointTemplate">
+		<SimulaLink name="rootHairDiameter" />
+		<SimulaLink name="rootHairLength" unit="cm" />
+		<SimulaLink name="rootHairDensity" unit="#/cm" />
+		<SimulaDerivative name="rootHairSurfaceArea" unit="cm2/cm" function="rootSegmentRootHairSurfaceArea"/>
+	</SimulaDirective>
+</SimulationModelIncludeFile>
+
+

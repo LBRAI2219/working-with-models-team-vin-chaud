@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="tree-view.xsl"?>
+<!--somecomment-->
+
+<SimulationModel name="test" date="xxx">
+	<Attributes>
+
+<!--Initial plant position and primordia of the primary root-->
+		<SimulaConstant name="plantPosition" type="Coordinate">
+			<Constant>
+				0 0 0
+			</Constant>
+			<Attributes>
+				<SimulaConstant name="primaryRoot" type="Coordinate">
+					<Constant>
+						0 0 0
+					</Constant>
+					<Attributes>
+						<SimulaPoint name="growthpoint" rateFunction="rootgrowth" integrationFunction="euler">
+							<Time>0</Time> <Coordinate> 0 0 0 </Coordinate>
+						</SimulaPoint>
+						<SimulaConstant name="rootType" type="string">
+							<Constant> primary </Constant>
+						</SimulaConstant>
+						<SimulaBase name="branches">
+							<Attributes updateFunction="rootBranches">
+							</Attributes>
+						</SimulaBase>
+					</Attributes>
+				</SimulaConstant>
+			</Attributes>
+		</SimulaConstant>
+<!--Sibling root template-->
+		<SimulaConstant name="siblingRootTemplate" type="Coordinate">
+			<Constant>	0 0 0	</Constant>
+			<Attributes>
+				<SimulaPoint name="growthpoint" rateFunction="rootgrowth" integrationFunction="euler">
+					<Time>0</Time> <Coordinate> 0 0 0 </Coordinate>
+				</SimulaPoint>
+				<!--SimulaConstant name="rootType" type="string" unit="noUnit">
+					<Constant> defined-by-function </Constant>
+				</SimulaConstant-->
+				<SimulaBase name="branches">
+					<Attributes updateFunction="rootBranches">
+					</Attributes>
+				</SimulaBase>
+			</Attributes>
+		</SimulaConstant>
+
+
+<!--Root type parameters start here. Move later to seperate file, when engine reads more then one file-->
+		<SimulaBase name="rootTypeParameters">
+			<Attributes>
+				<SimulaBase name="primary">
+					<Attributes>
+						<SimulaConstant type="double" name="growthRate" unit="cm/day">
+							<Constant> 2.0 </Constant>
+						</SimulaConstant>
+						<SimulaConstant type="double" name="branchingFrequency" unit="#/cm">
+							<Constant> .3 </Constant>
+						</SimulaConstant>
+						<SimulaConstant type="double" name="lengthRootTip" unit="cm">
+							<Constant> 5.5 </Constant>
+						</SimulaConstant>
+						<SimulaConstant name="branchRootType" type="string">
+							<Constant> type2 </Constant>
+						</SimulaConstant>
+					</Attributes>	
+				</SimulaBase>
+<!--type2-->
+				<SimulaBase name="type2">
+					<Attributes>
+						<SimulaConstant type="double" name="growthRate" unit="cm/day">
+							<Constant> 1.5 </Constant>
+						</SimulaConstant>
+						<SimulaConstant type="double" name="branchingFrequency" unit="#/cm">
+							<Constant> 1. </Constant>
+						</SimulaConstant>
+						<SimulaConstant type="double" name="lengthRootTip" unit="cm">
+							<Constant> 2.0 </Constant>
+						</SimulaConstant>
+						<SimulaConstant name="branchRootType" type="string">
+							<Constant> type3 </Constant>
+						</SimulaConstant>
+					</Attributes>
+				</SimulaBase>
+<!--type3-->
+				<SimulaBase name="type3">
+					<Attributes>
+						<SimulaConstant type="double" name="growthRate" unit="cm/day">
+							<Constant> 0.9 </Constant>
+						</SimulaConstant>
+						<SimulaConstant type="double" name="branchingFrequency" unit="#/cm">
+							<Constant> 1. </Constant>
+						</SimulaConstant>
+						<SimulaConstant type="double" name="lengthRootTip" unit="cm">
+							<Constant> 2.0 </Constant>
+						</SimulaConstant>
+						<SimulaConstant name="branchRootType" type="string">
+							<Constant> type3 </Constant>
+						</SimulaConstant>
+					</Attributes>
+				</SimulaBase>
+			</Attributes>	
+		</SimulaBase>
+<!--end of root type parameters-->		
+		
+	</Attributes>
+</SimulationModel>

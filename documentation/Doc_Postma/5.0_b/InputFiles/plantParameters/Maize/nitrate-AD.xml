@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--THIS FILE IS NOT UP TO DATE, THE COMMENTS ARE CORRECT BUT THE INPUT DATA NOT-->
+<!--Simulation file for SimRoot : nitrate parameters for maize-->
+<!--
+		moshe silberbush initial estimates for maize 2008:
+Root Section	Imax			Km		Cmin	R2	
+				(pmol cm-2 s-1)	(uM)	(uM)	
+Induced by Nitrate
+Seminal Roots:
+0-4 cm	26.6cd	10.5e	2.82a	0.79
+4-8 cm	22.2d	16.1d	2.06b	0.93
+Nodal Roots:
+0-4 cm	14.0e	15.7de	2.36ab	0.82
+4-8 cm	24.3d	52.2bc	0.98c	0.90
+Lateral Roots:
+0-4 cm	14.7e	2.7f	1.70c	0.82
+
+Imax converted to uMol/cm2/day
+pmol/cm2/s umol/cm2/day
+26.6		2.3
+22.2		1.92
+14			1.21
+24.3		2.1
+14.7		1.27
+
+Barberbook:
+Imax=1.9       #6.43 nmol/m2/s = 0.643 pmol/cm2/s = 55.55 10-3 umol/cm2/day
+Km= 16.1e-3    #umol/mL
+E=0.5          #efflux 
+
+-->
+
+<!--
+mcclure 1986 Comparison of nitrate uptake kinetic parameters across maize inbred lines
+maize:  
+vmax = 0.107 μmolNO3/mg root dry weight/hr
+Km = 224 μM = 0.224 uM/ml
+
+1 cm root= 0.314 cm2 & 0.785 mg
+roots with a diameter of 1 mm have about 0.4 cm2 /mg
+imax= 0.268 umol/cm2/hr =  6.42 umol/cm2/day
+average root diameter must have been less, and so this number must be an upper limit.
+-->
+<!--
+hole et al 1990 maize
+km: 18-24 uM
+Imax: 93-159 nMol/g f.w./min = 
+-->
+<!--
+aslam et al 1992 
+barley seedlings: high for induced seedlings
+km: 6-36 uM
+Imax: 1-8.4 uMol/g/h
+-->
+<!--target concentrations:
+P. Alexandrova and D. Donov 2003 fig 1:
+  40 g/kg dropping to 15 g/kg dm after 80 days
+= 2850 uMol/g dm dropping to 1071 uMol/g dm
+
+Chevalier P, Schrader LE. 1977. Genotypic Differences in Nitrate Absorption and Partitioning of N Among Plant Parts in Maize. Crop Sci 17: 897-901.
+these have ears
+roots: 4-8(N-NO3)+15-19(reduced N) ug/mg
+leafs: 0.4-1.1(N-NO3)+16-25(reduced N) ug/mg
+stems & leaf sheats: 4.7-7.7(N-NO3)+5-7(reduced N) ug/mg 
+
+-->
+
+
+<SimulationModelIncludeFile>
+	<SimulaDirective path="resources">
+		<SimulaBase name="nitrate">
+			<!--this represents the nutrients (P!) in the seed, should be enough for the first 7 days,  ~ 100-200 uMol/g -->
+			<SimulaConstant name="initialNutrientUptake" unit="uMol"> 150 </SimulaConstant>
+		</SimulaBase>	
+	</SimulaDirective>
+	<SimulaDirective path="shoot">
+		<SimulaBase name="nitrate">
+			<SimulaConstant name="leafOptimalNutrientConcentration" unit="uMol/g"> 2856 </SimulaConstant>
+			<SimulaConstant name="stemOptimalNutrientConcentration" unit="uMol/g"> 1428 </SimulaConstant>
+			<SimulaConstant name="leafMinimalNutrientConcentration" unit="uMol/g"> 714 </SimulaConstant>
+			<SimulaConstant name="stemMinimalNutrientConcentration" unit="uMol/g"> 357 </SimulaConstant>
+		</SimulaBase>
+	</SimulaDirective>
+	<SimulaDirective path="hypocotyl">
+		<SimulaBase name="nitrate">
+			<SimulaConstant  name="Imax" unit="uMol/cm2/day">
+				0.0
+			</SimulaConstant>
+			<SimulaConstant  name="Km" unit="uMol/ml">
+				1.0	
+			</SimulaConstant>
+			<SimulaConstant  name="Cmin" unit="uMol/ml">
+				0.0	
+			</SimulaConstant>
+			<SimulaConstant  name="Efflux" unit="uMol/cm/day">
+				0.05	
+			</SimulaConstant>
+			<SimulaConstant name="optimalNutrientConcentration" unit="uMol/g"> 1428</SimulaConstant>
+			<SimulaConstant name="minimalNutrientConcentration" unit="uMol/g"> 357</SimulaConstant>
+		</SimulaBase>
+	</SimulaDirective>
+	<SimulaDirective path="primaryRoot">
+		<SimulaBase name="nitrate">				
+			<SimulaTable  name_colum1="time since creation" unit_colum1="day" name_colum2="Imax" unit_colum2="uMol/cm2/day">
+				0 2.3	
+				2 1.92
+				100 1.92
+			</SimulaTable>
+			<SimulaTable  name_colum1="time since creation" unit_colum1="day" name_colum2="Km" unit_colum2="uMol/ml">
+				0 10.5e-3	
+				2 16.1e-3
+				100 16.1e-3
+			</SimulaTable>
+			<SimulaTable  name_colum1="time since creation" unit_colum1="day" name_colum2="Cmin" unit_colum2="uMol/ml">
+				0 	2.82e-3
+				2   2.06e-3
+				100 2.06e-3	
+			</SimulaTable>
+			<SimulaConstant  name="Efflux" unit="uMol/cm/day">
+				0.5	
+			</SimulaConstant>
+			<SimulaConstant name="optimalNutrientConcentration" unit="uMol/g"> 1428</SimulaConstant>
+			<SimulaConstant name="minimalNutrientConcentration" unit="uMol/g"> 357</SimulaConstant>
+			</SimulaBase>
+	</SimulaDirective>
+	<SimulaDirective path="braceroots">
+		<SimulaBase name="nitrate">
+			<SimulaTable  name_colum1="time since creation" unit_colum1="day" name_colum2="Imax" unit_colum2="uMol/cm2/day">
+				0 1.21
+				2 2.1
+				100 2.1
+			</SimulaTable>
+			<SimulaTable  name_colum1="time since creation" unit_colum1="day" name_colum2="Km" unit_colum2="uMol/ml">
+				0 15.7e-3	
+				2 52.2e-3
+				100 52.2e-3	
+			</SimulaTable>
+			<SimulaTable  name_colum1="time since creation" unit_colum1="day" name_colum2="Cmin" unit_colum2="uMol/ml">
+				0 	2.36e-3
+				2   0.98e-3
+				100  0.98e-3	
+			</SimulaTable>
+			<SimulaConstant  name="Efflux" unit="uMol/cm/day">
+				0.5	
+			</SimulaConstant>
+			<SimulaConstant name="optimalNutrientConcentration" unit="uMol/g"> 1428</SimulaConstant>
+			<SimulaConstant name="minimalNutrientConcentration" unit="uMol/g"> 357</SimulaConstant>
+		</SimulaBase>
+	</SimulaDirective>
+	<SimulaDirective path="braceroots2">
+		<SimulaBase name="nitrate">
+			<SimulaTable  name_colum1="time since creation" unit_colum1="day" name_colum2="Imax" unit_colum2="uMol/cm2/day">
+				0 1.21
+				2 2.1
+				100 2.1
+			</SimulaTable>
+			<SimulaTable  name_colum1="time since creation" unit_colum1="day" name_colum2="Km" unit_colum2="uMol/ml">
+				0 15.7e-3	
+				2 52.2e-3
+				100 52.2e-3	
+			</SimulaTable>
+			<SimulaTable  name_colum1="time since creation" unit_colum1="day" name_colum2="Cmin" unit_colum2="uMol/ml">
+				0 	2.36e-3
+				2   0.98e-3
+				100  0.98e-3	
+			</SimulaTable>
+			<SimulaConstant  name="Efflux" unit="uMol/cm/day">
+				0.5	
+			</SimulaConstant>
+			<SimulaConstant name="optimalNutrientConcentration" unit="uMol/g"> 1428</SimulaConstant>
+			<SimulaConstant name="minimalNutrientConcentration" unit="uMol/g"> 357</SimulaConstant>
+		</SimulaBase>
+	</SimulaDirective>
+	<SimulaDirective path="seminal">
+		<SimulaBase name="nitrate">
+			<SimulaTable  name_colum1="time since creation" unit_colum1="day" name_colum2="Imax" unit_colum2="uMol/cm2/day">
+				0 2.3	
+				2 1.92
+				100 1.92
+			</SimulaTable>
+			<SimulaTable  name_colum1="time since creation" unit_colum1="day" name_colum2="Km" unit_colum2="uMol/ml">
+				0 10.5e-3	
+				2 16.1e-3
+				100 16.1e-3	
+			</SimulaTable>
+			<SimulaTable  name_colum1="time since creation" unit_colum1="day" name_colum2="Cmin" unit_colum2="uMol/ml">
+				0 	2.82e-3
+				2   2.06e-3
+				100  2.06e-3	
+			</SimulaTable>						
+			<SimulaConstant  name="Efflux" unit="uMol/cm/day">
+				0.5	
+			</SimulaConstant>
+			<SimulaConstant name="optimalNutrientConcentration" unit="uMol/g"> 1428</SimulaConstant>
+			<SimulaConstant name="minimalNutrientConcentration" unit="uMol/g"> 357</SimulaConstant>
+		</SimulaBase>
+	</SimulaDirective>
+	<SimulaDirective path="nodalroots">
+		<SimulaBase name="nitrate">
+			<SimulaTable  name_colum1="time since creation" unit_colum1="day" name_colum2="Imax" unit_colum2="uMol/cm2/day">
+				0 1.21
+				2 2.1
+				100 2.1
+			</SimulaTable>
+			<SimulaTable  name_colum1="time since creation" unit_colum1="day" name_colum2="Km" unit_colum2="uMol/ml">
+				0 15.7e-3	
+				2 52.2e-3
+				100 52.2e-3	
+			</SimulaTable>
+			<SimulaTable  name_colum1="time since creation" unit_colum1="day" name_colum2="Cmin" unit_colum2="uMol/ml">
+				0 	2.36e-3
+				2   0.98e-3
+				100  0.98e-3	
+			</SimulaTable>
+			<SimulaConstant  name="Efflux" unit="uMol/cm/day">
+				0.5	
+			</SimulaConstant>
+			<SimulaConstant name="optimalNutrientConcentration" unit="uMol/g"> 1428</SimulaConstant>
+			<SimulaConstant name="minimalNutrientConcentration" unit="uMol/g"> 357</SimulaConstant>
+		</SimulaBase>
+	</SimulaDirective>
+	<SimulaDirective path="nodalroots2">
+		<SimulaBase name="nitrate">
+			<SimulaTable  name_colum1="time since creation" unit_colum1="day" name_colum2="Imax" unit_colum2="uMol/cm2/day">
+				0 1.21
+				2 2.1
+				100 2.1
+			</SimulaTable>
+			<SimulaTable  name_colum1="time since creation" unit_colum1="day" name_colum2="Km" unit_colum2="uMol/ml">
+				0 15.7e-3	
+				2 52.2e-3
+				100 52.2e-3	
+			</SimulaTable>
+			<SimulaTable  name_colum1="time since creation" unit_colum1="day" name_colum2="Cmin" unit_colum2="uMol/ml">
+				0 	2.36e-3
+				2   0.98e-3
+				100  0.98e-3	
+			</SimulaTable>
+			<SimulaConstant  name="Efflux" unit="uMol/cm/day">
+				0.5	
+			</SimulaConstant>
+			<SimulaConstant name="optimalNutrientConcentration" unit="uMol/g"> 1428</SimulaConstant>
+			<SimulaConstant name="minimalNutrientConcentration" unit="uMol/g"> 357</SimulaConstant>
+		</SimulaBase>
+	</SimulaDirective>
+	<SimulaDirective path="nodalroots3">
+		<SimulaBase name="nitrate">
+			<SimulaTable  name_colum1="time since creation" unit_colum1="day" name_colum2="Imax" unit_colum2="uMol/cm2/day">
+				0 1.21
+				2 2.1
+				100 2.1
+			</SimulaTable>
+			<SimulaTable  name_colum1="time since creation" unit_colum1="day" name_colum2="Km" unit_colum2="uMol/ml">
+				0 15.7e-3	
+				2 52.2e-3
+				100 52.2e-3	
+			</SimulaTable>
+			<SimulaTable  name_colum1="time since creation" unit_colum1="day" name_colum2="Cmin" unit_colum2="uMol/ml">
+				0 	2.36e-3
+				2   0.98e-3
+				100  0.98e-3	
+			</SimulaTable>
+			<SimulaConstant  name="Efflux" unit="uMol/cm/day">
+				0.5	
+			</SimulaConstant>
+			<SimulaConstant name="optimalNutrientConcentration" unit="uMol/g"> 1428</SimulaConstant>
+			<SimulaConstant name="minimalNutrientConcentration" unit="uMol/g"> 357</SimulaConstant>
+		</SimulaBase>
+	</SimulaDirective>
+	<SimulaDirective path="nodalroots4">
+		<SimulaBase name="nitrate">
+			<SimulaTable  name_colum1="time since creation" unit_colum1="day" name_colum2="Imax" unit_colum2="uMol/cm2/day">
+				0 1.21
+				2 2.1
+				100 2.1
+			</SimulaTable>
+			<SimulaTable  name_colum1="time since creation" unit_colum1="day" name_colum2="Km" unit_colum2="uMol/ml">
+				0 15.7e-3	
+				2 52.2e-3
+				100 52.2e-3	
+			</SimulaTable>
+			<SimulaTable  name_colum1="time since creation" unit_colum1="day" name_colum2="Cmin" unit_colum2="uMol/ml">
+				0 	2.36e-3
+				2   0.98e-3
+				100  0.98e-3	
+			</SimulaTable>
+			<SimulaConstant  name="Efflux" unit="uMol/cm/day">
+				0.5	
+			</SimulaConstant>
+			<SimulaConstant name="optimalNutrientConcentration" unit="uMol/g"> 1428</SimulaConstant>
+			<SimulaConstant name="minimalNutrientConcentration" unit="uMol/g"> 357</SimulaConstant>
+		</SimulaBase>
+	</SimulaDirective>
+	<SimulaDirective path="lateralOfCrownRoots">
+		<SimulaBase name="nitrate">
+			<SimulaConstant  name="Imax" unit="uMol/cm2/day">
+				1.27
+			</SimulaConstant>
+			<SimulaConstant  name="Km" unit="uMol/ml">
+				2.7e-3	
+			</SimulaConstant>
+			<SimulaConstant  name="Cmin" unit="uMol/ml">
+				1.7e-3	
+			</SimulaConstant>
+			<SimulaConstant  name="Efflux" unit="uMol/cm/day">
+				0.1	
+			</SimulaConstant>
+			<SimulaConstant name="optimalNutrientConcentration" unit="uMol/g"> 1428</SimulaConstant>
+			<SimulaConstant name="minimalNutrientConcentration" unit="uMol/g"> 357</SimulaConstant>
+		</SimulaBase>
+	</SimulaDirective>
+	<SimulaDirective path="lateral">
+		<SimulaBase name="nitrate">
+			<SimulaConstant  name="Imax" unit="uMol/cm2/day">
+				1.27
+			</SimulaConstant>
+			<SimulaConstant  name="Km" unit="uMol/ml">
+				2.7e-3	
+			</SimulaConstant>
+			<SimulaConstant  name="Cmin" unit="uMol/ml">
+				1.7e-3	
+			</SimulaConstant>
+			<SimulaConstant  name="Efflux" unit="uMol/cm/day">
+				0.1	
+			</SimulaConstant>
+			<SimulaConstant name="optimalNutrientConcentration" unit="uMol/g"> 1428</SimulaConstant>
+			<SimulaConstant name="minimalNutrientConcentration" unit="uMol/g"> 357</SimulaConstant>
+		</SimulaBase>
+	</SimulaDirective>
+	<SimulaDirective path="finelateral">
+		<SimulaBase name="nitrate">
+			<SimulaConstant  name="Imax" unit="uMol/cm2/day">
+				1.27
+			</SimulaConstant>
+			<SimulaConstant  name="Km" unit="uMol/ml">
+				2.7e-3	
+			</SimulaConstant>
+			<SimulaConstant  name="Cmin" unit="uMol/ml">
+				1.7e-3	
+			</SimulaConstant>
+			<SimulaConstant  name="Efflux" unit="uMol/cm/day">
+				0.1	
+			</SimulaConstant>
+			<SimulaConstant name="optimalNutrientConcentration" unit="uMol/g"> 1428</SimulaConstant>
+			<SimulaConstant name="minimalNutrientConcentration" unit="uMol/g"> 357</SimulaConstant>
+		</SimulaBase>
+	</SimulaDirective>
+	<SimulaDirective path="finelateral2">
+		<SimulaBase name="nitrate">
+			<SimulaConstant  name="Imax" unit="uMol/cm2/day">
+				1.27
+			</SimulaConstant>
+			<SimulaConstant  name="Km" unit="uMol/ml">
+				2.7e-3	
+			</SimulaConstant>
+			<SimulaConstant  name="Cmin" unit="uMol/ml">
+				1.7e-3	
+			</SimulaConstant>
+			<SimulaConstant  name="Efflux" unit="uMol/cm/day">
+				0.1	
+			</SimulaConstant>
+			<SimulaConstant name="optimalNutrientConcentration" unit="uMol/g"> 1428</SimulaConstant>
+			<SimulaConstant name="minimalNutrientConcentration" unit="uMol/g"> 357</SimulaConstant>
+		</SimulaBase>
+	</SimulaDirective>
+	
+</SimulationModelIncludeFile>

@@ -1,0 +1,70 @@
+<!--SimRoot parameter file-->
+<SimulationModelIncludeFile>
+<!--environmental parameters start here. -->
+	<SimulaDirective path="environment/soil">
+		<SimulaBase name="water">
+				<SimulaTable name_colum2="initialHydraulicHead" name_colum1="depth" unit_colum1="cm" unit_colum2="cm"> 
+			 		0    -300. 
+  			   		-28  -272.
+  			   		-32  -268.
+  			   		-90  -210.
+  			   		-200 -100.      
+				</SimulaTable>
+				<SimulaTable name_colum2="residualWaterContent" name_colum1="depth" unit_colum1="cm" unit_colum2="100%">
+				       0 0.1
+				    -300 0.1
+				</SimulaTable>
+				<SimulaTable name_colum2="saturatedWaterContent" name_colum1="depth" unit_colum1="cm" unit_colum2="100%" kinterpolationMethod="step">
+				<!--Luo L, Lin H, Halleck P. 2008. Quantifying Soil Structure and Preferential Flow in Intact Soil Using X-ray Computed Tomography. Soil Sci Soc Am J 72: 1058-1069.-->
+				<!--  0 0.460
+					-15	0.450
+					-25	0.430
+					-35	0.390
+					-65	0.390
+					-300	0.390-->
+				<!-- data from Simunek example2 -->
+					  0  .399
+					-28  .399
+					-32  .339
+					-200 .339 
+				</SimulaTable>
+				<SimulaTable name_colum2="vanGenuchten:alpha" name_colum1="depth" unit_colum1="cm" unit_colum2="1/cm">
+				<!--see hodnet and tomasella 2002 - rocksprings has a hagerstown silt loam--> 
+				<!--    0 0.1
+				     -300 0.1-->
+				<!-- data from Simunek example2 --> 
+				      0  .0174
+					-28  .0174
+					-32  .0139
+					-200 .0139
+				</SimulaTable>
+				<SimulaTable name_colum2="vanGenuchten:n" name_colum1="depth" unit_colum1="cm" unit_colum2="noUnit"> 
+				<!--see hodnet and tomasella 2002 - rocksprings has a hagerstown silt loam--> 
+				<!--   0 1.320
+				    -300 1.320-->
+				<!-- data from Simunek example2 -->    
+				      0  1.3757
+				    -28  1.3757
+				    -32  1.6024
+				   -200  1.6024
+				</SimulaTable>
+				<SimulaTable name_colum2="saturatedConductivity" name_colum1="depth" unit_colum1="cm" unit_colum2="cm/day" TinterpolationMethod="step">
+				<!--Luo L, Lin H, Halleck P. 2008. Quantifying Soil Structure and Preferential Flow in Intact Soil Using X-ray Computed Tomography. Soil Sci Soc Am J 72: 1058-1069.-->
+				<!--  0	74.000
+					-15 74.000
+					-25 64.800
+					-35 50.400
+					-65 50.400
+					-300 50.400 -->
+				<!-- data from Simunek example2 --> 	
+					  0  29.75
+					-28  29.75
+					-32  45.34 
+				   -200  45.34
+				</SimulaTable>
+			</SimulaBase>
+	</SimulaDirective>
+</SimulationModelIncludeFile>
+
+		
+		

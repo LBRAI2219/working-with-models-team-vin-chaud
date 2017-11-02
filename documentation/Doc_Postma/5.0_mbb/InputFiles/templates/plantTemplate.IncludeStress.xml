@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--there is still a bug in simulation model Include file - it needs a comment infron of it-->
+<SimulationModelIncludeFile>
+	<!--PlantTemplate-->
+	<SimulaDirective path="/plantTemplate">
+		<SimulaDerivative name="stressFactor" function="stressFactor" />
+		<SimulaDerivative name="stressFactor:impactOn:photosynthesis" function="stressFactor" />
+		<SimulaDerivative name="stressFactor:impactOn:leafAreaExpantionRate" function="stressFactor" />
+		<SimulaDerivative name="stressFactor:impactOn:rootSegmentCarbonCostOfExudates" function="stressFactor" />
+		<SimulaDerivative name="stressFactor:impactOn:rootSegmentRespiration" function="stressFactor" />
+		<SimulaDerivative name="stressFactor:impactOn:rootSegmentSecondaryGrowth" function="stressFactor" />
+	</SimulaDirective>
+
+	<!--ShootTemplate-->
+	<SimulaDirective path="/shootTemplate">
+		<SimulaVariable name="stressAdjustedPotentialLeafArea" unit="cm2" function="stressAdjustedPotentialLeafGrowthRate" />
+	</SimulaDirective>
+
+</SimulationModelIncludeFile>

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Simulation file for SimRoot version 5. This development version, build 5 october 2006
+	RootSystem: Maize w864xOH43 ril 192 ???? Have to check this with ana
+	Source: Ana Maria Fita Fernandez. Data is based on pouch studies and hydropnics studies she conducted august-oktober 2006. Current e-mail: anfifer@doctor.upv.es
+	Author: Jouke Postma
+	Note: This file is created for a corn-bean-squash poly culture study conducted by Jouke Postma and Ana Maria Fita Fernandez
+	
+	PLEASE KEEP THIS HEADER UP TO DATE! LIST BELOW WHO YOU ARE, WHEN AND WHAT CHANGES YOU MADE AND WHY. LIST YOUR SOURCE AS MUCH AS POSSIBLE!
+
+	change log:
+	jouke okt2006: included bits for phosphorus uptake - far from finished
+	
+-->
+<SimulationModelIncludeFile>	
+	<SimulaBase name="maize-w864XOH43-ril92">
+		<SimulaBase name="resources">
+			<SimulaConstant name="reserveAllocationRate"  unit="g/day"> 
+			   0.006
+			</SimulaConstant>
+			<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="carbonAllocation2RootsFactor" unit_colum2="100%">
+			<!--as portion of the total carbon allocation-->
+					 0 1 
+					 1 0.5
+					 5 0.2
+					 1000 0.2
+			</SimulaTable>
+			<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="carbonAllocation2LeafsFactor" unit_colum2="100%">
+			<!--as portion of the carbon allocation to the shoot-->
+				0 1.
+				1000 1.	
+			</SimulaTable>
+		</SimulaBase>
+		<SimulaBase name="shoot">
+			<SimulaConstant name="extinctionCoefficient"  unit="noUnit" note="KDF in lintul"> 
+			   0.64    <!--KDF for maize = 0.64 Heemst 1988, p22 --> 
+			</SimulaConstant>
+			<SimulaConstant name="specificLeafArea"  unit="cm2/g" note="SLA in lintul"> 
+			   35    <!--SLA for maize = 0.0035 m2/g reduced to 0.0016 m2/g during generative stage, Heemst0.64 Heemst 1988, p22 --> 
+			</SimulaConstant>
+			<SimulaConstant name="lightUseEfficiency"  unit="g/MJ" note="LUE in lintul"> 
+			<!--///@todo check these units-->
+			   3.3    
+			   <!-- following values are based on drymatter production, so respiration is already accounted for. -->
+			   <!--LUE for maize =  2.9, Estimate based on drymatter production on experimental farm in the Netherlands Vredepeel 2001,2002 -->
+			   <!-- 3.3 - 3.8 g dryweigth/Mj intecepted PAR: John L. Lindquist*, Timothy J. Arkebauer, Daniel T. Walters, Kenneth G. Cassman and Achim Dobermann, 2005. Maize Radiation Use Efficiency under Optimal Growth Conditions Agron. J. 97:72-78 (2005).-->
+			</SimulaConstant>
+			<SimulaConstant name="areaPerPlant"  unit="cm2"> 
+			   600    <!-- plant denisty for maize on experimental farm Vredepeel, 11 seeds/m2-->
+			</SimulaConstant>
+		</SimulaBase>
+		<SimulaBase name="hypocotyl">
+				<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="growthRate" unit_colum2="cm/day">
+					 0 1 
+					 1 3
+					 2 3
+					 3 1
+					 4 0
+					 1000 0
+				</SimulaTable>
+				<SimulaConstant name="diameter"  unit="cm">
+					 0.2 
+				</SimulaConstant>
+				<SimulaBase name="branchList">
+						<SimulaBase name="braceroots">
+								<SimulaConstant  name="branchingTimeOffset" unit="day">
+									15.	
+								</SimulaConstant>
+								<SimulaConstant type="integer" name="numberOfBranches/whorl" unit="#">
+									  3 
+								</SimulaConstant>
+								<SimulaConstant  name="branchingFrequency" unit="cm">
+									  1 
+								</SimulaConstant>
+								<SimulaConstant  name="branchingDelay" unit="day">
+									  5 
+								</SimulaConstant>
+								<SimulaConstant  name="lengthRootTip" unit="cm">
+									  3 
+								</SimulaConstant>
+						</SimulaBase>	
+				</SimulaBase>	
+				<SimulaConstant name="numberOfXylemPoles" type="int">
+					 50 <!--value unknown-->
+				</SimulaConstant>
+				<SimulaConstant  name="density" unit="g/cm3">
+					 0.1
+				</SimulaConstant>
+				<SimulaConstant  name="relativeRespiration" unit="g/g/day">
+					 0.1 <!--value may also be given in g/cm/day current value unknown-->
+				</SimulaConstant>
+		</SimulaBase>
+		<SimulaBase name="primaryRoot">
+				<SimulaConstant  name="growthRate" unit="cm/day">
+					 4.56 <!--original value: 4.56-->
+				</SimulaConstant>
+				<SimulaConstant name="diameter"  unit="cm">
+					 0.1 <!--original value: 2.52-->
+				</SimulaConstant>
+				<SimulaBase name="branchList">
+						<SimulaBase name="lateral">
+								<SimulaConstant type="integer" name="numberOfBranches/whorl" unit="#">
+									  1 <!--original value: 1-->
+								</SimulaConstant>
+								<SimulaConstant  name="branchingFrequency" unit="cm">
+									  0.19 <!--original value: 0.19 cm -->
+								</SimulaConstant>
+								<SimulaConstant  name="lengthRootTip" unit="cm">
+									  10.93 <!--original value: 10.93 cm-->
+								</SimulaConstant>
+						</SimulaBase>	
+						<SimulaBase name="seminal">
+								<SimulaConstant  name="branchingFrequency" unit="cm">
+									 0.1 <!--not used-->
+								</SimulaConstant>
+								<SimulaConstant  name="lengthRootTip" unit="cm">
+										10 <!--not used-->
+								</SimulaConstant>
+								<SimulaConstant  name="branchingTimeOffset" unit="day">
+									3.5	<!--original value: 3-4 days-->
+								</SimulaConstant>
+								<SimulaConstant type="integer" name="maxNumberOfBranches" unit="#">
+									  6 <!--original value: 6-->
+								</SimulaConstant>
+								<SimulaConstant type="integer" name="numberOfBranches/whorl" unit="#">
+									  6 <!--original value: 6-->
+								</SimulaConstant>
+						</SimulaBase>	
+				</SimulaBase>	
+				<SimulaConstant name="branchingAngle"  unit="degrees">
+					 0 <!--value unknown-->
+				</SimulaConstant>
+				<SimulaConstant name="numberOfXylemPoles" type="int">
+					 6 <!--value unknown-->
+				</SimulaConstant>
+				<SimulaConstant name="soilImpedence" >
+					 0.3 <!--value unknown-->
+				</SimulaConstant>
+				<SimulaConstant name="gravitropism" >
+					 0.1 <!--value unknown-->
+				</SimulaConstant>
+				<SimulaConstant  name="density" unit="g/cm3">
+					 0.1
+				</SimulaConstant>
+				<SimulaConstant  name="relativeRespiration" unit="g/g/day">
+					 0.1 <!--value may also be given in g/cm/day current value unknown-->
+				</SimulaConstant>
+		</SimulaBase>
+<!--PARAMETERS FOR Seminal ROOTS-->
+		<SimulaBase name="braceroots">
+				<SimulaConstant name="growthRate" unit="cm/day" >
+					2.97 
+				</SimulaConstant>
+				<SimulaConstant name="diameter"  unit="cm">
+					 0.08 
+				</SimulaConstant>
+				<SimulaConstant name="branchingAngle"  unit="degrees">
+					 90 
+				</SimulaConstant>
+				<SimulaConstant name="numberOfXylemPoles" type="int">
+					 4 
+				</SimulaConstant>
+				<SimulaConstant name="regularTopology" type="int">
+					 0 
+				</SimulaConstant>
+				<SimulaConstant name="soilImpedence" >
+					 0.1 <!--value unknown--> 
+				</SimulaConstant>
+				<SimulaConstant name="gravitropism" >
+					 0.005 <!--value unknown-->
+				</SimulaConstant>
+				<SimulaBase name="branchList">
+						<SimulaBase name="lateral">
+								<SimulaConstant  name="branchingFrequency" unit="#/cm">
+									 2 
+								</SimulaConstant>
+								<SimulaConstant  name="lengthRootTip" unit="cm">
+									 10 
+								</SimulaConstant>
+						</SimulaBase>
+				</SimulaBase>
+				<SimulaConstant  name="density" unit="g/cm3">
+					 0.1
+				</SimulaConstant>
+				<SimulaConstant  name="relativeRespiration" unit="g/g/day">
+					 0.1 <!--value may also be given in g/cm/day current value unknown-->
+				</SimulaConstant>
+		</SimulaBase>
+		<SimulaBase name="seminal">
+				<SimulaConstant name="growthRate" unit="cm/day" >
+					2.97 <!--original value: 2.97 cm/day-->
+				</SimulaConstant>
+				<SimulaConstant name="diameter"  unit="cm">
+					 0.1 <!--original value: 0.255-->
+				</SimulaConstant>
+				<SimulaConstant name="branchingAngle"  unit="degrees">
+					 75 <!--original value: 90 -->
+				</SimulaConstant>
+				<SimulaConstant name="numberOfXylemPoles" type="int">
+					 4 <!--value unknown-->
+				</SimulaConstant>
+				<SimulaConstant name="regularTopology" type="int">
+					 0 <!--value unknown-->
+				</SimulaConstant>
+				<SimulaConstant name="soilImpedence" >
+					 0.1 <!--value unknown--> 
+				</SimulaConstant>
+				<SimulaConstant name="gravitropism" >
+					 0.01 <!--value unknown-->
+				</SimulaConstant>
+				<SimulaBase name="branchList">
+						<SimulaBase name="lateral">
+								<SimulaConstant  name="branchingFrequency" unit="cm">
+									 0.2 <!--original value: 0.2 cm-->
+								</SimulaConstant>
+								<SimulaConstant  name="lengthRootTip" unit="cm">
+									 10 <!--original value: 10-->
+								</SimulaConstant>
+						</SimulaBase>
+				</SimulaBase>
+				<SimulaConstant  name="density" unit="g/cm3">
+					 0.1
+				</SimulaConstant>
+				<SimulaConstant  name="relativeRespiration" unit="g/g/day">
+					 0.1 <!--value may also be given in g/cm/day current value unknown-->
+				</SimulaConstant>
+		</SimulaBase>
+<!--PARAMETERS FOR lateral ROOTS-->
+		<SimulaBase name="lateral">
+				<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="growthRate" unit_colum2="cm/day">
+						<!--original value: 1.16-->						
+					 0 0.1 
+					 1 0.1
+					 2 1.
+					 3 0.2
+					 4 0.2
+					 1000 0.2
+				</SimulaTable>
+				<SimulaConstant name="diameter"  unit="cm">
+					 0.05 <!--estimated 0.1 cm-->
+				</SimulaConstant>
+				<SimulaConstant name="branchingAngle"  unit="degrees">
+					 62.83 <!--original value: 62.83-->
+				</SimulaConstant>
+				<SimulaConstant name="numberOfXylemPoles" type="int">
+					 4 <!--value unknown-->
+				</SimulaConstant>
+				<SimulaConstant name="regularTopology" type="int">
+					 0 <!--value unknown-->
+				</SimulaConstant>
+				<SimulaConstant name="topologyOffset" type="int">
+					 0 <!--value unknown-->
+				</SimulaConstant>
+				<SimulaConstant name="soilImpedence" >
+					 0.1 <!--value unknown-->
+				</SimulaConstant>
+				<SimulaConstant name="gravitropism" >
+					 0.0 <!--value unknown-->
+				</SimulaConstant>
+				<SimulaBase name="branchList">
+				</SimulaBase>
+				<SimulaConstant  name="density" unit="g/cm3">
+					 0.1
+				</SimulaConstant>
+				<SimulaConstant  name="relativeRespiration" unit="g/g/day">
+					 0.1 <!--value may also be given in g/cm/day current value unknown-->
+				</SimulaConstant>
+		</SimulaBase>
+	</SimulaBase>
+</SimulationModelIncludeFile>			
+

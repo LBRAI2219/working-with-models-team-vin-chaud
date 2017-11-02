@@ -1,0 +1,74 @@
+<!-- primary and secondary growth rates -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<SimulationModelIncludeFile>
+	<SimulaDirective path="shoot">
+		<SimulaTable name_colum1="time" name_colum2="leafAreaExpantionRate" unit_colum1="day" unit_colum2="cm2/day">
+		<!-- rough estimate, 40 cm2 in 42 days -->
+0	0
+2 0
+3 1
+42 2.0
+60 2.4
+<SimulaConstant name="multiplier" >2.0</SimulaConstant>
+	</SimulaTable>
+	</SimulaDirective>
+	<SimulaDirective path="hypocotyl">
+		<SimulaTable name_colum1="time" unit_colum1="day" name_colum2="growthRate" unit_colum2="cm/day"> 0 1
+			1 2 3 0 1000 0</SimulaTable>
+		<SimulaConstant name="diameter" unit="cm"> 0.161</SimulaConstant>
+		<SimulaTable name_colum1="root segment age" name_colum2="secondaryGrowthRate" unit_colum1="day"
+			unit_colum2="cm/day"
+		> <!--no data on this, but looks in the picture as if the first 20 cm of primary root has some secondary thickening. maybe 1 mm in 30 days --> 
+		0 0. 10 0.0  30 0.003  60 0.004 
+		</SimulaTable>
+		<SimulaTable name_colum1="distance to base of the root" name_colum2="secondaryGrowthScalingFactor"
+			unit_colum1="cm" unit_colum2="100%"
+		> 0 1 15 1 </SimulaTable>
+	</SimulaDirective>
+	<SimulaDirective path="primaryRoot">
+		<SimulaTable name_colum1="time" unit_colum1="day" name_colum2="growthRate" unit_colum2="cm/day">
+		<!--Data Dunbabin: dart 71: primary root length week 2= 48, week 4=77, week 6=97 -- thus rates are 3.4, 2.1, 1.4 
+		0 3.4 14 3.4  18.2 1.4 42 1.4  this should give the right length at each of these dates if scaling factor if 1--> 
+		 0 3.4 14 3.4  25 1.4 42 1.4 
+		</SimulaTable>
+		<SimulaConstant name="diameter" unit="cm">
+		<!--dunbabin data sheet: 1.61 mm for dart 71. This seems to be an average, with some secondary growth in the picture-->
+		0.161 
+		</SimulaConstant>
+		<SimulaTable name_colum1="root segment age" name_colum2="secondaryGrowthRate" unit_colum1="day"
+			unit_colum2="cm/day"
+		> <!--no data on this, but looks in the picture as if the first 20 cm of primary root has some secondary thickening. maybe 1 mm in 30 days --> 
+		0 0. 10 0.0  30 0.003  60 0.004 
+		</SimulaTable>
+		<SimulaTable name_colum1="distance to base of the root" name_colum2="secondaryGrowthScalingFactor"
+			unit_colum1="cm" unit_colum2="100%"
+		> 0 1 15 0 1000 0 </SimulaTable>
+	</SimulaDirective>
+	<SimulaDirective path="lateralPrimaryRoot">
+		<SimulaTable name_colum1="time" unit_colum1="day" name_colum2="growthRate" unit_colum2="cm/day"> 
+		<!--data sheet Dunbabin: laterals of the primary root grow fairly constant rate (cone shape root system) about 6 cm / 42 days = 0.14 cm /day -->
+		
+		<!--data to mimic dar 71 0 0.5 7 0.05 20 0.03 60 0.03-->
+		0 0.2 60 0.2
+			</SimulaTable>
+		<SimulaTable name_colum1="time" unit_colum1="day" name_colum2="longitudinalGrowthRateMultiplier" unit_colum2="noUnit"> 
+				0 0.2 5 0.5 5.5 1 600 1 
+				<SimulaStochastic name="multiplier" unit="noUnit" distribution="lognormal" mean="1" stdev="0.7" minimum="0." maximum="4" />
+		</SimulaTable>
+		<SimulaConstant name="diameter" unit="cm">
+		<!--data sheet dunbabin: 0.071 for dar 71 -->
+		0.071 
+		</SimulaConstant>
+		<!-- visible secondary growth of laterals at 42 days. I expect that that will be different in later stages?-->
+	</SimulaDirective>
+	<SimulaDirective path="finelateral">
+	  <!-- upt to 2 cm long on older lateral roots, see picture dunbabin -->
+		<SimulaTable name_colum1="time" unit_colum1="day" name_colum2="growthRate" unit_colum2="cm/day"> 
+		0	0.1 100 0.1 </SimulaTable>
+		<SimulaStochastic name="longitudinalGrowthRateMultiplier" unit="cm" distribution="normal" mean="1" stdev="0.2" minimum="0"
+			maximum="2" />
+		<SimulaConstant name="diameter" unit="cm"> 0.062</SimulaConstant>
+	</SimulaDirective>
+</SimulationModelIncludeFile>
+

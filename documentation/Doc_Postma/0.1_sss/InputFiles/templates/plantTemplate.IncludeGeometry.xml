@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Simulation file for SimRoot version 5. 
+
+	Author: Jouke Postma
+	Note: 
+	This file is an include file and contains the plantTemplate. You can control here 
+	what parameters are simulated for the plant. It has sections for the whole plant, 
+	the shoot, the hypocotyl and the roots and the datapoints (which are the nodes 
+	the root is made up from). 
+	This file contains the length, volume and surface area calculations for simroot. It
+  is unlikely that you'll need to change anything here.
+
+	
+	PLEASE KEEP THIS HEADER UP TO DATE! LIST BELOW WHO YOU ARE, WHEN AND WHAT CHANGES YOU MADE AND WHY. LIST YOUR SOURCE AS MUCH AS POSSIBLE!
+
+	change log:
+-->
+
+<SimulationModelIncludeFile>
+<!--PlantTemplate-->
+	<SimulaDirective path="/plantTemplate">
+		<SimulaDerivative name="rootLength" unit="cm" function="plantTotalRootFraction" />
+		<SimulaDerivative name="rootVolume" unit="cm3" function="plantTotalRootFraction" />
+		<SimulaDerivative name="rootSurfaceArea" unit="cm2" function="plantTotalRootFraction" />
+		<SimulaVariable name="rootLongitudinalGrowth" unit="cm" function="plantTotalRootFraction" />
+		<SimulaDerivative name="D90" unit="cm" function="D95" >
+			<SimulaConstant name="threshold"> 0.90 </SimulaConstant>
+		</SimulaDerivative>
+	</SimulaDirective>	
+
+<!--ShootTemplate-->
+	<SimulaDirective path="/shootTemplate">
+	</SimulaDirective>
+
+<!--HypocotylTemplate-->
+	<SimulaDirective path="/hypocotylTemplate">
+		<SimulaDirective path="growthpoint">
+			<SimulaLink name="rootDiameter" unit="cm" linksName="diameter"/>
+			<SimulaLink name="rootDiameter;steel" unit="cm" />
+			<SimulaDerivative name="rootCircumference" unit="cm" function="rootCircumference" />
+			<SimulaConstant name="rootSegmentLength"  unit="cm" /> 
+			<SimulaConstant name="rootSegmentVolume"  unit="cm3" />
+			<SimulaConstant name="rootSegmentSurfaceArea"  unit="cm2" />
+		</SimulaDirective>
+		<SimulaDerivative name="rootLength" unit="cm" function="rootTotal.v2" />
+		<SimulaDerivative name="rootSystemLength" unit="cm" function="rootSystemTotal" />
+		<SimulaDerivative name="rootSurfaceArea" unit="cm2" function="rootTotal" />
+		<SimulaDerivative name="rootSystemSurfaceArea" unit="cm2" function="rootSystemTotal" />
+		<SimulaDerivative name="rootVolume" unit="cm3" function="rootTotal" />
+		<SimulaDerivative name="rootSystemVolume" unit="cm3" function="rootSystemTotal" />
+		<SimulaVariable name="rootSystemLongitudinalGrowth" unit="cm" function="rootSystemTotal" />
+	</SimulaDirective>
+
+<!--Sibling root template-->
+	<SimulaDirective path="/siblingRootTemplate">
+		<SimulaDirective path="growthpoint">
+			<SimulaLink name="rootDiameter" unit="cm" linksName="diameter"/>
+			<SimulaLink name="rootDiameter;steel" unit="cm" />
+			<SimulaDerivative name="rootCircumference" unit="cm" function="rootCircumference" />
+			<SimulaConstant name="rootSegmentLength"  unit="cm" /> 
+			<SimulaConstant name="rootSegmentVolume"  unit="cm3" />
+			<SimulaConstant name="rootSegmentSurfaceArea"  unit="cm2" />
+		</SimulaDirective>
+		<SimulaDerivative name="rootLength" unit="cm" function="rootTotal.v2" />
+		<SimulaDerivative name="rootSystemLength" unit="cm" function="rootSystemTotal" />
+		<SimulaDerivative name="rootSurfaceArea" unit="cm2" function="rootTotal" />
+		<SimulaDerivative name="rootSystemSurfaceArea" unit="cm2" function="rootSystemTotal" />
+		<SimulaDerivative name="rootVolume" unit="cm3" function="rootTotal" />
+		<SimulaDerivative name="rootSystemVolume" unit="cm3" function="rootSystemTotal" />
+		<SimulaVariable name="rootSystemLongitudinalGrowth" unit="cm" function="rootSystemTotal" />
+	</SimulaDirective>
+
+<!--DataPointTemplate-->
+	<SimulaDirective path="/dataPointTemplate">
+		<!--SimulaDerivative name="rootDiameter" unit="cm" function="rootDiameter" /-->
+		<SimulaVariable name="rootDiameter" unit="cm" function="secondaryGrowth" />
+		<SimulaVariable name="rootDiameter;steel" unit="cm" function="secondaryGrowth" />
+		<SimulaDerivative name="rootCircumference" unit="cm" function="rootCircumference" />
+		<SimulaDerivative name="rootLength2Base" unit="cm" function="rootLength2Base" />
+		<SimulaDerivative name="rootSegmentLength" unit="cm" function="rootSegmentLength" />
+		<SimulaDerivative name="rootSegmentAge" unit="day" function="rootSegmentAge" />
+		<SimulaDerivative name="rootSegmentSurfaceArea" unit="cm2" function="rootSegmentSurfaceArea" />
+		<SimulaDerivative name="rootSegmentVolume" unit="cm3" function="rootSegmentVolume" />
+		<SimulaVariable name="rootPotentialSecondaryGrowth" unit="cm" function="potentialSecondaryGrowth" />
+	</SimulaDirective>
+</SimulationModelIncludeFile>
+

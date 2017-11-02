@@ -1,0 +1,12 @@
+Simulation took (hours:minutes:seconds): 5:26:5
+THE MODEL PUT OUT WARNINGS:
+RelativeCarbonAllocation2ShootPotentialGrowth: Not enough carbon for potential growth. Setting shoot growth to max available carbon.	92x
+ReservesSinkBased: Expiring seed reserves at 12.000000 d.a.g. with 11.350759% of the initial 0.200000g left.	1x
+ReservesSinkBased: Expiring seed reserves at 12.000000 d.a.g. with 11.382963% of the initial 0.200000g left.	1x
+ReservesSinkBased: Expiring seed reserves at 12.000000 d.a.g. with 11.462323% of the initial 0.200000g left.	1x
+RootBrances: fixing TimeShift error for lateralBasalRoots - check your branching rules. This may also happen if the growth rate of the parent root is increasing over time.	8x
+RootGrowth: lateralHypocotylBornRoots Growing above the ground	111x
+RootGrowthScaling Factor: Not enough carbon for secondary growth. Using threshold from input files to limit secondary growth	716x
+SimulaTable:: extrapolation at end of table secondaryGrowthScalingFactor	60x
+Solute::updateLists: nutrientConcentrationAtTheRootSurface not found	25440x
+Swms3d::getTimeStepSWMS: Ignoring Peclet courant criteria for timestep, as it reduces the timestep below minimum dt	401x

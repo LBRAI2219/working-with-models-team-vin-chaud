@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Simulation file for SimRoot version 5. This development version, build July 2007
+	Author: Jouke Postma
+	Note: 
+	
+	PLEASE KEEP THIS HEADER UP TO DATE! LIST BELOW WHO YOU ARE, WHEN AND WHAT CHANGES YOU MADE AND WHY. LIST YOUR SOURCE AS MUCH AS POSSIBLE!
+
+	change log: 
+	11-july-07 added support for include files. 
+	
+	
+-->
+<!--STYLE SHEET SECTION: feel free to attach any stylesheet of your choosing-->
+<!--?xml-stylesheet type="text/xsl" href="tree-view2.xsl"?-->
+
+
+<!--SIMULATION MODEL-->
+<SimulationModel>
+
+<!--Initial plant position and primordia of the primary root-->
+		<!--plant type options:
+			maize-w864XOH43-ril92
+			maize-w864XOH43-ril92-test
+			test-bean
+			Bean-Carioca-SimRoot4
+			squash
+			maizeSimRoot4  (seems to have no laterals)
+			roothairs (needs respiration to be turned off)
+			simpleRoot  (just a single primary root)
+			roothairs
+			  maize-aerenchyma
+		-->
+	<!--SimulaBase name="withAerenchyma" objectGenerator="seedling">
+		<SimulaConstant name="plantType" type="string">
+		  maize-aerenchyma
+		</SimulaConstant>	
+		<SimulaConstant name="plantingTime" type="Time" unit="day">	0.	</SimulaConstant>	
+		<SimulaConstant name="plantPosition" type="Coordinate">		0 -2 0		</SimulaConstant>
+	</SimulaBase-->	
+	<SimulaBase name="soil">
+	</SimulaBase>	
+
+
+	<SimulaBase name="squash3" objectGenerator="seedling">
+		<SimulaConstant name="plantType" type="string">
+			squash
+		</SimulaConstant>	
+		<SimulaConstant name="plantingTime"  unit="day" type="Time">
+			0
+		</SimulaConstant>	
+		<SimulaConstant name="plantPosition" type="Coordinate">
+				0 -3 8.66
+		</SimulaConstant>
+	</SimulaBase>	
+		
+
+
+	<SimulaIncludeFile fileName="simulationControlParameters.xml"/>
+	<SimulaIncludeFile fileName="templates/plantTemplateFullModel.xml"/>
+	<SimulaIncludeFile fileName="environmentalParameters/Rocksprings-threeSisters.xml"/>
+
+	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeGeometry.xml" />
+	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeDryweight.xml" />
+	<!--SimulaIncludeFile fileName="templates/plantTemplate.IncludePhosphorus.xml" /-->
+	<!--SimulaIncludeFile fileName="templates/plantTemplate.IncludePhosphorusDepletionZones.xml"/-->
+	<!--SimulaIncludeFile fileName="templates/plantTemplate.IncludeNitrateBarberCushman.xml"/-->
+	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeWaterModule.xml"/>
+	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeNitrate.xml"/>
+	<!--SimulaIncludeFile fileName="templates/plantTemplate.IncludeDrought.xml"/-->
+	<!--SimulaIncludeFile fileName="templates/plantTemplate.IncludePotassiumSWMS3D.xml" /-->
+	<!--SimulaIncludeFile fileName="templates/plantTemplate.IncludePotassiumDepletionZones.xml" /-->
+
+	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeCarbonModule.xml" />
+	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeRootHairs.xml"/>
+	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeRootLengthProfile.xml"/>
+	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeCarbonSinks.xml"/>
+	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeCarbonAllocation.xml"/>
+	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeRespiration.xml"/>
+	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeCarbonCosts.xml"/>
+	<!--SimulaIncludeFile fileName="templates/plantTemplate.IncludeAerenchyma.xml"/-->
+	<!--SimulaIncludeFile fileName="templates/plantTemplate.IncludeEtiolation.xml"/-->
+	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeStress.xml"/>
+
+
+	<SimulaBase name="rootTypeParameters">
+		<SimulaIncludeFile fileName="plantParameters/bean-carioca-SimRoot4.xml"/>
+		<SimulaIncludeFile fileName="plantParameters/Maize/genotypes/36H56.xml"/>
+		<SimulaIncludeFile fileName="plantParameters/squash.xml"/>
+	</SimulaBase>
+</SimulationModel>
+
+

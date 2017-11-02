@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- Angels and gravitopism for maize	-->
+<SimulationModelIncludeFile>
+		
+		<SimulaDirective path="hypocotyl">
+			<SimulaConstant name="soilImpedence" > 0.3 </SimulaConstant>  <!--value unknown-->
+			<SimulaConstant name="gravitropism" >  1.  </SimulaConstant>  <!--value unknown-->
+			<SimulaStochastic name="soilImpedence.v2" unit="cm" type="Coordinate" distribution="uniform"  minimum="-0.1" maximum="0.1"/> 
+			<SimulaStochastic name="gravitropism.v2" unit="cm"  type="Coordinate" distribution="uniform"  minimum="0.8" maximum="2"/> 	 		
+		</SimulaDirective>
+
+		<SimulaDirective path="primaryRoot">
+			<SimulaConstant name="branchingAngle"  unit="degrees">  0  </SimulaConstant>  <!--value unknown-->
+			<SimulaConstant name="soilImpedence" > 0.05  </SimulaConstant>
+			<SimulaConstant name="gravitropism" >  0.08  </SimulaConstant>
+			<SimulaStochastic name="soilImpedence.v2" unit="cm" type="Coordinate" distribution="uniform"  minimum="-0.05" maximum="0.05"/> 
+			<SimulaStochastic name="gravitropism.v2" unit="cm"  type="Coordinate" distribution="uniform"  minimum="-1" maximum="-0.5"/> 		
+		</SimulaDirective>
+		
+		<SimulaDirective path="braceroots">
+			<SimulaConstant name="branchingAngle"  unit="degrees">  120  </SimulaConstant>
+			<SimulaConstant name="soilImpedence" >  0.03  </SimulaConstant>  <!-- value unknown-->  
+			<SimulaConstant name="gravitropism" >   0.003  </SimulaConstant>  <!-- value unknown-->	 
+			<SimulaStochastic name="soilImpedence.v2" unit="cm" type="Coordinate" distribution="uniform"  minimum="-0.03" maximum="0.03"/> 
+			<SimulaStochastic name="gravitropism.v2" unit="cm"  type="Coordinate" distribution="uniform"  minimum="-0.02" maximum="-0.015"/> 		
+		</SimulaDirective>
+		
+		<SimulaDirective path="braceroots2">
+			<SimulaConstant name="branchingAngle"  unit="degrees">  110  </SimulaConstant>
+			<SimulaStochastic name="soilImpedence.v2" unit="cm" type="Coordinate" distribution="uniform"  minimum="-0.03" maximum="0.03"/> 
+			<SimulaStochastic name="gravitropism.v2" unit="cm"  type="Coordinate" distribution="uniform"  minimum="-0.02" maximum="-0.015"/> 
+		</SimulaDirective>
+		
+		<SimulaDirective path="seminal">
+			<SimulaConstant name="branchingAngle"  unit="degrees">   90  </SimulaConstant>  <!--original value: 90 -->	
+			<SimulaConstant name="soilImpedence" >  0.02  </SimulaConstant>  <!--value unknown--> 		 
+			<SimulaConstant name="gravitropism" >   0.008  </SimulaConstant>  <!--value unknown-->	 
+			<SimulaStochastic name="soilImpedence.v2" unit="cm" type="Coordinate" distribution="uniform"  minimum="-0.04" maximum="0.04"/> 
+			<SimulaStochastic name="gravitropism.v2" unit="cm"  type="Coordinate" distribution="uniform"  minimum="-0.01" maximum="-0.007"/> 		
+		</SimulaDirective>
+		
+		<SimulaDirective path="nodalroots">
+			<SimulaConstant name="branchingAngle"  unit="degrees">  120  </SimulaConstant>
+			<SimulaConstant name="soilImpedence" >  0.02  </SimulaConstant>  <!--value unknown-->
+			<SimulaConstant name="gravitropism" >   0.008  </SimulaConstant>  <!-- value unknown-->	  
+			<SimulaStochastic name="soilImpedence.v2" unit="cm" type="Coordinate" distribution="uniform"  minimum="-0.02" maximum="0.02"/> 
+			<SimulaStochastic name="gravitropism.v2" unit="cm"  type="Coordinate" distribution="uniform"  minimum="-0.06" maximum="-0.04"/> 	 
+		</SimulaDirective>
+		
+		<SimulaDirective path="nodalroots2">
+			<SimulaConstant name="branchingAngle"  unit="degrees">  110  </SimulaConstant>  <!--stem growth up and these branch from the stem-->	
+			<SimulaConstant name="soilImpedence" > 0.02 </SimulaConstant>
+			<SimulaStochastic name="gravitropism"  maximum="0.005" minimum="0.001" distribution="uniform" />
+			<SimulaStochastic name="soilImpedence.v2" unit="cm" type="Coordinate" distribution="uniform"  minimum="-0.02" maximum="0.02"/> 
+			<SimulaStochastic name="gravitropism.v2" unit="cm"  type="Coordinate" distribution="uniform"  minimum="-0.06" maximum="-0.04"/> 
+		</SimulaDirective>
+		
+		<SimulaDirective path="nodalroots3">
+			<SimulaConstant name="branchingAngle"  unit="degrees">  100  </SimulaConstant>  <!--stem growth up and these branch from the stem-->	
+			<SimulaConstant name="soilImpedence" > 0.02 </SimulaConstant>
+			<SimulaStochastic name="gravitropism"  maximum="0.005" minimum="0.001" distribution="uniform" />
+			<SimulaStochastic name="soilImpedence.v2" unit="cm" type="Coordinate" distribution="uniform"  minimum="-0.02" maximum="0.02"/> 
+			<SimulaStochastic name="gravitropism.v2" unit="cm"  type="Coordinate" distribution="uniform"  minimum="-0.06" maximum="-0.04"/> 
+		</SimulaDirective>
+		
+		<SimulaDirective path="nodalroots4">
+			<SimulaConstant name="branchingAngle"  unit="degrees">   90  </SimulaConstant>  <!--stem growth up and these branch from the stem-->	
+			<SimulaConstant name="soilImpedence" > 0.02 </SimulaConstant>
+			<SimulaStochastic name="gravitropism"  maximum="0.005" minimum="0.001" distribution="uniform" />
+			<SimulaStochastic name="soilImpedence.v2" unit="cm" type="Coordinate" distribution="uniform"  minimum="-0.02" maximum="0.02"/> 
+			<SimulaStochastic name="gravitropism.v2" unit="cm"  type="Coordinate" distribution="uniform"  minimum="-0.06" maximum="-0.04"/> 
+		</SimulaDirective>
+		
+		<SimulaDirective path="lateralOfCrownRoots">
+			<SimulaConstant name="branchingAngle"  unit="degrees">   90  </SimulaConstant>  <!--original value: 62.83-->		 
+			<SimulaConstant name="soilImpedence" > 0.05 </SimulaConstant>
+			<SimulaConstant name="gravitropism" > 0.0 </SimulaConstant>
+			<SimulaStochastic name="soilImpedence.v2" unit="cm" type="Coordinate" distribution="uniform"  minimum="-0.05" maximum="0.05"/> 
+			<SimulaConstant name="gravitropism.v2" type="Coordinate"> 0 0 0 </SimulaConstant> 
+		</SimulaDirective>
+		
+		<SimulaDirective path="lateral">
+			<SimulaConstant name="branchingAngle"  unit="degrees">  62.83  </SimulaConstant>   <!--original value: 62.83-->  		 	
+			<SimulaConstant name="soilImpedence" > 0.05 </SimulaConstant>
+			<SimulaConstant name="gravitropism" > 0.0 </SimulaConstant>
+			<SimulaStochastic name="soilImpedence.v2" unit="cm" type="Coordinate" distribution="uniform"  minimum="-0.05" maximum="0.05"/> 
+			<SimulaConstant name="gravitropism.v2" type="Coordinate"> 0 0 0 </SimulaConstant>
+		</SimulaDirective>
+			
+		<SimulaDirective path="finelateral">
+			<SimulaConstant name="branchingAngle"  unit="degrees">  62.83  </SimulaConstant>   <!--original value: 62.83-->  		 	
+			<SimulaConstant name="soilImpedence" > 0.05 </SimulaConstant>
+			<SimulaConstant name="gravitropism" > 0.0 </SimulaConstant>
+			<SimulaStochastic name="soilImpedence.v2" unit="cm" type="Coordinate" distribution="uniform"  minimum="-0.05" maximum="0.05"/> 
+			<SimulaConstant name="gravitropism.v2" type="Coordinate"> 0 0 0 </SimulaConstant>
+		</SimulaDirective>
+		
+		<SimulaDirective path="finelateral2">
+			<SimulaConstant name="branchingAngle"  unit="degrees">  62.83  </SimulaConstant>   <!--original value: 62.83-->  		 	
+			<SimulaConstant name="soilImpedence" > 0.05 </SimulaConstant>
+			<SimulaConstant name="gravitropism" > 0.0 </SimulaConstant>
+			<SimulaStochastic name="soilImpedence.v2" unit="cm" type="Coordinate" distribution="uniform"  minimum="-0.05" maximum="0.05"/> 
+			<SimulaConstant name="gravitropism.v2" type="Coordinate"> 0 0 0 </SimulaConstant>
+		</SimulaDirective>
+		
+</SimulationModelIncludeFile>			
+

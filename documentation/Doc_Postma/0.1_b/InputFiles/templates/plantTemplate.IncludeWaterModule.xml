@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SimulationModelIncludeFile>
+<!--PlantTemplate-->
+	<SimulaDirective path="/soil">
+		<SimulaExternal name="Simunek" unit="noUnit" function="Simunek" />
+		<!-- SimulaVariable name="potentialTranspiration" unit="cm3" function="sumOverPlantsShootRates" XintegrationFunction="Heuns"/-->
+	</SimulaDirective>	
+
+
+	<SimulaDirective path="/plantTemplate">
+		<SimulaVariable name="rootWaterUptake" unit="cm3" function="plantTotalRatesRootFraction" />
+	</SimulaDirective>	
+
+<!--ShootTemplate-->
+	<SimulaDirective path="/shootTemplate">
+		<SimulaVariable name="potentialTranspiration" unit="cm3" function="simplePotentialTranspiration" XintegrationFunction="Heuns"/>
+	</SimulaDirective>
+
+<!--HypocotylTemplate-->
+	<SimulaDirective path="/hypocotylTemplate">
+		<SimulaDirective path="growthpoint">
+			<SimulaConstant name="rootWaterUptake" unit="cm3/cm">0</SimulaConstant>
+			<SimulaConstant name="rootSegmentWaterUptake" unit="cm3">0</SimulaConstant>
+		</SimulaDirective>
+		<SimulaVariable name="rootWaterUptake" unit="cm3" function="rootTotalRates" />
+		<SimulaVariable name="rootSystemWaterUptake" unit="cm3" function="rootSystemTotalRates" />
+	</SimulaDirective>
+
+<!--Sibling root template-->
+	<SimulaDirective path="/siblingRootTemplate">
+		<SimulaDirective path="growthpoint">
+			<SimulaConstant name="rootWaterUptake" unit="cm3/cm">0</SimulaConstant>
+			<SimulaConstant name="rootSegmentWaterUptake" unit="cm3">0</SimulaConstant>
+		</SimulaDirective>
+		<SimulaVariable name="rootWaterUptake" unit="cm3" function="rootTotalRates" />
+		<SimulaVariable name="rootSystemWaterUptake" unit="cm3" function="rootSystemTotalRates" />
+	</SimulaDirective>
+
+<!--DataPointTemplate-->
+	<SimulaDirective path="/dataPointTemplate">
+		<!--SimulaVariable name="rootWaterUptake" unit="cm3/cm" function="waterUptakeFromHopmans" XintegrationFunction="Heuns"/-->
+		<SimulaVariable name="rootSegmentWaterUptake" unit="cm3" function="waterUptakeFromHopmans"/>
+		<SimulaTable name_colum1="time" name_colum2="volumetricWaterContentAtTheRootSurface" unit_colum1="day" unit_colum2="cm3/cm3" function="getValuesFromSWMS" integrationFunction="BackwardEuler" minTimeStep="0.1" maxTimeStep="0.1" preferedTimeStep="0.101"/>
+	</SimulaDirective>
+</SimulationModelIncludeFile>
+

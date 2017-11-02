@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SimulationModel>
+	<SimulaIncludeFile fileName="InputFiles/simulationControlParameters.xml"/>
+
+		<SimulaConstant name="plantRespirationRate" unit="g/day" >3</SimulaConstant>
+		<SimulaVariable name="plantRespiration" unit="g" function="useDerivative">0</SimulaVariable>
+</SimulationModel>
+

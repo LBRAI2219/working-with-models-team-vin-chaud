@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--
+		Simulation file for SimRoot version 5. This development version, build July 2007 Author: Jouke Postma Note: This file
+		is an include file and contains the plantTemplate. You can control here what parameters are simulated for the plant.
+		It has sections for the whole plant, the shoot, the hypocotyl and the roots and the datapoints (which are the nodes
+		the root is made up from). Please note that many parameters are interdepent. Dropping parameters may lead to faster
+		execution but possibly error messages. You can also control what functions are used here. For example, plants can grow
+		potential by changing the function for growthRate to the one that is used for potentialLongitudinalGrowthRate. Or
+		respiration can be set to 0, by replacing the SimulaDerivative with a SimulaConstant and setting the constant value to
+		0. This would reduce execution time and prevents messing around with the parameters section.
+	-->
+<SimulationModelIncludeFile>
+	<SimulaBase name="plantTemplate">
+	</SimulaBase>
+	<!--ShootTemplate-->
+	<SimulaBase name="shootTemplate">
+		<SimulaVariable name="leafArea" unit="cm2" function="leafArea" />
+		<SimulaDerivative name="leafAreaIndex" unit="cm2/cm2" function="leafAreaIndex" />
+	</SimulaBase>
+	<!--HypocotylTemplate-->
+	<!--///@todo: get rid of the 'root' word for these generic functions-->
+	<SimulaBase name="hypocotylTemplate">
+		<SimulaBase name="dataPoints" objectGenerator="rootDataPoints">
+		</SimulaBase>
+		<SimulaPoint name="growthpoint" function="rootGrowthDirection" garbageCollectionOff="true">
+			0 0 0
+			<SimulaVariable name="rootLongitudinalGrowth" unit="cm" function="scaledRootGrowthRate"
+				garbageCollectionOff="true" />
+		</SimulaPoint>
+		<SimulaBase name="branches">
+			<!--here the program will insert new branches-->
+		</SimulaBase>
+		<!--
+			Following will be inserted by the program: <SimulaConstant name="rootType" type="string" unit="noUnit">
+			defined-by-function </SimulaConstant>
+		-->
+	</SimulaBase>
+	<!--Sibling root template-->
+	<SimulaBase name="siblingRootTemplate">
+		<SimulaBase name="dataPoints" objectGenerator="rootDataPoints">
+		</SimulaBase>
+		<SimulaPoint name="growthpoint" function="rootGrowthDirection" garbageCollectionOff="true">
+			0 0 0
+			<SimulaVariable name="rootLongitudinalGrowth" unit="cm" function="scaledRootGrowthRate"
+				garbageCollectionOff="true" />
+		</SimulaPoint>
+		<!--
+			Following will be inserted by the program: <SimulaConstant name="rootType" type="string" unit="noUnit">
+			defined-by-function </SimulaConstant>
+		-->
+		<SimulaBase name="branches">
+			<!--here the program will insert new branches-->
+		</SimulaBase>
+	</SimulaBase>
+
+	<!--DataPointTemplate-->
+	<SimulaBase name="dataPointTemplate" type="Coordinate">
+		<SimulaDerivative name="spatialRootDensity" unit="cm/cm3" function="proximity" />
+	</SimulaBase>
+
+</SimulationModelIncludeFile>

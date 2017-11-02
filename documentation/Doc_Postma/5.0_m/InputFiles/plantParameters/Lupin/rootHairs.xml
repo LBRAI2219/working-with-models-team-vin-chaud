@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SimulationModelIncludeFile>
+		<SimulaDirective path="hypocotyl">
+				<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="rootHairLength" unit_colum2="cm">
+					 0 0
+					 100 0
+				</SimulaTable>
+				<SimulaConstant  name="rootHairDiameter" unit="cm">5e-4</SimulaConstant>
+				<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="rootHairDensity" unit_colum2="#/cm2">
+					 0 0
+					 100 0
+				</SimulaTable>
+		</SimulaDirective>
+		<SimulaDirective path="primaryRoot">
+				<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="rootHairLength" unit_colum2="cm">
+					 0 0
+					 1 0
+					 2 0.03
+					 100 0.03
+				</SimulaTable>
+				<SimulaConstant  name="rootHairDiameter" unit="cm">5e-4</SimulaConstant>
+				<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="rootHairDensity" unit_colum2="#/cm2">
+					 0 2000
+					 10 2000
+					 30 2000
+					 100 2000
+				</SimulaTable>
+	</SimulaDirective>
+	<SimulaDirective path="lateralPrimaryRoot">
+				<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="rootHairLength" unit_colum2="cm">
+					 0 0
+					 1 0
+					 2 0.03
+					 100 0.03
+				</SimulaTable>
+				<SimulaConstant  name="rootHairDiameter" unit="cm">5e-4</SimulaConstant>
+				<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="rootHairDensity" unit_colum2="#/cm2">
+					 0 2000
+					 10 2000
+					 30 2000
+					 100 2000
+				</SimulaTable>
+	</SimulaDirective>
+	<SimulaDirective path="finelateral">
+				<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="rootHairLength" unit_colum2="cm">
+					 0 0
+					 1 0
+					 2 0.03
+					 100 0.03
+				</SimulaTable>
+				<SimulaConstant  name="rootHairDiameter" unit="cm">5e-4</SimulaConstant>
+				<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="rootHairDensity" unit_colum2="#/cm2">
+					 0 3000
+					 100 3000
+				</SimulaTable>
+	</SimulaDirective>
+</SimulationModelIncludeFile>			
+

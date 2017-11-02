@@ -1,0 +1,22 @@
+/home/johannes/.bashrc: line 14: /opt/centos/devtoolset-1.1/enable: No such file or directory
+ 
+working dir = /mnt/data/johannes/scratch/nitrogen4bHybrid/Output/0.1_mbs 
+Job started on cavan.plabipd.de at Wed Jul 20 16:54:47 CEST 2016
+[30;47mTrying to load model from file: [30;47m
+Running modules: [30;47mRunning modules: [s0.0/40.0 days. Mem 2043 mB. #obj.=2998 x64b/obj.=89319[u[s1.0/40.0 days. Mem 2052 mB. #obj.=3954 x64b/obj.=68029[u[s2.0/40.0 days. Mem 2052 mB. #obj.=5376 x64b/obj.=50035[u[s3.0/40.0 days. Mem 2052 mB. #obj.=8617 x64b/obj.=31216[u[s4.0/40.0 days. Mem 2047 mB. #obj.=13179 x64b/obj.=20366[u[s5.0/40.0 days. Mem 2061 mB. #obj.=22488 x64b/obj.=12016[u[s6.0/40.0 days. Mem 2066 mB. #obj.=45564 x64b/obj.=5943[u[s7.0/40.0 days. Mem 2094 mB. #obj.=73172 x64b/obj.=3751[u[s8.0/40.0 days. Mem 2121 mB. #obj.=111685 x64b/obj.=2489[u[s9.0/40.0 days. Mem 2159 mB. #obj.=166050 x64b/obj.=1704[u[s10.0/40.0 days. Mem 2213 mB. #obj.=235570 x64b/obj.=1231[u[s11.0/40.0 days. Mem 2285 mB. #obj.=331817 x64b/obj.=902[u[s12.0/40.0 days. Mem 2380 mB. #obj.=453842 x64b/obj.=687[u[s13.0/40.0 days. Mem 2490 mB. #obj.=574952 x64b/obj.=567[u[s14.0/40.0 days. Mem 2614 mB. #obj.=702353 x64b/obj.=487[u[s15.0/40.0 days. Mem 2746 mB. #obj.=829604 x64b/obj.=433[u[s16.0/40.0 days. Mem 2883 mB. #obj.=961030 x64b/obj.=393[u[s17.0/40.0 days. Mem 3024 mB. #obj.=1090197 x64b/obj.=363[u[s18.0/40.0 days. Mem 3172 mB. #obj.=1222375 x64b/obj.=340[u[s19.0/40.0 days. Mem 3325 mB. #obj.=1357514 x64b/obj.=321[u[s20.0/40.0 days. Mem 3477 mB. #obj.=1452686 x64b/obj.=313[u[s21.0/40.0 days. Mem 3599 mB. #obj.=1481362 x64b/obj.=318[u[s22.0/40.0 days. Mem 3707 mB. #obj.=1505474 x64b/obj.=322[u[s23.0/40.0 days. Mem 3789 mB. #obj.=1529340 x64b/obj.=324[u[s24.0/40.0 days. Mem 3862 mB. #obj.=1549762 x64b/obj.=326[u[s25.0/40.0 days. Mem 3931 mB. #obj.=1567801 x64b/obj.=328[u[s26.0/40.0 days. Mem 3995 mB. #obj.=1585194 x64b/obj.=330[u[s27.0/40.0 days. Mem 4054 mB. #obj.=1605353 x64b/obj.=331[u[s28.0/40.0 days. Mem 4110 mB. #obj.=1624805 x64b/obj.=331[u[s29.0/40.0 days. Mem 4165 mB. #obj.=1645391 x64b/obj.=331[u[s30.0/40.0 days. Mem 4220 mB. #obj.=1664715 x64b/obj.=332[u[s31.0/40.0 days. Mem 4275 mB. #obj.=1684417 x64b/obj.=332[u[s32.0/40.0 days. Mem 4331 mB. #obj.=1705095 x64b/obj.=332[u[s33.0/40.0 days. Mem 4388 mB. #obj.=1727460 x64b/obj.=332[u[s34.0/40.0 days. Mem 4446 mB. #obj.=1751267 x64b/obj.=332[u[s35.0/40.0 days. Mem 4504 mB. #obj.=1774047 x64b/obj.=332[u[s36.0/40.0 days. Mem 4564 mB. #obj.=1798230 x64b/obj.=332[u[s37.0/40.0 days. Mem 4625 mB. #obj.=1821214 x64b/obj.=332[u[s38.0/40.0 days. Mem 4686 mB. #obj.=1842736 x64b/obj.=333[u[s39.0/40.0 days. Mem 4747 mB. #obj.=1864875 x64b/obj.=333[u[s40.0/40.0 days. Mem 4810 mB. #obj.=1885593 x64b/obj.=334[u[32;47m[800C[1DOK[30;47m
+Finalizing output:[32;47m[800C[1DOK[30;47m[34;47m
+THE MODEL PUT OUT WARNINGS:
+RelativeCarbonAllocation2ShootPotentialGrowth: Not enough carbon for potential growth. Setting shoot growth to max available carbon.[800C[7D268x
+ReservesSinkBased: Expiring seed reserves at 12.000000 d.a.g. with 13.619315% of the initial 0.200000g left.[800C[7D1x
+ReservesSinkBased: Expiring seed reserves at 12.000000 d.a.g. with 29.794398% of the initial 0.150000g left.[800C[7D1x
+ReservesSinkBased: Expiring seed reserves at 12.000000 d.a.g. with 68.738749% of the initial 0.200000g left.[800C[7D1x
+RootBrances: fixing TimeShift error for finelateral - check your branching rules. This may also happen if the growth rate of the parent root is increasing over time.[800C[7D2x
+RootBrances: fixing TimeShift error for lateral - check your branching rules. This may also happen if the growth rate of the parent root is increasing over time.[800C[7D1x
+RootBranches::checkSpatialRules: Branches are too close to the root tip. Please specify a length of the root tip or a branching emergence delay for lateralPrimaryRootFastGrowing branching of hypocotyl[800C[7D797x
+RootGrowthScaling Factor: Not enough carbon for secondary growth. Using threshold from input files to limit secondary growth[800C[7D3328x
+Solute::updateLists: nutrientConcentrationAtTheRootSurface not found[800C[7D16973x
+Swms3d::getTimeStepSWMS: Ignoring Peclet courant criteria for timestep, as it reduces the timestep below minimum dt[800C[7D401x[30;47m
+Simulation took (hours:minutes:seconds): 4:48:3[0m
+ 
+Job Ended at Wed Jul 20 21:43:20 CEST 2016
+ 

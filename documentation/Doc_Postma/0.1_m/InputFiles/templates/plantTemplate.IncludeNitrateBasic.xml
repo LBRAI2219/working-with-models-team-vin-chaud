@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SimulationModelIncludeFile>
+
+	<SimulaDirective path="/plantTemplate">
+		<SimulaBase name="nitrate">
+			<SimulaDerivative name="plantOptimalNutrientContent" unit="uMol" function="plantTotal" />
+			<SimulaDerivative name="plantMinimalNutrientContent" unit="uMol" function="plantTotal" />
+			<SimulaVariable name="plantNutrientFixation" unit="uMol" function="bnf.V1" />	
+		</SimulaBase>
+	</SimulaDirective>
+
+	<SimulaDirective path="/shootTemplate">
+		<SimulaBase name="nitrate">
+			<SimulaLink name="leafOptimalNutrientConcentration" unit="uMol/g"	/>
+			<SimulaDerivative name="leafOptimalNutrientContent" unit="uMol" function="leafOptimalNutrientContent" />
+			<SimulaLink name="leafMinimalNutrientConcentration" unit="uMol/g"	/>
+			<SimulaDerivative name="leafMinimalNutrientContent" unit="uMol" function="leafMinimalNutrientContent" />
+			<SimulaConstant name="leafNutrientUptake" unit="uMol">0</SimulaConstant>
+			<SimulaLink name="stemOptimalNutrientConcentration" unit="uMol/g" />
+			<SimulaDerivative name="stemOptimalNutrientContent" unit="uMol" function="stemOptimalNutrientContent" />
+			<SimulaLink name="stemMinimalNutrientConcentration" unit="uMol/g" />
+			<SimulaDerivative name="stemMinimalNutrientContent" unit="uMol" function="stemMinimalNutrientContent" />
+			<SimulaConstant name="stemNutrientUptake" unit="uMol">0</SimulaConstant>
+		</SimulaBase>
+	</SimulaDirective>
+
+	<SimulaDirective path="/hypocotylTemplate">
+		<SimulaDirective path="growthpoint">
+			<SimulaBase name="nitrate">
+				<SimulaLink name="optimalNutrientConcentration" unit="uMol/g"  />
+				<SimulaLink name="minimalNutrientConcentration" unit="uMol/g"  />
+				<SimulaConstant name="rootSegmentOptimalNutrientContent" unit="uMol">0 </SimulaConstant>
+				<SimulaConstant name="rootSegmentMinimalNutrientContent" unit="uMol">0 </SimulaConstant>
+	  		<SimulaLink name="Cmin" unit="uM"  />
+				<SimulaLink name="Imax" unit="uMol/cm2/day" />
+				<SimulaLink name="Km" unit="uM" />
+			</SimulaBase>
+		</SimulaDirective>
+		<SimulaBase name="nitrate">
+			<SimulaDerivative name="rootOptimalNutrientContent" unit="uMol" function="rootTotal.v2" />
+			<SimulaDerivative name="rootSystemOptimalNutrientContent" unit="uMol" function="rootSystemTotal" />
+			<SimulaDerivative name="rootMinimalNutrientContent" unit="uMol" function="rootTotal.v2" />
+			<SimulaDerivative name="rootSystemMinimalNutrientContent" unit="uMol" function="rootSystemTotal" />
+		</SimulaBase>
+	</SimulaDirective>
+
+	<SimulaDirective path="/siblingRootTemplate">
+		<SimulaDirective path="growthpoint">
+			<SimulaBase name="nitrate">
+				<SimulaLink name="optimalNutrientConcentration" unit="uMol/g" />
+				<SimulaConstant name="rootSegmentOptimalNutrientContent" unit="uMol">0 </SimulaConstant>
+				<SimulaLink name="minimalNutrientConcentration" unit="uMol/g"  />
+				<SimulaConstant name="rootSegmentMinimalNutrientContent" unit="uMol">0 </SimulaConstant>
+	  		<SimulaLink name="Cmin" unit="uM"  />
+				<SimulaLink name="Imax" unit="uMol/cm2/day" />
+				<SimulaLink name="Km" unit="uM" />
+			</SimulaBase>
+		</SimulaDirective>
+		<SimulaBase name="nitrate">
+			<SimulaDerivative name="rootOptimalNutrientContent" unit="uMol" function="rootTotal.v2" />
+			<SimulaDerivative name="rootSystemOptimalNutrientContent" unit="uMol" function="rootSystemTotal" />
+			<SimulaDerivative name="rootMinimalNutrientContent" unit="uMol" function="rootTotal.v2" />
+			<SimulaDerivative name="rootSystemMinimalNutrientContent" unit="uMol" function="rootSystemTotal" />
+		</SimulaBase>
+	</SimulaDirective>
+
+	<SimulaDirective path="/dataPointTemplate">
+		<SimulaBase name="nitrate">
+			<SimulaLink name="Imax" unit="uMol/cm2/day" />
+			<SimulaLink name="Km" unit="uM"  />
+			<SimulaLink name="Cmin" unit="uM" />
+			<SimulaLink name="optimalNutrientConcentration" unit="uMol/g"  />
+			<SimulaLink name="minimalNutrientConcentration" unit="uMol/g"  />
+			<SimulaVariable name="rootSegmentOptimalNutrientContent" unit="uMol" function="rootSegmentOptimalNutrientContent" />
+			<SimulaVariable name="rootSegmentMinimalNutrientContent" unit="uMol" function="rootSegmentMinimalNutrientContent" />
+		</SimulaBase>
+	</SimulaDirective>
+</SimulationModelIncludeFile>
+

@@ -1,0 +1,9 @@
+Simulation took (hours:minutes:seconds): 6:54:8
+THE MODEL PUT OUT WARNINGS:
+RelativeCarbonAllocation2ShootPotentialGrowth: Not enough carbon for potential growth. Setting shoot growth to max available carbon.	105x
+ReservesSinkBased: Expiring seed reserves at 12.000000 d.a.g. with 23.266642% of the initial 0.150000g left.	1x
+ReservesSinkBased: Expiring seed reserves at 12.000000 d.a.g. with 27.029465% of the initial 0.150000g left.	1x
+ReservesSinkBased: Expiring seed reserves at 12.000000 d.a.g. with 29.227528% of the initial 0.150000g left.	1x
+RootGrowth: lateral Growing above the ground	378x
+Solute::updateLists: nutrientConcentrationAtTheRootSurface not found	82116x
+Swms3d::getTimeStepSWMS: Ignoring Peclet courant criteria for timestep, as it reduces the timestep below minimum dt	401x

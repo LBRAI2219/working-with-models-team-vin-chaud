@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--there is still a bug in simulation model Include file - it needs a comment infron of it-->
+<SimulationModelIncludeFile>
+	<!--PlantTemplate-->
+	<SimulaDirective path="/plantTemplate">
+		<SimulaBase name="phosphorus">
+			<SimulaDerivative name="rootNutrientDepletionVolume" unit="cm3" function="plantTotalRootFraction" />
+		</SimulaBase>
+	</SimulaDirective>
+	<SimulaDirective path="/hypocotylTemplate">
+		<SimulaDirective path="growthpoint">
+			<SimulaBase name="phosphorus">
+				<SimulaConstant name="radiusDepletionZone" unit="cm">0</SimulaConstant>
+				<SimulaConstant name="rootSegmentNutrientDepletionVolume" unit="cm3"> 0 </SimulaConstant>
+			</SimulaBase>
+		</SimulaDirective>
+		<SimulaBase name="phosphorus">
+			<SimulaDerivative name="rootNutrientDepletionVolume" unit="cm3" function="rootTotal" />
+			<SimulaDerivative name="rootSystemNutrientDepletionVolume" unit="cm3" function="rootSystemTotal" />
+		</SimulaBase>
+	</SimulaDirective>
+
+	<!--Sibling root template-->
+	<SimulaDirective path="/siblingRootTemplate">
+		<SimulaDirective path="growthpoint">
+			<SimulaBase name="phosphorus">
+				<SimulaConstant name="radiusDepletionZone" unit="cm">0</SimulaConstant>
+				<SimulaConstant name="rootSegmentNutrientDepletionVolume" unit="cm3"> 0 </SimulaConstant>
+			</SimulaBase>
+		</SimulaDirective>
+		<SimulaBase name="phosphorus">
+			<SimulaDerivative name="rootNutrientDepletionVolume" unit="cm3" function="rootTotal" />
+			<SimulaDerivative name="rootSystemNutrientDepletionVolume" unit="cm3" function="rootSystemTotal" />
+		</SimulaBase>
+	</SimulaDirective>
+
+	<!--DataPointTemplate-->
+	<SimulaDirective path="/dataPointTemplate">
+		<SimulaBase name="phosphorus">
+			<SimulaDerivative name="radiusDepletionZone" unit="cm" function="radiusDepletionZoneSimRoot4" />
+			<SimulaDerivative name="rootSegmentNutrientDepletionVolume" unit="cm3" function="rootSegmentNutrientDepletionVolume" />
+		</SimulaBase>
+	</SimulaDirective>
+</SimulationModelIncludeFile>
+

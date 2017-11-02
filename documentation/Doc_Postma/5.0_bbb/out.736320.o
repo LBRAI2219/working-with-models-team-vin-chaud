@@ -1,0 +1,22 @@
+/home/johannes/.bashrc: line 14: /opt/centos/devtoolset-1.1/enable: No such file or directory
+ 
+working dir = /mnt/data/johannes/scratch/nitrogen4bHybrid/Output/5.0_bbb 
+Job started on carlow.plabipd.de at Wed Jul 20 16:54:52 CEST 2016
+[30;47mTrying to load model from file: [30;47m
+Running modules: [30;47mRunning modules: [s0.0/40.0 days. Mem 2042 mB. #obj.=2574 x64b/obj.=104027[u[s1.0/40.0 days. Mem 2052 mB. #obj.=3039 x64b/obj.=88507[u[s2.0/40.0 days. Mem 2052 mB. #obj.=3690 x64b/obj.=72893[u[s3.0/40.0 days. Mem 2052 mB. #obj.=4155 x64b/obj.=64735[u[s4.0/40.0 days. Mem 2052 mB. #obj.=4620 x64b/obj.=58220[u[s5.0/40.0 days. Mem 2047 mB. #obj.=10683 x64b/obj.=25123[u[s6.0/40.0 days. Mem 2061 mB. #obj.=19568 x64b/obj.=13809[u[s7.0/40.0 days. Mem 2057 mB. #obj.=32586 x64b/obj.=8275[u[s8.0/40.0 days. Mem 2085 mB. #obj.=57266 x64b/obj.=4772[u[s9.0/40.0 days. Mem 2102 mB. #obj.=104795 x64b/obj.=2629[u[s10.0/40.0 days. Mem 2153 mB. #obj.=164752 x64b/obj.=1713[u[s11.0/40.0 days. Mem 2217 mB. #obj.=262134 x64b/obj.=1108[u[s12.0/40.0 days. Mem 2305 mB. #obj.=383677 x64b/obj.=787[u[s13.0/40.0 days. Mem 2405 mB. #obj.=489213 x64b/obj.=644[u[s14.0/40.0 days. Mem 2514 mB. #obj.=594046 x64b/obj.=554[u[s15.0/40.0 days. Mem 2627 mB. #obj.=709891 x64b/obj.=485[u[s16.0/40.0 days. Mem 2748 mB. #obj.=838810 x64b/obj.=429[u[s17.0/40.0 days. Mem 2882 mB. #obj.=980123 x64b/obj.=385[u[s18.0/40.0 days. Mem 3027 mB. #obj.=1133759 x64b/obj.=350[u[s19.0/40.0 days. Mem 3182 mB. #obj.=1286340 x64b/obj.=324[u[s20.0/40.0 days. Mem 3348 mB. #obj.=1440586 x64b/obj.=304[u[s21.0/40.0 days. Mem 3524 mB. #obj.=1597565 x64b/obj.=289[u[s22.0/40.0 days. Mem 3710 mB. #obj.=1758697 x64b/obj.=276[u[s23.0/40.0 days. Mem 3900 mB. #obj.=1918396 x64b/obj.=266[u[s24.0/40.0 days. Mem 4093 mB. #obj.=2074136 x64b/obj.=258[u[s25.0/40.0 days. Mem 4287 mB. #obj.=2232202 x64b/obj.=251[u[s26.0/40.0 days. Mem 4481 mB. #obj.=2395005 x64b/obj.=245[u[s27.0/40.0 days. Mem 4675 mB. #obj.=2551989 x64b/obj.=240[u[s28.0/40.0 days. Mem 4868 mB. #obj.=2704522 x64b/obj.=235[u[s29.0/40.0 days. Mem 5065 mB. #obj.=2856950 x64b/obj.=232[u[s30.0/40.0 days. Mem 5262 mB. #obj.=3007482 x64b/obj.=229[u[s31.0/40.0 days. Mem 5458 mB. #obj.=3155728 x64b/obj.=226[u[s32.0/40.0 days. Mem 5651 mB. #obj.=3300596 x64b/obj.=224[u[s33.0/40.0 days. Mem 5846 mB. #obj.=3447400 x64b/obj.=222[u[s34.0/40.0 days. Mem 6042 mB. #obj.=3589982 x64b/obj.=220[u[s35.0/40.0 days. Mem 6238 mB. #obj.=3734850 x64b/obj.=218[u[s36.0/40.0 days. Mem 6432 mB. #obj.=3876494 x64b/obj.=217[u[s37.0/40.0 days. Mem 6631 mB. #obj.=4021734 x64b/obj.=216[u[s38.0/40.0 days. Mem 6828 mB. #obj.=4162869 x64b/obj.=215[u[s39.0/40.0 days. Mem 7031 mB. #obj.=4268796 x64b/obj.=215[u[s40.0/40.0 days. Mem 7201 mB. #obj.=4324034 x64b/obj.=218[u[32;47m[800C[1DOK[30;47m
+Finalizing output:[32;47m[800C[1DOK[30;47m[34;47m
+THE MODEL PUT OUT WARNINGS:
+RelativeCarbonAllocation2ShootPotentialGrowth: Not enough carbon for potential growth. Setting shoot growth to max available carbon.[800C[7D92x
+ReservesSinkBased: Expiring seed reserves at 12.000000 d.a.g. with 11.350759% of the initial 0.200000g left.[800C[7D1x
+ReservesSinkBased: Expiring seed reserves at 12.000000 d.a.g. with 11.382963% of the initial 0.200000g left.[800C[7D1x
+ReservesSinkBased: Expiring seed reserves at 12.000000 d.a.g. with 11.462323% of the initial 0.200000g left.[800C[7D1x
+RootBrances: fixing TimeShift error for lateralBasalRoots - check your branching rules. This may also happen if the growth rate of the parent root is increasing over time.[800C[7D8x
+RootGrowth: lateralHypocotylBornRoots Growing above the ground[800C[7D111x
+RootGrowthScaling Factor: Not enough carbon for secondary growth. Using threshold from input files to limit secondary growth[800C[7D716x
+SimulaTable:: extrapolation at end of table secondaryGrowthScalingFactor[800C[7D60x
+Solute::updateLists: nutrientConcentrationAtTheRootSurface not found[800C[7D25440x
+Swms3d::getTimeStepSWMS: Ignoring Peclet courant criteria for timestep, as it reduces the timestep below minimum dt[800C[7D401x[30;47m
+Simulation took (hours:minutes:seconds): 5:26:5[0m
+ 
+Job Ended at Wed Jul 20 22:21:30 CEST 2016
+ 

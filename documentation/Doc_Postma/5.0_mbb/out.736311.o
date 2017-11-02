@@ -1,0 +1,22 @@
+/home/johannes/.bashrc: line 14: /opt/centos/devtoolset-1.1/enable: No such file or directory
+ 
+working dir = /mnt/data/johannes/scratch/nitrogen4bHybrid/Output/5.0_mbb 
+Job started on kerry.plabipd.de at Wed Jul 20 16:54:52 CEST 2016
+[30;47mTrying to load model from file: [30;47m
+Running modules: [30;47mRunning modules: [s0.0/40.0 days. Mem 2042 mB. #obj.=2578 x64b/obj.=103866[u[s1.0/40.0 days. Mem 2052 mB. #obj.=3565 x64b/obj.=75449[u[s2.0/40.0 days. Mem 2052 mB. #obj.=4309 x64b/obj.=62421[u[s3.0/40.0 days. Mem 2052 mB. #obj.=5945 x64b/obj.=45244[u[s4.0/40.0 days. Mem 2052 mB. #obj.=8537 x64b/obj.=31507[u[s5.0/40.0 days. Mem 2047 mB. #obj.=16516 x64b/obj.=16250[u[s6.0/40.0 days. Mem 2061 mB. #obj.=37429 x64b/obj.=7219[u[s7.0/40.0 days. Mem 2089 mB. #obj.=62253 x64b/obj.=4398[u[s8.0/40.0 days. Mem 2113 mB. #obj.=95359 x64b/obj.=2905[u[s9.0/40.0 days. Mem 2150 mB. #obj.=146483 x64b/obj.=1923[u[s10.0/40.0 days. Mem 2198 mB. #obj.=211179 x64b/obj.=1364[u[s11.0/40.0 days. Mem 2266 mB. #obj.=304224 x64b/obj.=976[u[s12.0/40.0 days. Mem 2358 mB. #obj.=424996 x64b/obj.=727[u[s13.0/40.0 days. Mem 2464 mB. #obj.=529074 x64b/obj.=610[u[s14.0/40.0 days. Mem 2582 mB. #obj.=642842 x64b/obj.=526[u[s15.0/40.0 days. Mem 2704 mB. #obj.=758198 x64b/obj.=467[u[s16.0/40.0 days. Mem 2832 mB. #obj.=885522 x64b/obj.=419[u[s17.0/40.0 days. Mem 2972 mB. #obj.=1023698 x64b/obj.=380[u[s18.0/40.0 days. Mem 3123 mB. #obj.=1172000 x64b/obj.=349[u[s19.0/40.0 days. Mem 3288 mB. #obj.=1327308 x64b/obj.=324[u[s20.0/40.0 days. Mem 3458 mB. #obj.=1491246 x64b/obj.=303[u[s21.0/40.0 days. Mem 3648 mB. #obj.=1675611 x64b/obj.=285[u[s22.0/40.0 days. Mem 3855 mB. #obj.=1874394 x64b/obj.=269[u[s23.0/40.0 days. Mem 4086 mB. #obj.=2084257 x64b/obj.=257[u[s24.0/40.0 days. Mem 4330 mB. #obj.=2298166 x64b/obj.=246[u[s25.0/40.0 days. Mem 4591 mB. #obj.=2528821 x64b/obj.=237[u[s26.0/40.0 days. Mem 4865 mB. #obj.=2773548 x64b/obj.=229[u[s27.0/40.0 days. Mem 5159 mB. #obj.=3017435 x64b/obj.=224[u[s28.0/40.0 days. Mem 5455 mB. #obj.=3274433 x64b/obj.=218[u[s29.0/40.0 days. Mem 5771 mB. #obj.=3546235 x64b/obj.=213[u[s30.0/40.0 days. Mem 6092 mB. #obj.=3822460 x64b/obj.=208[u[s31.0/40.0 days. Mem 6439 mB. #obj.=4116818 x64b/obj.=205[u[s32.0/40.0 days. Mem 6796 mB. #obj.=4414428 x64b/obj.=201[u[s33.0/40.0 days. Mem 7174 mB. #obj.=4729872 x64b/obj.=198[u[s34.0/40.0 days. Mem 7569 mB. #obj.=5059994 x64b/obj.=196[u[s35.0/40.0 days. Mem 7983 mB. #obj.=5404005 x64b/obj.=193[u[s36.0/40.0 days. Mem 8414 mB. #obj.=5752034 x64b/obj.=191[u[s37.0/40.0 days. Mem 8861 mB. #obj.=6117223 x64b/obj.=189[u[s38.0/40.0 days. Mem 9374 mB. #obj.=6454370 x64b/obj.=190[u[s39.0/40.0 days. Mem 9883 mB. #obj.=6686616 x64b/obj.=193[u[s40.0/40.0 days. Mem 10357 mB. #obj.=6833731 x64b/obj.=198[u[32;47m[800C[1DOK[30;47m
+Finalizing output:[32;47m[800C[1DOK[30;47m[34;47m
+THE MODEL PUT OUT WARNINGS:
+RelativeCarbonAllocation2ShootPotentialGrowth: Not enough carbon for potential growth. Setting shoot growth to max available carbon.[800C[7D96x
+ReservesSinkBased: Expiring seed reserves at 12.000000 d.a.g. with 10.441462% of the initial 0.200000g left.[800C[7D1x
+ReservesSinkBased: Expiring seed reserves at 12.000000 d.a.g. with 10.940833% of the initial 0.200000g left.[800C[7D1x
+ReservesSinkBased: Expiring seed reserves at 12.000000 d.a.g. with 36.343187% of the initial 0.150000g left.[800C[7D1x
+RootGrowth: lateral Growing above the ground[800C[7D47x
+RootGrowth: lateralHypocotylBornRoots Growing above the ground[800C[7D251x
+RootGrowthScaling Factor: Not enough carbon for secondary growth. Using threshold from input files to limit secondary growth[800C[7D416x
+SimulaTable:: extrapolation at end of table secondaryGrowthScalingFactor[800C[7D32x
+Solute::updateLists: nutrientConcentrationAtTheRootSurface not found[800C[7D44569x
+Swms3d::getTimeStepSWMS: Ignoring Peclet courant criteria for timestep, as it reduces the timestep below minimum dt[800C[7D401x[30;47m
+Simulation took (hours:minutes:seconds): 6:28:31[0m
+ 
+Job Ended at Wed Jul 20 23:24:43 CEST 2016
+ 

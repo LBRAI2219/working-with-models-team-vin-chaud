@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Simulation file for SimRoot version 5. This development version, build 22 september 2006
+	RootSystem: Phaseolus Vulgaris sp Carioca
+	Source: rtbean08_de7 with comments.txt as received from Raul Jaramillo. File does not contain reference to other sources
+	Author: Jouke Postma
+	Note: This file is created to compare the new SimRoot 5 to SimRoot 4 series. By using the same data and fuctions, the same result should be shown
+	
+	PLEASE KEEP THIS HEADER UP TO DATE! LIST BELOW WHO YOU ARE, WHEN AND WHAT CHANGES YOU MADE AND WHY. LIST YOUR SOURCE AS MUCH AS POSSIBLE!
+
+	change log:
+	
+	Jouke 03 Oct 06: Added the new time based branching features that part of todays build. The roots realy mimic the original well now. 
+	Jouke 03 Oct 06: Changed rootangle of the second whorl to 60 degrees
+	Jouke 03 Oct 06: Reduced the number of roots/whorl to 4
+	Jouke 11 July 07: Updated to fit current SimRoot version: however shoot and hypocotyl parameters may not be correct for beans
+	
+-->
+<!--parameters for the primary root, named 'Main_Tap_Root' in the original file-->			
+<SimulationModelIncludeFile>
+			<SimulaBase name="test-bean">
+				<SimulaBase name="resources">
+					<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="reserveAllocationRate" unit_colum2="100%/day"> 
+<!--///@todo: this should go. plants can just take what they need when we have potential growth for the shoot in place.-->
+					   0 0.05
+						2 0.05
+						3 0.1
+						4 0.3
+						1000 0.3
+					</SimulaTable>
+					<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="carbonAllocation2RootsFactor" unit_colum2="100%">
+					<!--as portion of the total carbon allocation-->
+							 0 1 
+							 1 0.5
+							 5 0.2
+							 1000 0.2
+					</SimulaTable>
+					<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="carbonAllocation2LeafsFactor" unit_colum2="100%">
+					<!--as portion of the carbon allocation to the shoot-->
+						0 1.
+						1000 1.	
+					</SimulaTable>
+				</SimulaBase>
+				<SimulaBase name="shoot">
+					<SimulaConstant name="extinctionCoefficient"  unit="noUnit" note="KDF in lintul"> 
+					   0.64    <!--KDF for maize = 0.64 Heemst 1988, p22 --> 
+					</SimulaConstant>
+					<SimulaConstant name="specificLeafArea"  unit="cm2/g" note="SLA in lintul"> 
+					   35    <!--SLA for maize = 0.0035 m2/g reduced to 0.0016 m2/g during generative stage, Heemst0.64 Heemst 1988, p22 --> 
+					</SimulaConstant>
+					<SimulaConstant name="lightUseEfficiency"  unit="g/MJ" note="LUE in lintul"> 
+					<!--///@todo check these units-->
+					   3.3    
+					   <!-- following values are based on drymatter production, so respiration is already accounted for.--> 
+					   <!--LUE for maize =  2.9, Estimate based on drymatter production on experimental farm in the Netherlands Vredepeel 2001,2002 -->
+					   <!-- 3.3 - 3.8 g dryweigth/Mj intecepted PAR: John L. Lindquist*, Timothy J. Arkebauer, Daniel T. Walters, Kenneth G. Cassman and Achim Dobermann, 2005. Maize Radiation Use Efficiency under Optimal Growth Conditions Agron. J. 97:72-78 (2005).-->
+					</SimulaConstant>
+					<SimulaConstant name="areaPerPlant"  unit="cm2"> 
+					   400     <!--rough estimate-->
+					</SimulaConstant>
+				</SimulaBase>
+				<SimulaBase name="hypocotyl">
+						<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="growthRate" unit_colum2="cm/day">
+							 0 1 
+							 1 3
+							 2 3
+							 3 1
+							 4 0
+							 1000 0
+						</SimulaTable>
+						<SimulaConstant name="diameter"  unit="cm">
+							 0.2 
+						</SimulaConstant>
+						<SimulaBase name="branchList">
+								<!--not implemented-->
+								<!--SimulaBase name="hypocotylBornRoots">
+										<SimulaConstant  name="branchingTimeOffset" unit="day">
+											15.	
+										</SimulaConstant>
+										<SimulaConstant type="integer" name="numberOfBranches/whorl" unit="#">
+											  3 
+										</SimulaConstant>
+										<SimulaConstant  name="branchingFrequency" unit="cm">
+											  1 
+										</SimulaConstant>
+										<SimulaConstant  name="branchingDelay" unit="day">
+											  5 
+										</SimulaConstant>
+										<SimulaConstant  name="lengthRootTip" unit="cm">
+											  3 
+										</SimulaConstant>
+								</SimulaBase-->	
+						</SimulaBase>	
+						<SimulaConstant name="numberOfXylemPoles" type="int">
+							 50 <!--value unknown-->
+						</SimulaConstant>
+						<SimulaConstant  name="density" unit="g/cm3">
+							 0.1
+						</SimulaConstant>
+						<SimulaConstant  name="relativeRespiration" unit="g/g/day">
+							 0.1 <!--value may also be given in g/cm/day - current value unknown-->
+						</SimulaConstant>
+				</SimulaBase>
+				<SimulaBase name="primaryRoot">
+						<SimulaConstant  name="growthRate" unit="cm/day">
+						<!--original file (line 28): 0.098 cm/hour-->
+							 .52 
+						</SimulaConstant>
+						<SimulaConstant name="diameter"  unit="cm">
+<!--NOT CLEAR TO ME. FILE READS:
+1            Radial Growth Parameter
+THE SOURCE IN VERSION 4 NEEDS TO BE STUDIED MORE HERE-->						
+							 0.1 
+						</SimulaConstant>
+						<SimulaBase name="branchList">
+								<SimulaBase name="lateral">
+										<SimulaConstant type="integer" name="numberOfBranches/whorl" unit="#">
+											  1
+										</SimulaConstant>
+										<SimulaConstant  name="branchingFrequency" unit="day">
+											  0.5
+										</SimulaConstant>
+										<SimulaConstant  name="lengthRootTip" unit="day">
+											  0
+										</SimulaConstant>
+										<SimulaConstant type="integer" name="maxNumberOfBranches" unit="#">
+											  60000
+										</SimulaConstant>
+								</SimulaBase>	
+								<SimulaBase name="basalWhorl1">
+										<SimulaConstant  name="branchingFrequency" unit="cm">
+											 0.5
+										</SimulaConstant>
+										<SimulaConstant  name="lengthRootTip" unit="cm">
+												0	  
+										</SimulaConstant>
+										<SimulaConstant type="integer" name="maxNumberOfBranches" unit="#">
+											  1
+										</SimulaConstant>
+								</SimulaBase>	
+							
+						</SimulaBase>	
+						<SimulaConstant name="branchingAngle"  unit="degrees">
+							<!--this is the lateral branching angle, may also be given in radians-->
+							<!--primary roots grow down. original file reads on line 79: 0-->
+							 0 
+						</SimulaConstant>
+						<SimulaConstant name="numberOfXylemPoles" type="int">
+						<!-- this not well defined in the original model. It seems that model allowed to specify the number of xylem poles of the parent for each root type. That would result in a parent root that has different number of xylem poles speficied for different branches. That is not possible.-->
+						<!-- original file line 92 and 106: 8 and 6.  for 2 whorls of basal roots -->
+						<!-- original file line 24: 4.  for lateral roots -->
+							 1 
+						</SimulaConstant>
+						<!--SimulaConstant name="regularTopology" type="int">
+						this has no meaning since this root does not branch of any other root
+							 0 
+						</SimulaConstant-->
+						<SimulaConstant name="soilImpedence" >
+							<!--this is a weight for the random direction vector which represents soil impedence.--> 
+							 <!-- original file line 32: reads 0.3. Note that the effect of this factor is timestep dependent in the old and current version of the model. This has to be fixed. The listed value is probably based on hourly data!!!-->
+							 0.0 
+						</SimulaConstant>
+						<SimulaConstant name="gravitropism" >
+							<!--this is a weight for the gravitropism vector.--> 
+							<!-- note: this is timestep dependent currently. listed value should be for an hourly timestep-->
+							<!-- original file line 31: 0.1 -->
+							 0.0 
+						</SimulaConstant>
+						<SimulaConstant  name="density" unit="g/cm3">
+							 0.1
+						</SimulaConstant>
+						<SimulaConstant  name="relativeRespiration" unit="g/g/day">
+							 0.1 <!--value may also be given in g/cm/day - current value unknown-->
+						</SimulaConstant>
+				</SimulaBase>
+<!--PARAMETERS FOR BASAL ROOTS OF WHORL 1-->
+				<SimulaBase name="basalWhorl1">
+						<SimulaConstant name="growthRate" unit="cm/day" >
+							<!-- orignal file line 52: 0.17 presumably in cm/hour-->
+							.508
+						</SimulaConstant>
+						<SimulaConstant name="diameter"  unit="cm">
+						<!-- NOT CLEAR IN ORIGINAL FILE -->
+							 0.1 
+						</SimulaConstant>
+						<SimulaConstant name="branchingAngle"  unit="degrees">
+						<!--orignal file line 91 and 105 : 90-->
+							 90
+						</SimulaConstant>
+						<SimulaConstant name="numberOfXylemPoles" type="int">
+						<!-- original file line 48: 4.-->
+							 1
+						</SimulaConstant>
+						<SimulaConstant name="regularTopology" type="int">
+						<!--this 0 for random topology or >0 for regular topology
+							if >0 then the value indicates the shift from the previous branching position
+							i.e. if previous branch is at position 1 then next branch is at position 1+this constant. 
+							the numberOfXylemPoles indicates the number of positions-->
+						<!-- original file line 86 and 100: 1 -->
+							 0 
+						</SimulaConstant>
+						<SimulaConstant name="soilImpedence" >
+							<!--this is a weight for the random direction vector which represents soil impedence.--> 
+							<!-- original file line 55: 0.1 note: based on hourly timestep -->
+							 0.0
+						</SimulaConstant>
+						<SimulaConstant name="gravitropism" >
+							<!--this is a weight for the gravitropism vector.--> 
+							<!-- original file line 54: 0.08 . based on hourly timestep-->
+							 0.00
+						</SimulaConstant>
+						<SimulaBase name="branchList">
+								<SimulaBase name="lateral">
+										<SimulaConstant  name="branchingFrequency" unit="day">
+										<!-- original file line 44: 0.55  -->
+											 0.5 
+										</SimulaConstant>
+										<SimulaConstant  name="lengthRootTip" unit="cm">
+										<!-- original file line 43: 10 -->
+											 0 
+										</SimulaConstant>
+								</SimulaBase>
+						</SimulaBase>
+						<SimulaConstant  name="density" unit="g/cm3">
+							 0.1
+						</SimulaConstant>
+						<SimulaConstant  name="relativeRespiration" unit="g/g/day">
+							 0.1 <!--value may also be given in g/cm/day - current value unknown-->
+						</SimulaConstant>
+				</SimulaBase>
+<!--PARAMETERS FOR LATERAL ROOTS-->
+				<SimulaBase name="lateral">
+						<SimulaConstant  name="growthRate" unit="cm/day">
+							 <!-- original file line 62: 0.032 cm/hour -->
+							 0.2 
+						</SimulaConstant>
+						<SimulaConstant name="diameter"  unit="cm">
+							 <!-- NOT UNDERSTOOD FROM ORIGINAL FILE-->
+							 0.05 
+						</SimulaConstant>
+						<SimulaConstant name="branchingAngle"  unit="degrees">
+						<!-- original file line 23 and 47: 75 -->	
+							 75 
+						</SimulaConstant>
+						<SimulaConstant name="numberOfXylemPoles" type="int">
+						<!-- undefined in original file since there are no branches going off lateral roots -->
+							 4 
+						</SimulaConstant>
+						<SimulaConstant name="regularTopology" type="int">
+						<!-- original file line 18 and 42: 0 -->
+							 0 
+						</SimulaConstant>
+						<SimulaConstant name="topologyOffset" type="int">
+						<!--///@todo this is really just a bool-->
+						<!--optional if true and regularTopology>0 then regular topology is a positional offset since last branch (causes roots to swirl around the parent)-->
+						<!--default false-->
+						<!-- original file line 18 and 42: 0 -->
+							 0 
+						</SimulaConstant>
+						<SimulaConstant name="soilImpedence" >
+							<!--this is a weight for the random direction vector which represents soil impedence.--> 
+							<!-- original file line 65: 0.1 based on hourly timestep-->
+							 0. 
+						</SimulaConstant>
+						<SimulaConstant name="gravitropism" >
+							<!--this is a weight for the gravitropism vector.--> 
+							<!-- original file line 64: 0.025 based on hourly timestep-->
+							 0.0
+						</SimulaConstant>
+						<SimulaBase name="branchList">
+								<!--there are no branches on lateral roots-->
+						</SimulaBase>
+						<SimulaConstant  name="density" unit="g/cm3">
+							 0.1
+						</SimulaConstant>
+						<SimulaConstant  name="relativeRespiration" unit="g/g/day">
+							 0.1 <!--value may also be given in g/cm/day - current value unknown-->
+						</SimulaConstant>
+				</SimulaBase>
+			</SimulaBase>
+</SimulationModelIncludeFile>
+
+

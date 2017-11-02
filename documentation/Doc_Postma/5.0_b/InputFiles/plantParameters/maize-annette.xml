@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Simulation file for SimRoot : plant parameters for maize
+	RootSystem: Maize 
+	Source: Ana Maria Fita Fernandez. Data is based on pouch studies and hydropnics studies she conducted august-oktober 2006. Current e-mail: anfifer@doctor.upv.es
+					Cylinder studies of Raul Jaramillo (2005-2007) (3 week old plants)
+					Animation movies made by amy anino (2007) (grown for 8 days)
+	Author: Jouke Postma
+	Note: This file is created for the aerenchyma study on phosphorus and possibly later drought
+	
+	PLEASE KEEP THIS HEADER UP TO DATE! LIST BELOW WHO YOU ARE, WHEN AND WHAT CHANGES YOU MADE AND WHY. LIST YOUR SOURCE AS MUCH AS POSSIBLE!
+
+	change log:
+	
+-->
+<SimulationModelIncludeFile>			
+	<SimulaBase name="maize-annette">
+		<SimulaBase name="stressImpactFactors">
+			<SimulaBase name="impactOn:photosynthesis">
+			   <!--for phosphorus this is based on Lynch et al 1991 figure 4 where severe P stress reduced photosynthesis by ~ 1/2 (2/3 if you take the extremes). The response was linear and measured in bean leaves-->
+			   <!--for maize: Usuda, H. & Shimogawara, K., 1991. Phosphate Deficiency in Maize. I. Leaf Phosphate Status, Growth, Photosynthesis and Carbon Partitioning. Plant Cell Physiol., 32(4), 497-504.
+			       this reference shows even a 3 fold decrease from 35-10 uMol/m2/s see fig 3
+			       but the max of the light curve shifts about 50%
+			       -->
+			  	<SimulaTable name_colum2="impactBy:phosphorus" name_colum1="phosphorus stress factor">1 1 0 0.5</SimulaTable>
+			  	<SimulaTable name_colum2="impactBy:potassium" name_colum1="potassium stress factor">1 1 0 0</SimulaTable>
+			  	<SimulaTable name_colum2="impactBy:nitrate" name_colum1="nitrate stress factor">1 1 0 0</SimulaTable>
+			</SimulaBase>
+			<SimulaBase name="impactOn:leafAreaExpantionRate">
+			  	<SimulaTable name_colum2="impactBy:phosphorus" name_colum1="phosphorus stress factor">1 1 0 0</SimulaTable>
+			  	<SimulaTable name_colum2="impactBy:potassium" name_colum1="potassium stress factor">1 1 0 1</SimulaTable>
+			  	<SimulaTable name_colum2="impactBy:nitrate" name_colum1="nitrate stress factor">1 1 0 0</SimulaTable>
+				</SimulaBase>
+			<SimulaBase name="impactOn:rootSegmentCarbonCostOfExudates">
+			  	<SimulaTable name_colum2="impactBy:phosphorus" name_colum1="phosphorus stress factor">1 1 0 1</SimulaTable>
+			  	<SimulaTable name_colum2="impactBy:potassium" name_colum1="potassium stress factor">1 1 0 1</SimulaTable>
+			  	<SimulaTable name_colum2="impactBy:nitrate" name_colum1="nitrate stress factor">1 1 0 1</SimulaTable>
+			</SimulaBase>
+			<SimulaBase name="impactOn:rootSegmentRespiration">
+			  	<SimulaTable name_colum2="impactBy:phosphorus" name_colum1="phosphorus stress factor">1 1 0 1</SimulaTable>
+			  	<SimulaTable name_colum2="impactBy:potassium" name_colum1="potassium stress factor">1 1 0 1</SimulaTable>
+			  	<SimulaTable name_colum2="impactBy:nitrate" name_colum1="nitrate stress factor">1 1 0 1</SimulaTable>
+			</SimulaBase>
+			<SimulaBase name="impactOn:rootSegmentSecondaryGrowth">
+			  	<SimulaTable name_colum2="impactBy:phosphorus" name_colum1="phosphorus stress factor">1 1 0 0</SimulaTable>
+			  	<SimulaTable name_colum2="impactBy:potassium" name_colum1="potassium stress factor">1 1 0 0</SimulaTable>
+			  	<SimulaTable name_colum2="impactBy:nitrate" name_colum1="nitrate stress factor">1 1 0 0</SimulaTable>
+			</SimulaBase>
+		</SimulaBase>
+		<SimulaBase name="resources">
+
+				<SimulaConstant name="seedSize"  unit="g" >
+				<!--correct a bit, not all of the seed weight carbon can be reused-->
+				<!--Zhu et al 2005: 0.15-0.4 g --> 
+			   0.15
+			</SimulaConstant>
+			<SimulaTable name_colum1="time" unit_colum1="day" name_colum2="reserveAllocationRate" unit_colum2="%/day"> 
+			   0.0 0.01
+			   1.0 0.02
+			   2.0 0.04
+			   3.0 0.04
+			   10.0  0.2
+			   11 0.2
+			   1000 0.2
+			</SimulaTable>
+			<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="carbonAllocation2RootsFactor" unit_colum2="100%">
+			<!--as portion of the total carbon allocation-->
+			<!-- values used until June 10 2010
+				0	1
+				1	1
+				6	0.4
+				24	0.30
+				36	0.30
+				38	0.30
+				39	0.30
+				40	0.30
+				60	0			-->
+				
+			<!--  New values from maize-jouke.xml. Comment:	this produces a gigantic plant (if there is no stress). 
+			Drouet JL, Pagès L. 2007. GRAAL: Growth, Architecture, ALlocation: a functional-structural model to analyse the interactions between growth and assimilates allocation integrating processes from organ to whole plant. Wageningen UR Frontis Series 22: 165.
+			figure 4-->
+				0	1
+				1	1
+				6	0.4
+				20	0.20
+				40	0.17
+				80	0.17
+				
+			</SimulaTable>
+			<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="carbonAllocation2LeafsFactor" unit_colum2="100%">
+			<!--as portion of the carbon allocation to the shoot-->
+			<!--Raul2007 at 28 days leaf/shoot biomass ratio in irrigated plants is 0.64 (range: 0.48-0.74)-->
+			<!-- values used until June 10 2010 
+ 				0   1.0
+				10  0.8
+				20  0.5
+				33  0.5
+				40  0.4
+ 				60  0.4	  -->
+ 				
+ 			<!-- see also Drouet JL, Pagès L. 2007. GRAAL:..
+			seems their allocation to stems is less.  
+			-->
+				0   1.0
+				10  0.7
+				20  0.45
+				33  0.42
+				40  0.4
+ 				60  0.4	
+ 					
+			</SimulaTable>
+		</SimulaBase>
+
+		<SimulaBase name="shoot">
+			<SimulaConstant name="relativePotentialTranspiration"  unit="cm3/g"> 
+			  <!--  0.1   0.05-0.1 as a rough estimate
+			    transpiration per cm2 leafArea per day -->
+			    
+			 <!--use either cm3/cm2 leaf area/day or per cm3/g C of photosynthesis-->
+			<!--sinclair et al 1975: maize: max. during day = 0.6 mg/mm2/hour = 
+			1.44 cm3/cm2/day
+			wue (measured): 7-16 10e-3 g CO2/g H2O. = 1.9-4.3  mg/ml 229-524 where maize becomes less water efficient when stomata close?
+			-->  
+			<!--
+			http://www.dse.vic.gov.au/dpi/vro/vrosite.nsf/pages/lwm_farmwater_maize
+			maize: 30 kg dm/mm = 15 kg C/M3 = 15 mg/cm3 = 66 g/cm3 
+			-->
+			<!--gaiser et al 2004: maize-cowpea system:	11.2 kg/mm	-->
+			<!--baldocchi 1994: 
+			10-15 mg C/g water during day, but during night negative numbers because of respiration
+			~ 66-100 ml/g -->
+			
+			   100    
+			     
+			</SimulaConstant>
+			<SimulaConstant name="extinctionCoefficient"  unit="noUnit" note="KDF in lintul"> 
+			 	0.85  
+			   <!--note that around 1 means full leaf cover at lai 3, this is not for individual leaves and 0.64 is too low -->
+			   <!--KDF for maize = 0.64 Heemst 1988, p22 --> 
+			</SimulaConstant>
+			<SimulaTable name_colum1="time" name_colum2="specificLeafArea"  unit_colum1="day" unit_colum2="g/cm2" note="SLA in lintul"> 
+					<!-- we can compensate for not having table by using light leafs and allocating more to stems-->
+			     	<!--SLA for maize = 0.0035 g/cm2 reduced to 0.0016 g/cm2 during generative stage (MUST BE THE OTHER WAY ROUND?), Heemst0.64 Heemst 1988, p22 --> 
+			    	<!--Raul 2007 data: average SLA = 2.56 mg/cm2 range: 2.09-3.19-->
+			    	<!--Raul 2007 data irrigated plants: average SLA = 2.649 mg/cm2 range: 23.-31.9-->
+			    	<!--Jacob and Lawlor 1991: 145 g fresh/ m2 ~ 0.0015 g/cm2, 16 day old plant -->
+			 0 0.0015
+			 24 0.0026
+			 50 0.0032
+			 100 0.0032
+			</SimulaTable>
+			<SimulaConstant name="lightUseEfficiency"  unit="g/uMol" note="LUE in lintul"> 
+			   0.38E-6 <!-- 0.285-0.35-->
+			   <!--note that this should be about 8% higher to compensate for respiration -->
+			   <!-- average in cylinder study raul measured with licor 6400 at a light intensity of 800 uMol/m2/s is about 19 uMol CO2/m2/s (range 11/26). 
+					19/800= 0.02375 uMol CO2 / uMol light = 0.285 ug carbon / uMol light-->
+			   <!--	Data maize light curve maize field experiment three sisters 2007 with chaochun:
+			   light_intensity(uMol/m2/s) photosynthesis(uMol CO2/m2/s)
+			   1801	31.8
+			   1600	30.6
+			   1401	29.5
+			   1201	27.8
+			   999	25.2
+			   799	22
+			   601	17.8
+			   400	11.8
+			   200	1.2
+			   0	0.
+			   -->
+			   <!-- following values are based on drymatter production, so respiration is already accounted for. -->
+			   <!--LUE for maize =  2.9 g dryweight/Mj, Estimate based on drymatter production on experimental farm in the Netherlands Vredepeel 2001,2002 -->
+			   <!-- 3.3 - 3.8 g dryweigth/Mj intecepted PAR: John L. Lindquist*, Timothy J. Arkebauer, Daniel T. Walters, Kenneth G. Cassman and Achim Dobermann, 2005. Maize Radiation Use Efficiency under Optimal Growth Conditions Agron. J. 97:72-78 (2005).-->
+			</SimulaConstant>
+			<SimulaConstant name="areaPerPlant"  unit="cm2"> 
+			      <!-- plant denisty for maize on experimental farm Vredepeel, 11 seeds/m2 which is 909 cm2/plant-->
+			   1600
+			</SimulaConstant>
+			</SimulaBase>
+			
+		<SimulaBase name="hypocotyl">				
+				<SimulaBase name="branchList">
+						<SimulaBase name="braceroots">
+							<SimulaConstant type="time" name="branchingTimeOffset" unit="day">
+								24.	
+							</SimulaConstant>
+							<SimulaConstant  name="branchingSpatialOffset" unit="cm">
+								7.0
+							</SimulaConstant>
+							<SimulaConstant type="integer" name="numberOfBranches/whorl" unit="#">
+								  10 
+							</SimulaConstant>
+							<SimulaConstant type="bool" name="allometricScaling">true</SimulaConstant>
+						</SimulaBase>
+						<SimulaBase name="braceroots2">
+							<SimulaConstant type="time" name="branchingTimeOffset" unit="day">
+								31.	
+							</SimulaConstant>
+							<SimulaConstant  name="branchingSpatialOffset" unit="cm">
+								8.0
+							</SimulaConstant>
+							<SimulaConstant type="integer" name="numberOfBranches/whorl" unit="#">
+								 15 
+							</SimulaConstant>
+							<SimulaConstant type="bool" name="allometricScaling">true</SimulaConstant>
+						</SimulaBase>		
+						<SimulaBase name="nodalroots">
+								<SimulaConstant type="integer" name="numberOfBranches/whorl" unit="#">
+								  3
+								</SimulaConstant>
+								<SimulaConstant type="time" name="branchingTimeOffset" unit="day">
+									9.	
+								</SimulaConstant>
+								<SimulaConstant  name="branchingSpatialOffset" unit="cm">
+									4.5 <!--these should grow at ground level - make this equal to planting depth--> 
+								</SimulaConstant>
+								<SimulaConstant type="bool" name="allometricScaling">true</SimulaConstant> 
+						</SimulaBase>
+						<SimulaBase name="nodalroots2">
+								<SimulaConstant type="integer" name="numberOfBranches/whorl" unit="#">
+								  4
+								</SimulaConstant>
+								<SimulaConstant type="time" name="branchingTimeOffset" unit="day">
+									16.	
+								</SimulaConstant>
+								<SimulaConstant  name="branchingSpatialOffset" unit="cm">
+									4.7 <!--these should grow at ground level - make this equal to planting depth--> 
+								</SimulaConstant>
+								<SimulaConstant type="bool" name="allometricScaling">true</SimulaConstant>
+						</SimulaBase>
+						<SimulaBase name="nodalroots3">
+								<SimulaConstant type="integer" name="numberOfBranches/whorl" unit="#">
+								  5
+								</SimulaConstant>
+								<SimulaConstant type="time" name="branchingTimeOffset" unit="day">
+									20.	
+								</SimulaConstant>
+								<SimulaConstant  name="branchingSpatialOffset" unit="cm">
+									4.9 <!--these should grow at ground level - make this equal to planting depth--> 
+								</SimulaConstant>
+								<SimulaConstant type="bool" name="allometricScaling">true</SimulaConstant>
+						</SimulaBase>
+						<SimulaBase name="nodalroots4">
+								<SimulaConstant type="integer" name="numberOfBranches/whorl" unit="#">
+								  6
+								</SimulaConstant>
+								<SimulaConstant type="time" name="branchingTimeOffset" unit="day">
+									23.	
+								</SimulaConstant>
+								<SimulaConstant  name="branchingSpatialOffset" unit="cm">
+									5.1 <!--these should grow at ground level - make this equal to planting depth--> 
+								</SimulaConstant>
+								<SimulaConstant type="bool" name="allometricScaling">true</SimulaConstant>
+						</SimulaBase>				
+				</SimulaBase>	
+				<SimulaConstant name="numberOfXylemPoles" type="int">
+					 24 <!--should be 4 for hypocotyl - but since the crown roots really come from the stem (not include so far) 4 will give strange crown roots-->
+				</SimulaConstant>
+				<SimulaConstant  name="density" unit="g/cm3">
+					 0.094
+				</SimulaConstant>
+		</SimulaBase>
+
+		<SimulaBase name="primaryRoot">							
+				<SimulaBase name="branchList">
+						<SimulaBase name="lateral">
+								<!--original value: 1-->
+								<!--SimulaConstant type="integer" name="numberOfBranches/whorl" unit="#"> 1 </SimulaConstant-->
+								<!--SimulaStochastic type="integer" name="numberOfBranches/whorl" unit="#" distribution="uniform" minimum="0" maximum="6" /--> 
+								<!--SimulaConstant  name="branchingFrequency" unit="cm"> 0.19 </SimulaConstant--><!--original value: 0.19 cm-->
+								<!--SimulaConstant  name="branchingFrequency" unit="cm">0.4</SimulaConstant-->
+								<SimulaStochastic  name="branchingFrequency" unit="cm" distribution="uniform" minimum="0.25" maximum="0.45" /> 
+								<SimulaConstant  name="lengthRootTip" unit="cm">
+									  <!--original value: 10.93 cm-->
+									 10.93 
+								</SimulaConstant>
+						<SimulaConstant name="allowBranchesToFormAboveGround" type="bool">false</SimulaConstant>
+						</SimulaBase>	
+						<SimulaBase name="seminal">
+								<SimulaConstant  name="branchingFrequency" unit="cm">
+									 0.01 <!--not used-->
+								</SimulaConstant>
+								<SimulaConstant type="time" name="branchingTimeOffset" unit="day">
+									3.0	<!--original value: 3-4 days-->
+								</SimulaConstant>
+								<SimulaConstant type="integer" name="maxNumberOfBranches" unit="#">
+									  6 <!--original value: 6-->
+								</SimulaConstant>
+								<SimulaConstant type="integer" name="numberOfBranches/whorl" unit="#">
+									 6  <!--original value: 6-->
+								</SimulaConstant>
+						<SimulaConstant name="allowBranchesToFormAboveGround" type="bool">false</SimulaConstant>
+						</SimulaBase>	
+				</SimulaBase>	
+				<SimulaConstant name="numberOfXylemPoles" type="int">
+					 24 <!--value unknown, was set to 6 but microscopic root sections show much more-->
+				</SimulaConstant>
+				<SimulaConstant  name="density" unit="g/cm3">
+					 0.094
+				</SimulaConstant>
+		</SimulaBase>
+
+<!--PARAMETERS FOR Seminal ROOTS-->
+		<SimulaBase name="braceroots">												
+				<SimulaConstant name="numberOfXylemPoles" type="int">
+					 40 
+				</SimulaConstant>
+				<SimulaConstant name="regularTopology" type="int">
+					 0 
+				</SimulaConstant>
+
+				<SimulaBase name="branchList">
+					<!--Raul2006: till 28 days - no branches observed growing of the crown roots-->
+					<!--Given moshes image raul must mean the airborn crown roots - but there is certainly a second whorl with branches (first being the nodal roots)-->
+					<SimulaBase name="lateralOfCrownRoots">
+						<!--SimulaConstant type="time" name="branchingTimeOffset" unit="day">
+							2.	
+						</SimulaConstant--><!--this is garanteed by the length of the roottip-->
+						<SimulaConstant  name="branchingSpatialOffset" unit="cm">
+							12.
+						</SimulaConstant>
+						<SimulaConstant type="integer" name="numberOfBranches/whorl" unit="#">
+							  1 
+						</SimulaConstant>
+						<SimulaStochastic  name="branchingFrequency" unit="cm" distribution="uniform" minimum="0.1" maximum="0.3" /> 
+						<SimulaConstant  name="lengthRootTip" unit="cm">
+							 10.93 <!--original value: 10.93 cm-->
+						</SimulaConstant>
+						<SimulaConstant name="allowBranchesToFormAboveGround" type="bool">false</SimulaConstant>
+					</SimulaBase>
+					</SimulaBase>
+				<SimulaConstant  name="density" unit="g/cm3">
+					 0.094
+				</SimulaConstant>
+				</SimulaBase>
+				
+				<SimulaBase name="braceroots2">
+				<SimulaConstant name="numberOfXylemPoles" type="int">
+					 40 
+				</SimulaConstant>
+				<SimulaConstant name="regularTopology" type="int">
+					 0 
+				</SimulaConstant>
+				
+				<SimulaBase name="branchList">
+					<!--Raul2006: till 28 days - no branches observed growing of the crown roots-->
+					<!--Given moshes image raul must mean the airborn crown roots - but there is certainly a second whorl with branches (first being the nodal roots)-->
+					<SimulaBase name="lateralOfCrownRoots">
+						<!--SimulaConstant type="time" name="branchingTimeOffset" unit="day">
+							2.	
+						</SimulaConstant--><!--this is garanteed by the length of the roottip-->
+						<SimulaConstant  name="branchingSpatialOffset" unit="cm">
+							15.
+						</SimulaConstant>
+						<SimulaConstant type="integer" name="numberOfBranches/whorl" unit="#">
+							  1 
+						</SimulaConstant>
+						<SimulaStochastic  name="branchingFrequency" unit="cm" distribution="uniform" minimum="0.1" maximum="0.4" /> 
+						<SimulaConstant  name="lengthRootTip" unit="cm">
+							 10.93 <!--original value: 10.93 cm-->
+						</SimulaConstant>
+						<SimulaConstant name="allowBranchesToFormAboveGround" type="bool">false</SimulaConstant>
+					</SimulaBase>
+				</SimulaBase>
+				<SimulaConstant  name="density" unit="g/cm3">
+					 0.094 <!-- primary maize root 0.94 dry weight / fresh weight 1. Ali M. Pahlavanian and Wendy Kuhn Silk, “Effect of Temperature on Spatial and Temporal Aspects of Growth in the Primary Maize Root ,” Plant Physiol. 87, no. 2 (June 1, 1988): 529-532.-->
+				</SimulaConstant>
+				</SimulaBase>
+						
+		<SimulaBase name="seminal">				
+				<SimulaConstant name="numberOfXylemPoles" type="int">
+					 24 <!--value unknown, was 4-->
+				</SimulaConstant>
+				<SimulaConstant name="regularTopology" type="int">
+					 1 <!--value unknown-->
+				</SimulaConstant>	 
+				
+				<SimulaBase name="branchList">
+						<SimulaBase name="lateral">
+								<!--SimulaConstant  name="branchingFrequency" unit="cm">0.4</SimulaConstant-->
+								<SimulaStochastic  name="branchingFrequency" unit="cm" distribution="uniform" minimum="0.05" maximum="0.25" /> 
+								<SimulaConstant  name="lengthRootTip" unit="cm"> 10.93 <!--original value: 10.93 --></SimulaConstant>
+								<SimulaConstant name="allowBranchesToFormAboveGround" type="bool">false</SimulaConstant>
+						</SimulaBase>
+				</SimulaBase>
+				<SimulaConstant  name="density" unit="g/cm3">
+					 0.094
+				</SimulaConstant>
+		</SimulaBase>
+
+<!--PARAMETERS FOR lateral ROOTS-->
+		<SimulaBase name="nodalroots">				
+				<SimulaConstant name="numberOfXylemPoles" type="int">
+					 24 <!--value unknown, was 4-->
+				</SimulaConstant>
+				<SimulaConstant name="regularTopology" type="int">
+					 0 <!--value unknown-->
+				</SimulaConstant>
+				<SimulaConstant name="topologyOffset" type="int">
+					 0 <!--value unknown-->
+				</SimulaConstant>
+					 
+				<SimulaBase name="branchList">
+					<SimulaBase name="lateral">
+						<!--SimulaConstant  name="branchingFrequency" unit="cm">0.4</SimulaConstant-->
+						<SimulaStochastic  name="branchingFrequency" unit="cm" distribution="uniform" minimum="0.1" maximum="0.3" /> 
+						<SimulaConstant  name="lengthRootTip" unit="cm"> 10.93 <!--original value: 10.93 cm-->	</SimulaConstant>
+						<SimulaConstant name="allowBranchesToFormAboveGround" type="bool">false</SimulaConstant>
+					</SimulaBase>	
+				</SimulaBase>
+				<SimulaConstant  name="density" unit="g/cm3">
+					 0.094
+				</SimulaConstant>		
+		</SimulaBase>
+		
+		<SimulaBase name="nodalroots2">
+				<SimulaConstant name="numberOfXylemPoles" type="int">
+					 24 <!--value unknown, was 4-->
+				</SimulaConstant>
+				<SimulaConstant name="regularTopology" type="int">
+					 0 <!--value unknown-->
+				</SimulaConstant>
+				<SimulaConstant name="topologyOffset" type="int">
+					 0 <!--value unknown-->
+				</SimulaConstant>
+				
+				<SimulaBase name="branchList">
+					<SimulaBase name="lateral">
+						<!--SimulaConstant  name="branchingFrequency" unit="cm">0.4</SimulaConstant-->
+						<SimulaStochastic  name="branchingFrequency" unit="cm" distribution="uniform" minimum="0.1" maximum="0.3" /> 
+						<SimulaConstant  name="lengthRootTip" unit="cm">
+								  10.93<!--original value: 10.93 cm-->
+						</SimulaConstant>
+						<SimulaConstant name="allowBranchesToFormAboveGround" type="bool">false</SimulaConstant>
+					</SimulaBase>	
+				</SimulaBase>
+				<SimulaConstant  name="density" unit="g/cm3">
+					 0.094 <!-- primary maize root 0.94 dry weight / fresh weight 1. Ali M. Pahlavanian and Wendy Kuhn Silk, “Effect of Temperature on Spatial and Temporal Aspects of Growth in the Primary Maize Root ,” Plant Physiol. 87, no. 2 (June 1, 1988): 529-532.-->
+				</SimulaConstant>
+			</SimulaBase>
+			
+			<SimulaBase name="nodalroots3">				
+				<SimulaConstant name="numberOfXylemPoles" type="int">
+					 24 <!--value unknown, was 4-->
+				</SimulaConstant>
+				<SimulaConstant name="regularTopology" type="int">
+					 0 <!--value unknown-->
+				</SimulaConstant>
+				<SimulaConstant name="topologyOffset" type="int">
+					 0 <!--value unknown-->
+				</SimulaConstant>
+					 
+				<SimulaBase name="branchList">
+					<SimulaBase name="lateral">
+						<!--SimulaConstant  name="branchingFrequency" unit="cm">0.4</SimulaConstant-->
+						<SimulaStochastic  name="branchingFrequency" unit="cm" distribution="uniform" minimum="0.1" maximum="0.3" /> 
+						<SimulaConstant  name="lengthRootTip" unit="cm"> 10.93 <!--original value: 10.93 cm-->	</SimulaConstant>
+						<SimulaConstant name="allowBranchesToFormAboveGround" type="bool">false</SimulaConstant>
+					</SimulaBase>	
+				</SimulaBase>
+				<SimulaConstant  name="density" unit="g/cm3">
+					 0.094
+				</SimulaConstant>		
+			</SimulaBase>
+			
+			<SimulaBase name="nodalroots4">				
+				<SimulaConstant name="numberOfXylemPoles" type="int">
+					 24 <!--value unknown, was 4-->
+				</SimulaConstant>
+				<SimulaConstant name="regularTopology" type="int">
+					 0 <!--value unknown-->
+				</SimulaConstant>
+				<SimulaConstant name="topologyOffset" type="int">
+					 0 <!--value unknown-->
+				</SimulaConstant>
+					 
+				<SimulaBase name="branchList">
+					<SimulaBase name="lateral">
+						<!--SimulaConstant  name="branchingFrequency" unit="cm">0.4</SimulaConstant-->
+						<SimulaStochastic  name="branchingFrequency" unit="cm" distribution="uniform" minimum="0.1" maximum="0.3" /> 
+						<SimulaConstant  name="lengthRootTip" unit="cm"> 10.93 <!--original value: 10.93 cm-->	</SimulaConstant>
+						<SimulaConstant name="allowBranchesToFormAboveGround" type="bool">false</SimulaConstant>
+					</SimulaBase>	
+				</SimulaBase>
+				<SimulaConstant  name="density" unit="g/cm3">
+					 0.094
+				</SimulaConstant>		
+			</SimulaBase>
+				
+			<SimulaBase name="lateralOfCrownRoots">
+				<SimulaConstant name="numberOfXylemPoles" type="int">
+					 24 <!--value unknown, was 4-->
+				</SimulaConstant>
+				<SimulaConstant name="regularTopology" type="int">
+					 0 <!--value unknown-->
+				</SimulaConstant>
+				<SimulaConstant name="topologyOffset" type="int">
+					 0 <!--value unknown-->
+				</SimulaConstant>
+				
+				<SimulaBase name="branchList">
+					<SimulaBase name="lateral">
+					<!--///@todo: these may actually be thicker and longer roots-->
+						<!--SimulaConstant  name="branchingFrequency" unit="cm">0.5</SimulaConstant-->
+						<SimulaStochastic  name="branchingFrequency" unit="cm" distribution="uniform" minimum="0.25" maximum="0.35" /> 
+						<SimulaConstant name="lengthRootTip" unit="cm">	6 </SimulaConstant>
+						<SimulaConstant name="allowBranchesToFormAboveGround" type="bool">false</SimulaConstant>
+					</SimulaBase>	
+				</SimulaBase>
+				<SimulaConstant  name="density" unit="g/cm3">
+					 0.094 <!-- primary maize root 0.94 dry weight / fresh weight 1. Ali M. Pahlavanian and Wendy Kuhn Silk, “Effect of Temperature on Spatial and Temporal Aspects of Growth in the Primary Maize Root ,” Plant Physiol. 87, no. 2 (June 1, 1988): 529-532.-->
+				</SimulaConstant>
+		</SimulaBase>		
+			
+		<SimulaBase name="lateral">											
+				<SimulaConstant name="numberOfXylemPoles" type="int">
+					 24 <!--value unknown, was 4-->
+				</SimulaConstant>
+				<SimulaConstant name="regularTopology" type="int">
+					 0 <!--value unknown-->
+				</SimulaConstant>
+				<SimulaConstant name="topologyOffset" type="int">
+					 0 <!--value unknown-->
+				</SimulaConstant>	 
+				
+				<SimulaBase name="branchList">
+					<SimulaBase name="finelateral">
+						<!--SimulaConstant  name="branchingFrequency" unit="cm">0.5</SimulaConstant-->
+						<SimulaStochastic  name="branchingFrequency" unit="cm" distribution="uniform" minimum="0.15" maximum="0.35" /> 
+						<SimulaConstant name="lengthRootTip" unit="cm">	4 </SimulaConstant>
+						<SimulaConstant name="allowBranchesToFormAboveGround" type="bool">false</SimulaConstant>
+					</SimulaBase>	
+				</SimulaBase>
+				<SimulaConstant  name="density" unit="g/cm3">
+					 0.094
+				</SimulaConstant>
+		</SimulaBase>
+		
+		<SimulaBase name="finelateral">
+				<SimulaConstant name="numberOfXylemPoles" type="int">
+					 24 <!--value unknown, was 4-->
+				</SimulaConstant>
+				<SimulaConstant name="regularTopology" type="int">
+					 0 <!--value unknown-->
+				</SimulaConstant>
+				<SimulaConstant name="topologyOffset" type="int">
+					 0 <!--value unknown-->   
+				</SimulaConstant>
+				<SimulaBase name="branchList">
+					<SimulaBase name="finelateral2">
+						<!--SimulaConstant  name="branchingFrequency" unit="cm">0.5</SimulaConstant-->
+						<SimulaStochastic  name="branchingFrequency" unit="cm" distribution="uniform" minimum="0.4" maximum="0.6" /> 
+						<SimulaConstant name="lengthRootTip" unit="cm">	1.5 </SimulaConstant>
+						<SimulaConstant name="allowBranchesToFormAboveGround" type="bool">false</SimulaConstant>
+					</SimulaBase>
+				</SimulaBase>
+				<SimulaConstant  name="density" unit="g/cm3">
+					 0.094
+				</SimulaConstant>
+		</SimulaBase>
+		
+		<SimulaBase name="finelateral2">
+				<SimulaConstant name="numberOfXylemPoles" type="int">
+					 24 <!--value unknown, was 4-->
+				</SimulaConstant>
+				<SimulaBase name="branchList">
+				</SimulaBase>
+				<SimulaConstant  name="density" unit="g/cm3">
+					 0.094 <!-- primary maize root 0.94 dry weight / fresh weight 1. Ali M. Pahlavanian and Wendy Kuhn Silk, “Effect of Temperature on Spatial and Temporal Aspects of Growth in the Primary Maize Root ,” Plant Physiol. 87, no. 2 (June 1, 1988): 529-532.-->
+				</SimulaConstant>
+		</SimulaBase>
+		
+		<!--SimulaIncludeFile fileName="plantParameters/Maize/aerenchyma.xml"/-->
+		<SimulaIncludeFile fileName="plantParameters/Maize/respiration.xml"/>
+		<SimulaIncludeFile fileName="plantParameters/Maize/exudates.xml"/>
+		<SimulaIncludeFile fileName="plantParameters/Maize/growthrates-AD.xml"/>
+		<SimulaIncludeFile fileName="plantParameters/Maize/nitrate-AD.xml"/>
+		<SimulaIncludeFile fileName="plantParameters/Maize/angles+gravitro.xml"/>
+		<SimulaIncludeFile fileName="plantParameters/Maize/includeTopBoundary.xml"/>
+		<SimulaIncludeFile fileName="plantParameters/Maize/keepRootsInsideBox.xml"/>
+	</SimulaBase>
+	</SimulationModelIncludeFile>			
+

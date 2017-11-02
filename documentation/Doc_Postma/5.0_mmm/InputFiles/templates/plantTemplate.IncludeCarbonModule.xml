@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Simulation file for SimRoot version 5. 
+
+	Author: Jouke Postma
+	Note: 
+	This file is an include file and contains the plantTemplate. You can control here 
+	what parameters are simulated for the plant. It has sections for the whole plant, 
+	the shoot, the hypocotyl and the roots and the datapoints (which are the nodes 
+	the root is made up from). 
+	This file contains the settings for the respiration calculations for simroot. 
+
+	
+	PLEASE KEEP THIS HEADER UP TO DATE! LIST BELOW WHO YOU ARE, WHEN AND WHAT CHANGES YOU MADE AND WHY. LIST YOUR SOURCE AS MUCH AS POSSIBLE!
+
+	change log:
+-->
+
+<SimulationModelIncludeFile>
+
+<!--PlantTemplate-->
+	<SimulaDirective path="/plantTemplate">
+		<SimulaVariable name="plantCarbonIncome" unit="g" function="plantCarbonIncomeRate" />
+		<SimulaVariable name="carbonAvailableForGrowth" unit="g" function="carbonAvailableForGrowth"/>
+		<SimulaVariable name="carbonReserves" unit="g" function="carbonReserves" integrationFunction="Heuns"/><!-- stores & releases carbon-->
+		<SimulaVariable name="reserves" unit="g" Xfunction="reserves" function="reservesSinkBased" /><!--these are seed reserves-->
+		<SimulaDerivative name="plantCarbonBalance" unit="g" function="plantCarbonBalance" />
+	</SimulaDirective>	
+
+<!--ShootTemplate-->
+	<SimulaDirective path="/shootTemplate">
+		<SimulaDerivative name="lightInterception" unit="uMol/cm2/day" function="lightInterception" />
+		<SimulaVariable name="photosynthesis" unit="g" function="photosynthesisLintulV2" />
+		<SimulaVariable name="potentialLeafArea" unit="cm2" function="potentialLeafGrowthRate" />
+		<SimulaDerivative name="leafAreaReductionCoefficient" unit="cm2/cm2" function="leafAreaReductionCoefficient" />
+	</SimulaDirective>
+
+<!--HypocotylTemplate-->
+	<SimulaDirective path="/hypocotylTemplate">
+		<SimulaDirective path="growthpoint">
+			<SimulaVariable name="rootPotentialLongitudinalGrowth" unit="cm" function="potentialRootGrowthRate"/>
+		</SimulaDirective>
+	</SimulaDirective>
+
+<!--Sibling root template-->
+	<SimulaDirective path="/siblingRootTemplate">
+		<SimulaDirective path="growthpoint">
+			<SimulaVariable name="rootPotentialLongitudinalGrowth" unit="cm" function="potentialRootGrowthRate"/>
+		</SimulaDirective>
+	</SimulaDirective>
+
+<!--DataPointTemplate-->
+	<SimulaDirective path="/dataPointTemplate">
+	</SimulaDirective>
+
+</SimulationModelIncludeFile>
+

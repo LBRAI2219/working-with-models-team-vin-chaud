@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--
+this keeps roots inside a predefined box
+-->
+<SimulationModelIncludeFile>
+	<SimulaDirective path="hypocotyl">
+		<SimulaConstant name="bottomBoundary" type="bool">1</SimulaConstant>
+		<SimulaConstant name="bounceOfTheSide" type="bool">1</SimulaConstant>
+	</SimulaDirective>
+	<SimulaDirective path="primaryRoot">
+		<SimulaConstant name="bottomBoundary" type="bool">1</SimulaConstant>
+		<SimulaConstant name="bounceOfTheSide" type="bool">1</SimulaConstant>
+	</SimulaDirective>
+	<SimulaDirective path="braceroots">
+		<SimulaConstant name="bottomBoundary" type="bool">1</SimulaConstant>
+		<SimulaConstant name="bounceOfTheSide" type="bool">1</SimulaConstant>
+	</SimulaDirective>
+	<SimulaDirective path="braceroots2">
+		<SimulaConstant name="bottomBoundary" type="bool">1</SimulaConstant>
+		<SimulaConstant name="bounceOfTheSide" type="bool">1</SimulaConstant>
+	</SimulaDirective>
+	<SimulaDirective path="seminal">
+		<SimulaConstant name="bottomBoundary" type="bool">1</SimulaConstant>
+		<SimulaConstant name="bounceOfTheSide" type="bool">1</SimulaConstant>
+	</SimulaDirective>
+	<SimulaDirective path="nodalroots">
+		<SimulaConstant name="bottomBoundary" type="bool">1</SimulaConstant>
+		<SimulaConstant name="bounceOfTheSide" type="bool">1</SimulaConstant>
+	</SimulaDirective>
+	<SimulaDirective path="nodalroots2">
+		<SimulaConstant name="bottomBoundary" type="bool">1</SimulaConstant>
+		<SimulaConstant name="bounceOfTheSide" type="bool">1</SimulaConstant>
+	</SimulaDirective>
+	<SimulaDirective path="nodalroots3">
+		<SimulaConstant name="bottomBoundary" type="bool">1</SimulaConstant>
+		<SimulaConstant name="bounceOfTheSide" type="bool">1</SimulaConstant>
+	</SimulaDirective>
+	<SimulaDirective path="nodalroots4">
+		<SimulaConstant name="bottomBoundary" type="bool">1</SimulaConstant>
+		<SimulaConstant name="bounceOfTheSide" type="bool">1</SimulaConstant>
+	</SimulaDirective>
+	<SimulaDirective path="lateralOfCrownRoots">
+		<SimulaConstant name="bottomBoundary" type="bool">1</SimulaConstant>
+		<SimulaConstant name="bounceOfTheSide" type="bool">1</SimulaConstant>
+	</SimulaDirective>
+	<SimulaDirective path="lateral">
+		<SimulaConstant name="bottomBoundary" type="bool">1</SimulaConstant>
+		<SimulaConstant name="bounceOfTheSide" type="bool">1</SimulaConstant>
+	</SimulaDirective>
+	<SimulaDirective path="finelateral">
+		<SimulaConstant name="bottomBoundary" type="bool">1</SimulaConstant>
+		<SimulaConstant name="bounceOfTheSide" type="bool">1</SimulaConstant>
+	</SimulaDirective>
+	<SimulaDirective path="finelateral2">
+		<SimulaConstant name="bottomBoundary" type="bool">1</SimulaConstant>
+		<SimulaConstant name="bounceOfTheSide" type="bool">1</SimulaConstant>
+	</SimulaDirective>
+</SimulationModelIncludeFile>

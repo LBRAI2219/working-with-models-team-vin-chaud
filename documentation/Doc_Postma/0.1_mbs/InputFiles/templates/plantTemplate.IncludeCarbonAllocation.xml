@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Includes templates for allocation of carbon-->
+
+<SimulationModelIncludeFile>
+<!--PlantTemplate-->
+	<SimulaDirective path="/plantTemplate">
+		<SimulaVariable name="rootGrowthScalingFactor" unit="100%" function="rootGrowthScalingFactor" maxTimeStep="0.1" minTimeStep="0.1" />
+		<SimulaVariable name="rootGrowthScalingFactor;majorAxis" unit="100%" function="rootGrowthScalingFactor" maxTimeStep="0.1" minTimeStep="0.1"  />
+		<SimulaVariable name="secondaryRootGrowthScalingFactor" unit="100%" function="rootGrowthScalingFactor" maxTimeStep="0.1" minTimeStep="0.1"  />
+		<!--SimulaConstant name="rootGrowthScalingFactor" unit="100%" function="rootGrowthScalingFactor" >1</SimulaConstant-->
+		<!-- ///@todo: useDerivative -->
+		<!--SimulaConstant name="targetK" note="log(DWshoot)/log(DWroot)"  unit="noUnit">0.8</SimulaConstant-->
+		<!-- ///@todo: write this -->
+		<!-- SimulaDerivative name="actualK" note="log(DWleaf)/log(DWroot)" unit="noUnit" function="allometricRatio">0.8</SimulaDerivative-->
+		<!-- ///@todo: write this 1) fixed allocation 2) to meet targeted K 3) to maintain nutrient homeostasis?-->
+		<!-- this is relative to total carbon available for growth-->
+		<SimulaDerivative name="relativeCarbonAllocation2Roots"  unit="100%" Xfunction="relativeCarbonAllocation2RootsFromInputFile" Ffunction="relativeCarbonAllocation2RootsScaledGrowth" functionK="relativeCarbonAllocation2RootsPotentialGrowth"  function="relativeCarbonAllocation2RootsOneMinusShoot" />
+		<SimulaDerivative name="relativeCarbonAllocation2Shoot"  unit="100%" Rfunction="relativeCarbonAllocation2ShootFromInputFile" Ffunction="relativeCarbonAllocation2ShootScaledGrowth" function="relativeCarbonAllocation2ShootPotentialGrowth" functionJ="relativeCarbonAllocation2ShootSwitch"/>
+		<SimulaVariable name="carbonAllocation2Shoot" unit="g" function="carbonAllocation2Shoot" />
+		<SimulaVariable name="carbonAllocation2Roots" unit="g" function="carbonAllocation2Roots" />
+	</SimulaDirective>	
+
+<!--ShootTemplate-->
+	<SimulaDirective path="/shootTemplate">
+		<SimulaDerivative name="relativeCarbonAllocation2Stems"  unit="100%" function="relativeCarbonAllocation2StemsOneMinusLeafs" />
+		<SimulaDerivative name="relativeCarbonAllocation2Leafs"  unit="100%" function="relativeCarbonAllocation2LeafsFromInputFile" />
+		<SimulaVariable name="carbonAllocation2Leafs" unit="g" function="carbonAllocation2Leafs" />
+		<SimulaVariable name="carbonAllocation2Stems" unit="g" function="carbonAllocation2Stems" />
+	</SimulaDirective>
+
+</SimulationModelIncludeFile>
+

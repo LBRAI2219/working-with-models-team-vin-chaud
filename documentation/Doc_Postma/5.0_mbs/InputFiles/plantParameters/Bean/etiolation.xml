@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- etiolation parameters for bean	-->
+	<!-- THis file is currently not used anymore-->
+<SimulationModelIncludeFile>
+	<SimulaDirective path="hypocotyl">
+		<SimulaTable name_colum1="stressFactor" unit_colum1="100%" name_colum2="etiolationStressResponse"
+			unit_colum2="100%"
+		>
+			<!--
+				reduce secondary growth when there is stress : 1 no stress, 0 full stress, 1 no etiolation, 0 no secondary growth
+			-->
+			1 1 0 0
+		</SimulaTable>
+	</SimulaDirective>
+	<SimulaDirective path="primaryRoot">
+		<SimulaTable name_colum1="stressFactor" unit_colum1="100%" name_colum2="etiolationStressResponse"
+			unit_colum2="100%"
+		>
+			<!--
+				reduce secondary growth when there is stress : 1 no stress, 0 full stress, 1 no etiolation, 0 no secondary growth
+			-->
+			1 1 0 0
+		</SimulaTable>
+	</SimulaDirective>
+	<SimulaDirective path="basalWhorl1">
+		<SimulaTable name_colum1="stressFactor" unit_colum1="100%" name_colum2="etiolationStressResponse"
+			unit_colum2="100%"
+		>
+			<!--
+				reduce secondary growth when there is stress : 1 no stress, 0 full stress, 1 no etiolation, 0 no secondary growth
+			-->
+			1 1 0 0
+		</SimulaTable>
+	</SimulaDirective>
+	<SimulaDirective path="basalWhorl2">
+		<SimulaTable name_colum1="stressFactor" unit_colum1="100%" name_colum2="etiolationStressResponse"
+			unit_colum2="100%"
+		>
+			<!--
+				reduce secondary growth when there is stress : 1 no stress, 0 full stress, 1 no etiolation, 0 no secondary growth
+			-->
+			1 1 0 0
+		</SimulaTable>
+	</SimulaDirective>
+	<SimulaDirective path="basalWhorl3">
+		<SimulaTable name_colum1="stressFactor" unit_colum1="100%" name_colum2="etiolationStressResponse"
+			unit_colum2="100%"
+		>
+			<!--
+				reduce secondary growth when there is stress : 1 no stress, 0 full stress, 1 no etiolation, 0 no secondary growth
+			-->
+			1 1 0 0
+		</SimulaTable>
+	</SimulaDirective>
+	<SimulaDirective path="hypocotylBornRoots">
+		<SimulaTable name_colum1="stressFactor" unit_colum1="100%" name_colum2="etiolationStressResponse"
+			unit_colum2="100%"
+		>
+			<!--
+				reduce secondary growth when there is stress : 1 no stress, 0 full stress, 1 no etiolation, 0 no secondary growth
+			-->
+			1 1 0 0
+		</SimulaTable>
+	</SimulaDirective>
+	<SimulaDirective path="lateralPrimaryRoot">
+		<SimulaTable name_colum1="stressFactor" unit_colum1="100%" name_colum2="etiolationStressResponse"
+			unit_colum2="100%"
+		>
+			<!--
+				reduce secondary growth when there is stress : 1 no stress, 0 full stress, 1 no etiolation, 0 no secondary growth
+			-->
+			1 1 0 0
+		</SimulaTable>
+	</SimulaDirective>
+	<SimulaDirective path="lateralPrimaryRootFastGrowing">
+		<SimulaTable name_colum1="stressFactor" unit_colum1="100%" name_colum2="etiolationStressResponse"
+			unit_colum2="100%"
+		>
+			<!--
+				reduce secondary growth when there is stress : 1 no stress, 0 full stress, 1 no etiolation, 0 no secondary growth
+			-->
+			1 1 0 0
+		</SimulaTable>
+	</SimulaDirective>
+	<SimulaDirective path="lateralBasalRoots">
+		<SimulaTable name_colum1="stressFactor" unit_colum1="100%" name_colum2="etiolationStressResponse"
+			unit_colum2="100%"
+		>
+			<!--
+				reduce secondary growth when there is stress : 1 no stress, 0 full stress, 1 no etiolation, 0 no secondary growth
+			-->
+			1 1 0 0
+		</SimulaTable>
+	</SimulaDirective>
+	<SimulaDirective path="lateralHypocotylBornRoots">
+		<SimulaTable name_colum1="stressFactor" unit_colum1="100%" name_colum2="etiolationStressResponse"
+			unit_colum2="100%"
+		>
+			<!--
+				reduce secondary growth when there is stress : 1 no stress, 0 full stress, 1 no etiolation, 0 no secondary growth
+			-->
+			1 1 0 0
+		</SimulaTable>
+	</SimulaDirective>
+	<SimulaDirective path="finelateral">
+		<SimulaTable name_colum1="stressFactor" unit_colum1="100%" name_colum2="etiolationStressResponse"
+			unit_colum2="100%"
+		>
+			<!--
+				reduce secondary growth when there is stress : 1 no stress, 0 full stress, 1 no etiolation, 0 no secondary growth
+			-->
+			1 1 0 0
+		</SimulaTable>
+	</SimulaDirective>
+	<SimulaDirective path="finelateralFastGrowing">
+		<SimulaTable name_colum1="stressFactor" unit_colum1="100%" name_colum2="etiolationStressResponse"
+			unit_colum2="100%"
+		>
+			<!--
+				reduce secondary growth when there is stress : 1 no stress, 0 full stress, 1 no etiolation, 0 no secondary growth
+			-->
+			1 1 0 0
+		</SimulaTable>
+	</SimulaDirective>
+</SimulationModelIncludeFile>

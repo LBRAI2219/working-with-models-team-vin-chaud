@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	This file contains the settings for the respiration calculations for simroot. 
+-->
+
+<SimulationModelIncludeFile>
+<!--PlantTemplate-->
+	<SimulaDirective path="/plantTemplate">
+		<SimulaVariable name="plantPotentialCarbonSinkForGrowth" unit="g" function="plantTotal" />
+		
+		<!-- plant total will include secondary growth here -->
+		<SimulaVariable name="rootPotentialCarbonSinkForGrowth"  unit="g" function="plantTotal" />
+		<SimulaVariable name="rootPotentialCarbonSinkForGrowth;majorAxis"  unit="g" function="plantTotal" />
+		
+		<SimulaVariable name="rootSecondaryPotentialCarbonSinkForGrowth"  unit="g" function="plantTotal" />
+		<SimulaVariable name="shootPotentialCarbonSinkForGrowth" unit="g" function="plantTotal" />
+	</SimulaDirective>	
+
+<!--ShootTemplate-->
+	<SimulaDirective path="/shootTemplate">
+		<SimulaVariable name="leafPotentialCarbonSinkForGrowth" unit="g" function="leafPotentialCarbonSinkForGrowth" />
+		<SimulaVariable name="stemPotentialCarbonSinkForGrowth" unit="g" function="stemPotentialCarbonSinkForGrowth" />
+	</SimulaDirective>
+
+<!--HypocotylTemplate-->
+	<SimulaDirective path="/hypocotylTemplate">
+		<SimulaDirective path="growthpoint">
+			<SimulaVariable name="rootSegmentPotentialCarbonSinkForGrowth"  unit="g" function="rootNodePotentialCarbonSinkForGrowth" />
+			<SimulaConstant name="rootSegmentSecondaryPotentialCarbonSinkForGrowth"  unit="g" />
+		</SimulaDirective>
+		<!--SimulaVariable name="rootPotentialCarbonSinkForGrowth"  unit="g" function="rootTotalRates" /-->
+		<SimulaVariable name="rootSystemPotentialCarbonSinkForGrowth"  unit="g" function="rootSystemTotalRates" />
+		<SimulaVariable name="rootSystemPotentialCarbonSinkForGrowth;majorAxis"  unit="g" function="rootSystemTotalRates">
+		  0 
+		  <SimulaConstant name="includedRootClasses" type="string">
+		  		hypocotyl, 
+		  		primaryRoot,	 
+		  		seminal, 
+		  		nodalroots, nodalroots1, nodalroots2, nodalroots3, nodalroots4, nodalroots5,
+		  		braceroots, braceroots1, braceroots2, braceroots3, 
+		  		basalWhorl1, 
+		  		basalWhorl2, 
+		  		basalWhorl3, 
+		  		basalWhorl4
+		  </SimulaConstant>
+		</SimulaVariable>
+		<SimulaVariable name="rootSecondaryPotentialCarbonSinkForGrowth"  unit="g" function="rootTotalRates" />
+		<SimulaVariable name="rootSystemSecondaryPotentialCarbonSinkForGrowth"  unit="g" function="rootSystemTotalRates" />
+	</SimulaDirective>
+
+<!--Sibling root template-->
+	<SimulaDirective path="/siblingRootTemplate">
+		<SimulaDirective path="growthpoint">
+			<SimulaVariable name="rootSegmentPotentialCarbonSinkForGrowth"  unit="g" function="rootNodePotentialCarbonSinkForGrowth" />
+			<SimulaConstant name="rootSegmentSecondaryPotentialCarbonSinkForGrowth"  unit="g" />
+		</SimulaDirective>
+		<!--SimulaVariable name="rootPotentialCarbonSinkForGrowth"  unit="g" function="rootTotalRates" /-->
+		<SimulaVariable name="rootSystemPotentialCarbonSinkForGrowth"  unit="g" function="rootSystemTotalRates" />
+		<SimulaVariable name="rootSystemPotentialCarbonSinkForGrowth;majorAxis"  unit="g" function="rootSystemTotalRates">
+		  0 
+		  <SimulaConstant name="includedRootClasses" type="string">
+		  		hypocotyl, 
+		  		primaryRoot,	 
+		  		seminal, 
+		  		nodalroots, nodalroots1, nodalroots2, nodalroots3, nodalroots4, nodalroots5,
+		  		braceroots, braceroots1, braceroots2, braceroots3, 
+		  		basalWhorl1, 
+		  		basalWhorl2, 
+		  		basalWhorl3, 
+		  		basalWhorl4
+		  </SimulaConstant>
+		</SimulaVariable>
+		<SimulaVariable name="rootSecondaryPotentialCarbonSinkForGrowth"  unit="g" function="rootTotalRates" />
+		<SimulaVariable name="rootSystemSecondaryPotentialCarbonSinkForGrowth"  unit="g" function="rootSystemTotalRates" />
+	</SimulaDirective>
+
+<!--DataPointTemplate-->
+	<SimulaDirective path="/dataPointTemplate">
+		<SimulaVariable name="rootSegmentSecondaryPotentialCarbonSinkForGrowth"  unit="g" function="rootNodePotentialCarbonSinkForGrowth" />
+		<!--SimulaConstant name="rootSegmentPotentialCarbonSinkForGrowth"  unit="g" /-->
+	</SimulaDirective>
+</SimulationModelIncludeFile>
+

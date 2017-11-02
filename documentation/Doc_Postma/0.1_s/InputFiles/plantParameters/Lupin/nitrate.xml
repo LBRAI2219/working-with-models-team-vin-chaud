@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Shoot N concentrations for lupin (Dunbabin, e-mail 14 jul 2010):
+
+N(%), deficient 1.1-2.3, marginal 2.5-2.8, adequate 3.2-6.0
+N (g/kg), deficient 11-23, marginal 25-28, adequate 32-60.
+N (umol/g), deficient 785-1642, marginal 1786-20000, adequate 2286-4286.
+
+Dunbabin is working with the values of 46 gN/kg = 3285 
+
+-->
+<!--
+Barberbook:
+Imax=1.9       #6.43 nmol/m2/s= 0.643 pmol/cm2/s = 55.55 10-3 umol/cm2/day
+Km= 16.1e-3    #umol/mL
+--> 
+<SimulationModelIncludeFile>
+	<SimulaDirective path="resources">
+		<SimulaBase name="nitrate">
+			<!--this represents the nutrients in the seed , should be enough for the first 0 days ~ 100-200 uMol/g -->
+			<SimulaConstant name="initialNutrientUptake" unit="uMol"> 150 </SimulaConstant>
+		</SimulaBase>
+	</SimulaDirective>
+	<SimulaDirective path="shoot">
+	<SimulaBase name="nitrate">
+		<SimulaConstant name="leafOptimalNutrientConcentration" unit="uMol/g"> 2000 </SimulaConstant>
+		<SimulaConstant name="stemOptimalNutrientConcentration" unit="uMol/g"> 2000 </SimulaConstant>
+		<SimulaConstant name="leafMinimalNutrientConcentration" unit="uMol/g"> 785 </SimulaConstant>
+		<SimulaConstant name="stemMinimalNutrientConcentration" unit="uMol/g"> 785 </SimulaConstant>
+	</SimulaBase>
+	</SimulaDirective>
+	<SimulaDirective path="hypocotyl">
+		<SimulaBase name="nitrate">
+			<SimulaConstant name="optimalNutrientConcentration" unit="uMol/g"> 1200</SimulaConstant>
+			<SimulaConstant name="minimalNutrientConcentration" unit="uMol/g"> 600</SimulaConstant>
+			<SimulaConstant name="Imax" unit="uMol/cm2/day"> 1.9</SimulaConstant>
+			<SimulaConstant name="Km" unit="uMol/ml"> 16.1e-3</SimulaConstant>
+			<SimulaConstant name="Cmin" unit="uMol/ml"> 1.0e-3</SimulaConstant>
+		</SimulaBase>
+	</SimulaDirective>
+	<SimulaDirective path="primaryRoot">
+		<SimulaBase name="nitrate">
+			<SimulaConstant name="optimalNutrientConcentration" unit="uMol/g"> 1200</SimulaConstant>
+			<SimulaConstant name="minimalNutrientConcentration" unit="uMol/g"> 600</SimulaConstant>
+			<SimulaConstant name="Imax" unit="uMol/cm2/day"> 1.9</SimulaConstant>
+			<SimulaConstant name="Km" unit="uMol/ml"> 16.1e-3</SimulaConstant>
+			<SimulaConstant name="Cmin" unit="uMol/ml"> 1.0e-3</SimulaConstant>
+		</SimulaBase>
+	</SimulaDirective>
+	<SimulaDirective path="lateralPrimaryRoot">
+		<SimulaBase name="nitrate">
+			<SimulaConstant name="optimalNutrientConcentration" unit="uMol/g"> 1200</SimulaConstant>
+			<SimulaConstant name="minimalNutrientConcentration" unit="uMol/g"> 600</SimulaConstant>
+			<SimulaConstant name="Imax" unit="uMol/cm2/day"> 1.9</SimulaConstant>
+			<SimulaConstant name="Km" unit="uMol/ml"> 16.1e-3</SimulaConstant>
+			<SimulaConstant name="Cmin" unit="uMol/ml"> 1.0e-3</SimulaConstant>
+		</SimulaBase>
+	</SimulaDirective>
+	<SimulaDirective path="finelateral">
+		<SimulaBase name="nitrate">
+			<SimulaConstant name="optimalNutrientConcentration" unit="uMol/g"> 1200</SimulaConstant>
+			<SimulaConstant name="minimalNutrientConcentration" unit="uMol/g"> 600</SimulaConstant>
+			<SimulaConstant name="Imax" unit="uMol/cm2/day"> 1.9</SimulaConstant>
+			<SimulaConstant name="Km" unit="uMol/ml"> 16.1e-3</SimulaConstant>
+			<SimulaConstant name="Cmin" unit="uMol/ml"> 1.0e-3</SimulaConstant>
+		</SimulaBase>
+	</SimulaDirective>
+
+</SimulationModelIncludeFile>

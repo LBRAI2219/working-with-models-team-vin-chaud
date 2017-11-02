@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Simulation file for SimRoot version 5. 
+
+	Author: Jouke Postma
+	Note: 
+	This file is an include file and contains the plantTemplate. You can control here 
+	what parameters are simulated for the plant. It has sections for the whole plant, 
+	the shoot, the hypocotyl and the roots and the datapoints (which are the nodes 
+	the root is made up from). 
+	This file contains the length, volume and surface area calculations for simroot. It
+  is unlikely that you'll need to change anything here.
+
+	
+	PLEASE KEEP THIS HEADER UP TO DATE! LIST BELOW WHO YOU ARE, WHEN AND WHAT CHANGES YOU MADE AND WHY. LIST YOUR SOURCE AS MUCH AS POSSIBLE!
+
+	change log:
+-->
+
+<SimulationModelIncludeFile>
+<!--PlantTemplate-->
+	<SimulaDirective path="/plantTemplate">
+		<SimulaDerivative name="rootLength;majorAxis" unit="cm" function="plantTotalRootFraction" />
+		<SimulaDerivative name="rootLength;lateralsFastGrowing" unit="cm" function="plantTotalRootFraction" />
+	</SimulaDirective>	
+
+<!--ShootTemplate-->
+	<SimulaDirective path="/shootTemplate">
+	</SimulaDirective>
+
+<!--HypocotylTemplate-->
+	<SimulaDirective path="/hypocotylTemplate">
+		<SimulaDerivative name="rootSystemLength;lateralsFastGrowing"  unit="cm" function="rootSystemTotal">
+		  <SimulaConstant name="includedRootClasses" type="string">
+		  		lateralPrimaryRootFastGrowing, finelateralFastGrowing
+		  </SimulaConstant>
+		</SimulaDerivative>
+		<SimulaDerivative name="rootSystemLength;majorAxis"  unit="cm" function="rootSystemTotal">
+		  <SimulaConstant name="includedRootClasses" type="string">
+		  		hypocotyl, 
+		  		primaryRoot,	 
+		  		seminal, 
+		  		nodalroots, nodalroots1, nodalroots2, nodalroots3, nodalroots4, nodalroots5,
+		  		braceroots, braceroots1, braceroots2, braceroots3, 
+		  		basalWhorl1, 
+		  		basalWhorl2, 
+		  		basalWhorl3, 
+		  		basalWhorl4
+		  </SimulaConstant>
+		</SimulaDerivative>
+	</SimulaDirective>
+
+<!--Sibling root template-->
+	<SimulaDirective path="/siblingRootTemplate">
+		<SimulaDerivative name="rootSystemLength;lateralsFastGrowing"  unit="cm" function="rootSystemTotal">
+		  <SimulaConstant name="includedRootClasses" type="string">
+		  	lateralPrimaryRootFastGrowing, finelateralFastGrowing
+		  </SimulaConstant>
+		</SimulaDerivative>
+		<SimulaDerivative name="rootSystemLength;majorAxis"  unit="cm" function="rootSystemTotal">
+		  <SimulaConstant name="includedRootClasses" type="string">
+		  		hypocotyl, 
+		  		primaryRoot,	 
+		  		seminal, 
+		  		nodalroots, nodalroots1, nodalroots2, nodalroots3, nodalroots4, nodalroots5,
+		  		braceroots, braceroots1, braceroots2, braceroots3, 
+		  		basalWhorl1, 
+		  		basalWhorl2, 
+		  		basalWhorl3, 
+		  		basalWhorl4
+		  </SimulaConstant>
+		</SimulaDerivative>
+	</SimulaDirective>
+
+</SimulationModelIncludeFile>
+

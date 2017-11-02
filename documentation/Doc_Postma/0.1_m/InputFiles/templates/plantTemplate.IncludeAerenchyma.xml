@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Simulation file for SimRoot version 5. 
+
+	Author: Jouke Postma
+	Note: 
+	This file is an include file and contains the plantTemplate. You can control here 
+	what parameters are simulated for the plant. It has sections for the whole plant, 
+	the shoot, the hypocotyl and the roots and the datapoints (which are the nodes 
+	the root is made up from). 
+	This file contains the settings for aerenchyma formation in simroot. 
+
+-->
+
+<SimulationModelIncludeFile>
+	<SimulaDirective path="/simulationControls">
+		<SimulaBase name="aerenchyma">
+			<SimulaConstant name="remobilizeP" type="bool"> false </SimulaConstant>
+			<!--note that you can also control this in the plantParameter section-->
+			<SimulaConstant name="reduceRespiration" type="bool"> false </SimulaConstant>
+			<SimulaConstant name="includePhotosynthesisEffects" type="bool"> false </SimulaConstant>
+		</SimulaBase>
+	</SimulaDirective>
+
+<!--DataPointTemplate-->
+	<SimulaDirective path="/dataPointTemplate">
+		<SimulaLink name="aerenchymaFormation" unit="100%" />
+	</SimulaDirective>
+
+</SimulationModelIncludeFile>
+

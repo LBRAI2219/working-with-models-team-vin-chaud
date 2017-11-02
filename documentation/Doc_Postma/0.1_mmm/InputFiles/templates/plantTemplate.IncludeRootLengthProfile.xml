@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SimulationModelIncludeFile>
+	<SimulaDirective path="/soil">
+	<!--this will simple allow for a root length profile-->
+		<SimulaDerivative name="RootLengthProfile_00-10" unit="cm" function="rootLengthProfile">
+			<SimulaConstant name="y1"> 0 </SimulaConstant>
+			<SimulaConstant name="y2"> -10 </SimulaConstant>
+		</SimulaDerivative>
+		<SimulaDerivative name="RootLengthProfile_10-20" unit="cm" function="rootLengthProfile">
+			<SimulaConstant name="y1"> -10 </SimulaConstant>
+			<SimulaConstant name="y2"> -20 </SimulaConstant>
+		</SimulaDerivative>
+		<SimulaDerivative name="RootLengthProfile_20-30" unit="cm" function="rootLengthProfile">
+			<SimulaConstant name="y1"> -20 </SimulaConstant>
+			<SimulaConstant name="y2"> -30 </SimulaConstant>
+		</SimulaDerivative>
+		<SimulaDerivative name="RootLengthProfile_30-40" unit="cm" function="rootLengthProfile">
+			<SimulaConstant name="y1"> -30 </SimulaConstant>
+			<SimulaConstant name="y2"> -40 </SimulaConstant>
+		</SimulaDerivative>
+		<SimulaDerivative name="RootLengthProfile_40-50" unit="cm" function="rootLengthProfile">
+			<SimulaConstant name="y1"> -40 </SimulaConstant>
+			<SimulaConstant name="y2"> -50 </SimulaConstant>
+		</SimulaDerivative>
+		<SimulaDerivative name="RootLengthProfile_50-60" unit="cm" function="rootLengthProfile">
+			<SimulaConstant name="y1"> -50 </SimulaConstant>
+			<SimulaConstant name="y2"> -60 </SimulaConstant>
+		</SimulaDerivative>
+		<SimulaDerivative name="RootLengthProfile_60-70" unit="cm" function="rootLengthProfile">
+			<SimulaConstant name="y1"> -60 </SimulaConstant>
+			<SimulaConstant name="y2"> -70 </SimulaConstant>
+		</SimulaDerivative>
+		<SimulaDerivative name="RootLengthProfile_70-80" unit="cm" function="rootLengthProfile">
+			<SimulaConstant name="y1"> -70 </SimulaConstant>
+			<SimulaConstant name="y2"> -80 </SimulaConstant>
+		</SimulaDerivative>
+		<SimulaDerivative name="RootLengthProfile_80-90" unit="cm" function="rootLengthProfile">
+			<SimulaConstant name="y1"> -80 </SimulaConstant>
+			<SimulaConstant name="y2"> -90 </SimulaConstant>
+		</SimulaDerivative>
+		<SimulaDerivative name="RootLengthProfile_90+" unit="cm" function="rootLengthProfile">
+			<SimulaConstant name="y1"> -90 </SimulaConstant>
+			<SimulaConstant name="y2"> -1000 </SimulaConstant>
+		</SimulaDerivative>
+		
+		<SimulaDerivative name="rootLengthDensityInMiddleCore_04" unit="cm/cm3" function="rootLengthDensity">
+			<SimulaConstant name="location" type="coordinate"> 0 -4 4.33 </SimulaConstant>
+			<SimulaConstant name="radius" unit="cm"> 3 </SimulaConstant>
+		</SimulaDerivative>
+		<SimulaDerivative name="rootLengthDensityInMiddleCore_12" unit="cm/cm3" function="rootLengthDensity">
+			<SimulaConstant name="location" type="coordinate"> 0 -12 4.33 </SimulaConstant>
+			<SimulaConstant name="radius" unit="cm"> 3 </SimulaConstant>
+		</SimulaDerivative>
+		<SimulaDerivative name="rootLengthDensityInMiddleCore_20" unit="cm/cm3" function="rootLengthDensity">
+			<SimulaConstant name="location" type="coordinate"> 0 -20 4.33 </SimulaConstant>
+			<SimulaConstant name="radius" unit="cm"> 3 </SimulaConstant>
+		</SimulaDerivative>
+		<SimulaDerivative name="rootLengthDensityInMiddleCore_28" unit="cm/cm3" function="rootLengthDensity">
+			<SimulaConstant name="location" type="coordinate"> 0 -28 4.33 </SimulaConstant>
+			<SimulaConstant name="radius" unit="cm"> 3 </SimulaConstant>
+		</SimulaDerivative>
+		<SimulaDerivative name="rootLengthDensityInMiddleCore_36" unit="cm/cm3" function="rootLengthDensity">
+			<SimulaConstant name="location" type="coordinate"> 0 -36 4.33 </SimulaConstant>
+			<SimulaConstant name="radius" unit="cm"> 3 </SimulaConstant>
+		</SimulaDerivative>
+		
+		
+	</SimulaDirective>	
+</SimulationModelIncludeFile>
+

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SimulationModelIncludeFile>
+<!--PlantTemplate-->
+	<SimulaDirective path="/soil">
+		<SimulaExternal name="Simunek" unit="noUnit" function="Simunek" />
+		<!--SimulaVariable name="potentialTranspiration" unit="cm3" function="sumOverPlantsShootRates" />
+		<SimulaVariable name="actualTranspiration" unit="cm3" function="sumOverPlantsShootRates" /-->
+	</SimulaDirective>	
+
+
+	<SimulaDirective path="/plantTemplate">
+		<SimulaVariable name="rootWaterUptake" unit="cm3" function="plantTotalRatesRootFraction" />
+		<SimulaVariable name="rootPotentialWaterUptake" unit="cm3" function="plantTotalRatesRootFraction"/>
+		<SimulaVariable name="innerRootTensionBase" unit="cm" function="innerRootTensionBase" integrationFunction="iterativeSolver" />
+	</SimulaDirective>	
+
+<!--ShootTemplate-->
+	<SimulaDirective path="/shootTemplate">
+		<SimulaVariable name="potentialTranspiration" unit="cm3" function="simplePotentialTranspiration" />
+		<SimulaVariable name="actualTranspiration" unit="cm3" function="actualTranspiration" />
+	</SimulaDirective>
+
+<!--HypocotylTemplate-->
+	<SimulaDirective path="/hypocotylTemplate">
+		<SimulaDirective path="growthpoint">
+			<SimulaConstant name="rootWaterUptake" unit="cm3/cm">0</SimulaConstant>
+			<SimulaConstant name="rootSegmentWaterUptake" unit="cm3">0</SimulaConstant>
+			<SimulaConstant name="rootSegmentPotentialWaterUptake" unit="cm3">0</SimulaConstant>
+		</SimulaDirective>
+		<SimulaVariable name="rootWaterUptake" unit="cm3" function="rootTotalRates" />
+		<SimulaVariable name="rootSystemWaterUptake" unit="cm3" function="rootSystemTotalRates" />
+		<SimulaVariable name="rootPotentialWaterUptake" unit="cm3" function="rootTotalRates" />
+		<SimulaVariable name="rootSystemPotentialWaterUptake" unit="cm3" function="rootSystemTotalRates" />
+	</SimulaDirective>
+
+<!--Sibling root template-->
+	<SimulaDirective path="/siblingRootTemplate">
+		<SimulaDirective path="growthpoint">
+			<SimulaConstant name="rootWaterUptake" unit="cm3/cm">0</SimulaConstant>
+			<SimulaConstant name="rootSegmentWaterUptake" unit="cm3">0</SimulaConstant>
+			<SimulaConstant name="rootSegmentPotentialWaterUptake" unit="cm3">0</SimulaConstant>
+		</SimulaDirective>
+		<SimulaVariable name="rootWaterUptake" unit="cm3" function="rootTotalRates" />
+		<SimulaVariable name="rootSystemWaterUptake" unit="cm3" function="rootSystemTotalRates" />
+		<SimulaVariable name="rootPotentialWaterUptake" unit="cm3" function="rootTotalRates" />
+		<SimulaVariable name="rootSystemPotentialWaterUptake" unit="cm3" function="rootSystemTotalRates" />
+	</SimulaDirective>
+
+<!--DataPointTemplate-->
+	<SimulaDirective path="/dataPointTemplate">
+		<SimulaVariable name="rootSegmentPotentialWaterUptake" unit="cm3" function="waterUptakeInnerRootTension" />
+		<SimulaVariable name="rootWaterUptake" unit="cm3/cm" function="scaledWaterUptake" />
+		<SimulaVariable name="rootSegmentWaterUptake" unit="cm3" function="scaledWaterUptake" />
+		<SimulaTable name_colum1="time" name_colum2="hydraulicHeadAtRootSurface" unit_colum1="day" unit_colum2="cm" function="getValuesFromSWMS" />
+		 <!--0 -400 1 -700 2 -300 3 -700 4 -300 5 -600 7 -1000 8 -100  50 -1000
+		</SimulaTable-->
+		<SimulaTable name_colum1="time" name_colum2="volumetricWaterContentAtTheRootSurface" unit_colum1="day" unit_colum2="cm3/cm3" function="getValuesFromSWMS" integrationFunction="BackwardEuler" minTimeStep="0.1" maxTimeStep="0.1" preferedTimeStep="0.101"/>
+		<SimulaDerivative name="innerRootTension" unit="cm" function="innerRootTension"/>
+		<SimulaLink name="radialHydraulicConductivity" unit="cm/day/hPa" />
+		<SimulaLink name="lengthRootTipWithoutXylemVessels" unit="cm" />
+	</SimulaDirective>
+</SimulationModelIncludeFile>
+

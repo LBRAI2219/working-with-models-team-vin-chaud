@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Simulation file for SimRoot version 5. 
+
+	Author: Jouke Postma
+	Note: 
+	This file is an include file and contains the plantTemplate. You can control here 
+	what parameters are simulated for the plant. It has sections for the whole plant, 
+	the shoot, the hypocotyl and the roots and the datapoints (which are the nodes 
+	the root is made up from). 
+	This file contains the settings for the CarbonCostOfExudates calculations for simroot. 
+
+	
+	PLEASE KEEP THIS HEADER UP TO DATE! LIST BELOW WHO YOU ARE, WHEN AND WHAT CHANGES YOU MADE AND WHY. LIST YOUR SOURCE AS MUCH AS POSSIBLE!
+
+	change log:
+-->
+
+<SimulationModelIncludeFile>
+<!--PlantTemplate-->
+	<SimulaDirective path="/plantTemplate">
+		<SimulaVariable name="rootCarbonCostOfExudates" unit="g" function="plantTotal"/>
+	</SimulaDirective>	
+
+
+<!--HypocotylTemplate-->
+	<SimulaDirective path="/hypocotylTemplate">
+		<SimulaDirective path="growthpoint">
+				<SimulaConstant name="rootSegmentCarbonCostOfExudates" unit="g" >0</SimulaConstant>
+		</SimulaDirective>
+		<SimulaVariable name="rootCarbonCostOfExudates" unit="g" function="rootTotal" />	
+		<SimulaVariable name="rootSystemCarbonCostOfExudates" unit="g" function="rootSystemTotal"/>
+	</SimulaDirective>
+
+<!--Sibling root template-->
+	<SimulaDirective path="/siblingRootTemplate">
+		<SimulaDirective path="growthpoint">
+			<SimulaConstant name="rootSegmentCarbonCostOfExudates" unit="g" >0</SimulaConstant>
+		</SimulaDirective>
+		<SimulaVariable name="rootCarbonCostOfExudates" unit="g" function="rootTotal" />		
+		<SimulaVariable name="rootSystemCarbonCostOfExudates" unit="g" function="rootSystemTotal" />
+	</SimulaDirective>
+
+<!--DataPointTemplate-->
+	<SimulaDirective path="/dataPointTemplate">
+		<SimulaDerivative name="rootSegmentCarbonCostOfExudates" unit="g/day"  function="carbonCostOfExudates"/>
+	</SimulaDirective>
+</SimulationModelIncludeFile>
+

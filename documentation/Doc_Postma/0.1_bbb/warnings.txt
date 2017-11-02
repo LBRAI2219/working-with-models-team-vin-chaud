@@ -1,0 +1,8 @@
+Simulation took (hours:minutes:seconds): 4:25:22
+THE MODEL PUT OUT WARNINGS:
+ReservesSinkBased: Expiring seed reserves at 12.000000 d.a.g. with 14.778494% of the initial 0.200000g left.	1x
+ReservesSinkBased: Expiring seed reserves at 12.000000 d.a.g. with 14.862681% of the initial 0.200000g left.	1x
+ReservesSinkBased: Expiring seed reserves at 12.000000 d.a.g. with 15.124695% of the initial 0.200000g left.	1x
+RootGrowthScaling Factor: Not enough carbon for secondary growth. Using threshold from input files to limit secondary growth	8x
+Solute::updateLists: nutrientConcentrationAtTheRootSurface not found	16830x
+Swms3d::getTimeStepSWMS: Ignoring Peclet courant criteria for timestep, as it reduces the timestep below minimum dt	401x

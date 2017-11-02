@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Simulation file for SimRoot version 5. This development version, build 17 november 2006 
+	RootSystem: Squash curcurbita monschata - waldhem butternut squash from seed savers - genotype: have to check this with ana
+	Source: Ana Maria Fita Fernandez. Data is based on pouch studies and hydropnics studies she conducted august-oktober 2006. Current e-mail: anfifer@doctor.upv.es
+	Author: Jouke Postma
+	Note: This file is created for a corn-bean-squash poly culture study conducted by Jouke Postma and Ana Maria Fita Fernandez
+	
+	PLEASE KEEP THIS HEADER UP TO DATE! LIST BELOW WHO YOU ARE, WHEN AND WHAT CHANGES YOU MADE AND WHY. LIST YOUR SOURCE AS MUCH AS POSSIBLE!
+
+	change log:
+	
+	jouke 17nov2006: adjusted growthrates using a table and estimates from the pictures from ana
+	jouke 17nov2006: split laterals into two groups, fast growing laterals and slow growing laterals that stop after ~5cm growth
+	jouke 17nov2006: created a table for branching of long laterals which becomes less frequent as the plant ages
+	jouke 11july1007: changed to include file to fit current SimRoot version.
+	jouke march 2010: updated to fit current simroot, splitted file 	
+-->
+<!--
+observations jouke:
+upto 3 orders of laterals.
+Only finest order does not have secondary growth
+some first order laterals grow very long (meter or more).
+some second order laterals still can grow long, 20 cm or so, but most stay within 10
+third order laterals are always very short, up to 1 cm. 
+primary root has all orders of laterals (fine to heavily developed). 
+lateral branching is sparce 1-3 per cm with fine order being more regular about 4/cm
+fourth order laterals are sometimes formed but hard to see with naked eye. usually only 1-2 mm long. 
+highest order laterals definetely have some gravitropism, especially deeper once. 
+primary root gets 1.3 cm thick, but agter 20 cm is 5 mm thick. 
+fast growing laterals 4 mm
+higher order (or faster developing) laterals start of thicker.
+sometimes nodal roots do form. they look similar to the fast developing laterals.
+
+ 
+-->
+<SimulationModelIncludeFile>
+	<SimulaBase name="squash">
+		<SimulaBase name="stressImpactFactors">
+			<SimulaBase name="impactOn:photosynthesis">
+				<SimulaTable name_colum2="impactBy:phosphorus" name_colum1="phosphorus stress factor">1 1 0 0.5</SimulaTable>
+				<SimulaTable name_colum2="impactBy:potassium" name_colum1="potassium stress factor">1 1 0 0</SimulaTable>
+				<SimulaTable name_colum2="impactBy:nitrate" name_colum1="nitrate stress factor">1 1 0.4 0.5 0 0</SimulaTable>
+			</SimulaBase>
+			<SimulaBase name="impactOn:leafAreaExpantionRate">
+				<SimulaTable name_colum2="impactBy:phosphorus" name_colum1="phosphorus stress factor">1 1 0 0</SimulaTable>
+				<SimulaTable name_colum2="impactBy:potassium" name_colum1="potassium stress factor">1 1 0 1</SimulaTable>
+				<SimulaTable name_colum2="impactBy:nitrate" name_colum1="nitrate stress factor">1 1 0.4 0.1 0 0</SimulaTable>
+			</SimulaBase>
+			<SimulaBase name="impactOn:rootSegmentCarbonCostOfExudates">
+				<SimulaTable name_colum2="impactBy:phosphorus" name_colum1="phosphorus stress factor">1 1 0 1</SimulaTable>
+				<SimulaTable name_colum2="impactBy:potassium" name_colum1="potassium stress factor">1 1 0 1</SimulaTable>
+				<SimulaTable name_colum2="impactBy:nitrate" name_colum1="nitrate stress factor">1 1 0 1</SimulaTable>
+			</SimulaBase>
+			<SimulaBase name="impactOn:rootSegmentRespiration">
+				<SimulaTable name_colum2="impactBy:phosphorus" name_colum1="phosphorus stress factor">1 1 0 1</SimulaTable>
+				<SimulaTable name_colum2="impactBy:potassium" name_colum1="potassium stress factor">1 1 0 1</SimulaTable>
+				<SimulaTable name_colum2="impactBy:nitrate" name_colum1="nitrate stress factor">1 1 0 1</SimulaTable>
+			</SimulaBase>
+			<SimulaBase name="impactOn:rootSegmentSecondaryGrowth">
+				<SimulaTable name_colum2="impactBy:phosphorus" name_colum1="phosphorus stress factor">1 1 0 0</SimulaTable>
+				<SimulaTable name_colum2="impactBy:potassium" name_colum1="potassium stress factor">1 1 0 0</SimulaTable>
+				<SimulaTable name_colum2="impactBy:nitrate" name_colum1="nitrate stress factor">1 1 0 0</SimulaTable>
+			</SimulaBase>
+		</SimulaBase>
+		<SimulaBase name="resources">
+			<SimulaConstant name="carbonCostOfNitrateUptake" unit="g/uMol">
+				<!--
+					Nielsen et al 1998 says, citing: "Respiration associated with ion uptake was estimated by multiplying the net uptake
+					rate of N by the specific cost of N uptake 1,2 mol CO2 /mol N" ; reviewed by Bouma, Broekhuysen & Veen (1996). this
+					is potato? This may be highest estimate of 1.16 below
+				-->
+				<!--
+				Bouma, Broekhuysen & Veen (1996): cost of nitrate uptake in  potato
+				0.39-0.67 mol 02/mol nitrate. But they state that these numbers are low compared to the literature which is more like 0.83-1.16 mol O2/mol nitrate
+					mol/mol g/mol
+					0.39	4.68
+					0.67	8.04
+					0.83	9.96
+					1.16	13.92
+				-->
+				0.00001392			
+			</SimulaConstant>
+			<SimulaTable name_colum1="time since creation" unit_colum1="day" name_colum2="carbonAllocation2LeafsFactor"	unit_colum2="100%"	>
+			<!--
+			Loy JB. 2004. Morpho-physiological aspects of productivity and quality in squash and pumpkins (Cucurbita spp.). Critical Reviews in Plant Sciences 23: 337–363.
+			leafdw/(leafdw+stemdw)=63% in mature plants
+			-->
+			 0 1. 
+			 10 0.9
+			 13 0.83
+			 17 0.71
+			 19 0.64  
+			 20 0.63  
+			 1000 0.63
+			</SimulaTable>
+			<SimulaConstant name="maxCarbonAllocation2SecondaryGrowth"  unit="100%">0.70</SimulaConstant>
+			<SimulaConstant name="maxCarbonAllocation2Shoot"  unit="100%">0.83</SimulaConstant>
+			<SimulaConstant name="seedSize"  unit="g" >
+			<!-- this is too high?, but otherwise we do not get the plant established. Left over carbon will expire. --> 
+			0.2	</SimulaConstant>
+			<SimulaConstant name="CtoDryWeightRatio"  unit="100%">
+			<!--Zhang 2008 three sisters data: squash 0.41, maize 0.45, bean 0.45 -->
+			0.41
+			</SimulaConstant>
+		</SimulaBase>
+		<SimulaBase name="shoot">
+			<SimulaConstant name="relativePotentialTranspiration"  unit="cm3/g">
+			<!--use either cm3/cm2 leaf area/day or per cm3/g C of photosynthesis-->
+			<!--sinclair et al 1975: maize: max. during day = 0.6 mg/mm2/hour = 
+			1.44 cm3/cm2/day
+			wue (measured): 7-16 10e-3 g CO2/g H2O. = 1.9-4.3  mg/ml 229-524 where maize becomes less water efficient when stomata close?
+			-->  
+			<!--
+			http://www.dse.vic.gov.au/dpi/vro/vrosite.nsf/pages/lwm_farmwater_maize
+			maize: 30 kg dm/mm = 15 kg C/M3 = 15 mg/cm3 = 66 g/cm3 
+			-->
+			<!--gaiser et al 2004: maize-cowpea system:	11.2 kg/mm	-->
+			<!--baldocchi 1994: 
+			10-15 mg C/g water during day, but during night negative numbers because of respiration
+			~ 66-100 ml/g -->
+			
+			   100  
+			</SimulaConstant>		
+		
+			<SimulaConstant name="extinctionCoefficient" unit="noUnit" note="KDF in lintul"> 1. </SimulaConstant>
+			<SimulaTable name_colum1="time" name_colum2="specificLeafArea" unit_colum1="day" unit_colum2="g/cm2"
+				note="SLA in lintul"
+			> 0 0.0012 10 0.0012 24 0.0040 40 0.0050 60 0.0050</SimulaTable>
+			<SimulaConstant name="lightUseEfficiency" unit="g/uMol" note="LUE in lintul"> 0.38E-6</SimulaConstant>
+			<SimulaConstant name="areaPerPlant" unit="cm2">
+				<!--three sisters: 3 plants / 120*60 cm = 2400 cm2/plant -->
+				2400
+			</SimulaConstant>
+		</SimulaBase>
+		<SimulaBase name="hypocotyl">
+			<SimulaBase name="branchList">
+				<SimulaBase name="lateralPrimaryRootFastGrowing">
+					<SimulaConstant type="integer" name="numberOfBranches/whorl" unit="#"> 1</SimulaConstant>
+					<SimulaConstant name="branchingFrequency" unit="cm"> 0.5</SimulaConstant>
+					
+					<SimulaConstant  name="branchingTimeOffset" unit="day" type="Time">	10 </SimulaConstant>
+					<SimulaConstant name="allowBranchesToFormAboveGround" type="bool">false</SimulaConstant>
+				</SimulaBase>
+			</SimulaBase>
+			<SimulaConstant name="density" unit="g/cm3"> 0.1</SimulaConstant>
+		</SimulaBase>
+		<SimulaBase name="primaryRoot">
+			<SimulaBase name="branchList">
+				<SimulaBase name="lateralPrimaryRootFastGrowing">
+					<SimulaConstant type="integer" name="numberOfBranches/whorl" unit="#"> 1</SimulaConstant>
+					<SimulaTable name_colum1="relative time creation last branch" unit_colum1="day" name_colum2="branchingFrequency"
+						unit_colum2="cm"
+					>
+						<!--about 1 every cm for first 20 cm  of root system, than fewer later on.-->
+						0 0.5  10 1 20 10 30 500 1000 500
+					</SimulaTable>
+					<SimulaConstant name="lengthRootTip" unit="cm"> 6.00 </SimulaConstant>
+				</SimulaBase>
+				<SimulaBase name="lateralPrimaryRoot">
+					<SimulaConstant type="integer" name="numberOfBranches/whorl" unit="#"> 1</SimulaConstant>
+					<SimulaConstant name="branchingFrequency" unit="cm"> 0.5</SimulaConstant>
+					<SimulaConstant name="lengthRootTip" unit="cm"> 6 </SimulaConstant>
+				</SimulaBase>
+			</SimulaBase>
+			<SimulaConstant name="density" unit="g/cm3"> 0.1</SimulaConstant>
+		</SimulaBase>
+		<SimulaBase name="lateralPrimaryRootFastGrowing">
+			<SimulaBase name="branchList">
+				<SimulaBase name="finelateralFastGrowing">
+					<SimulaConstant name="branchingFrequency" unit="cm"> 0.7</SimulaConstant>
+					<SimulaConstant name="lengthRootTip" unit="cm"> 4.0</SimulaConstant>
+				</SimulaBase>
+				<SimulaBase name="finelateral">
+					<SimulaConstant name="branchingFrequency" unit="cm"> 0.32</SimulaConstant>
+					<SimulaConstant name="lengthRootTip" unit="cm"> 4.0</SimulaConstant>
+				</SimulaBase>
+			</SimulaBase>
+			<SimulaConstant name="density" unit="g/cm3"> 0.1</SimulaConstant>
+		</SimulaBase>
+		<SimulaBase name="lateralPrimaryRoot">
+			<SimulaBase name="branchList">
+				<!--these seem to be quite different from the tertiary root on the long laterals and more like the quatiary roots-->
+				<SimulaBase name="finelateral">
+					<SimulaConstant name="branchingFrequency" unit="cm"> 0.32</SimulaConstant>
+					<SimulaConstant name="lengthRootTip" unit="cm"> 1.5 <!--very short--></SimulaConstant>
+				</SimulaBase>
+			</SimulaBase>
+			<SimulaConstant name="density" unit="g/cm3"> 0.1</SimulaConstant>
+		</SimulaBase>
+		<!--PARAMETERS FOR tetiarySquash ROOTS-->
+		<SimulaBase name="finelateralFastGrowing">
+			<SimulaBase name="branchList">
+				<!--cuartera roots appear after 15 days. -->
+				<SimulaBase name="finelateral">
+					<SimulaConstant name="branchingFrequency" unit="cm"> 0.32</SimulaConstant>
+					<SimulaConstant name="lengthRootTip" unit="cm"> 1.</SimulaConstant>
+				</SimulaBase>
+			</SimulaBase>
+			<SimulaConstant name="density" unit="g/cm3"> 0.1</SimulaConstant>
+		</SimulaBase>
+		<SimulaBase name="finelateral">
+			<SimulaConstant name="density" unit="g/cm3"> 0.1</SimulaConstant>
+			<SimulaBase name="branchList"></SimulaBase>
+		</SimulaBase>
+		<!--these root classes are currently not used, just keep for later -->
+		<SimulaBase name="hypocotylBornRoots">
+			<SimulaConstant name="density" unit="g/cm3"> 0.1</SimulaConstant>
+			<SimulaBase name="branchList">
+				<SimulaBase name="lateralHypocotylBornRoots">
+					<SimulaConstant name="branchingFrequency" unit="cm"> 0.32</SimulaConstant>
+					<SimulaConstant name="lengthRootTip" unit="cm"> 1.</SimulaConstant>
+				</SimulaBase>
+			</SimulaBase>
+		</SimulaBase>
+		<SimulaBase name="lateralHypocotylBornRoots">
+			<SimulaConstant name="density" unit="g/cm3"> 0.1</SimulaConstant>
+			<SimulaBase name="branchList"></SimulaBase>
+		</SimulaBase>
+		<SimulaIncludeFile fileName="plantParameters/Squash/growthrates.xml" />
+		<SimulaIncludeFile fileName="plantParameters/Squash/phosphorus.xml" />
+		<SimulaIncludeFile fileName="plantParameters/Squash/nitrate.xml" />
+		<SimulaIncludeFile fileName="plantParameters/Squash/potassium.xml" />
+		<SimulaIncludeFile fileName="plantParameters/Squash/respiration.xml" />
+		<SimulaIncludeFile fileName="plantParameters/Squash/exudates.xml" />
+		<SimulaIncludeFile fileName="plantParameters/Squash/rootHairs.xml" />
+		<SimulaIncludeFile fileName="plantParameters/Squash/angles.xml" />
+		<SimulaIncludeFile fileName="plantParameters/Squash/keepRootsInsideBox.xml" />
+	</SimulaBase>
+</SimulationModelIncludeFile>
