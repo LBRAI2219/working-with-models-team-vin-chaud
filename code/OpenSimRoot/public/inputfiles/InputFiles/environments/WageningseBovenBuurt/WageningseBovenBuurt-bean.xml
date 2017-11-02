@@ -26,14 +26,14 @@ You should have received the GNU GENERAL PUBLIC LICENSE v3 with this file in lic
 			<SimulaConstant
 				name="minCorner"
 				type="Coordinate">
-				<!-- -13.33 -30 -30 -->
-				-11 -150 -15
+				 -13.33 -30 -30 
+				<!---11 -150 -15-->
 			</SimulaConstant>
 			<SimulaConstant
 				name="maxCorner"
 				type="Coordinate">
-				<!-- 13.33 0 30 -->
-				11 0 15
+				13.33 0 30 
+				<!-- 11 0 15-->
 			</SimulaConstant>
 			<SimulaConstant
 				name="resolution"

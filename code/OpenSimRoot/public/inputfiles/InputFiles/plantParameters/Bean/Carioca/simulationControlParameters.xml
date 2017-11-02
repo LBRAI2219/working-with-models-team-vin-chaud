@@ -62,7 +62,7 @@ You should have received the GNU GENERAL PUBLIC LICENSE v3 with this file in lic
 					type="time"> 0.</SimulaConstant>
 				<SimulaConstant
 					name="endTime"
-					type="time"> 40</SimulaConstant>
+					type="time"> 20</SimulaConstant>
 				<SimulaConstant
 					name="timeInterval"
 					type="time"> 1.</SimulaConstant>
@@ -186,7 +186,7 @@ You should have received the GNU GENERAL PUBLIC LICENSE v3 with this file in lic
 					type="bool"> 0</SimulaConstant>
 				<SimulaConstant
 					name="timeInterval"
-					type="time"> 8</SimulaConstant>
+					type="time"> 5</SimulaConstant>
 			</SimulaBase>
 			<SimulaBase name="table">
 				<SimulaConstant

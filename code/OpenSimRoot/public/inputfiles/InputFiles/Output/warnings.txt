@@ -1,0 +1,9 @@
+Simulation took (hours:minutes:seconds): 0:1:22
+THE MODEL PUT OUT WARNINGS:
+BarberCushman: competition effective.	1909402x
+BarberCushmanExplicit: adjusting Ci to less than 10% of original Ci	7243x
+BarberCushmanExplicit: getting negative values for uptake, returning 0	939x
+BarberCushmanExplicit: min timestep does not allow CFL criteria to be met for at least one compartment. A smaller min dt is needed or a larger dr.	6x
+BarberCushmanExplicit: using miniminum timestep and not meeting tolerance criteria. Results might be instable	739209x
+SimulaTable:: extrapolation at end of table radiusDepletionZone	24978x
+VTU: root segments with 0 diameter replaced with small diameter	2x

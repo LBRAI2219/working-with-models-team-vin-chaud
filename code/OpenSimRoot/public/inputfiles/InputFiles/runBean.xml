@@ -47,7 +47,7 @@
 	<SimulaIncludeFile fileName="templates/plantTemplateFullModel.xml" />
 	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeGeometry.xml" />
 	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeDryweight.xml" />
-	<SimulaIncludeFile fileName="templates/plantTemplate.IncludePhosphorusBC.xml" />
+	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeNitrateBC.xml" />
 	<!--
 	If leaving out water and nitrate, enable this to have a rough estimate of carbon cost of nitrate fixation and uptake
 	-->
