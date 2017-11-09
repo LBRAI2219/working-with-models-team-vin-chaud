@@ -1,2 +1,0 @@
-THE MODEL PUT OUT WARNINGS:
-PhotosynthesisLintulV2: no stress impact factor found	1x
