@@ -1,5 +1,8 @@
-Simulation took (hours:minutes:seconds): 0:0:0
+Simulation took (hours:minutes:seconds): 0:2:38
 THE MODEL PUT OUT WARNINGS:
-BarberCushmanExplicit: getting negative values for uptake, returning 0	1x
-RootGrowthDirection: Simulating round pot	1x
-VTU::addData: Data is not simulated entering 0 in the list	1x
+BarberCushman: competition effective.	2251409x
+BarberCushmanExplicit: adjusting Ci to less than 10% of original Ci	5144x
+BarberCushmanExplicit: getting negative values for uptake, returning 0	10399x
+BarberCushmanExplicit: using miniminum timestep and not meeting tolerance criteria. Results might be instable	8317194x
+SimulaTable:: extrapolation at end of table radiusDepletionZone	36853x
+VTU: root segments with 0 diameter replaced with small diameter	2x

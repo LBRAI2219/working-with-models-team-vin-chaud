@@ -1,5 +1,26 @@
 <?xml version="1.0"?>
  <VTKFile type="Collection" version="0.1">
   <Collection>
+   <DataSet timestep="0" group="" part="0" file="nitrate000.00.vtu"/>
+   <DataSet timestep="1" group="" part="0" file="nitrate001.00.vtu"/>
+   <DataSet timestep="2" group="" part="0" file="nitrate002.00.vtu"/>
+   <DataSet timestep="3" group="" part="0" file="nitrate003.00.vtu"/>
+   <DataSet timestep="4" group="" part="0" file="nitrate004.00.vtu"/>
+   <DataSet timestep="5" group="" part="0" file="nitrate005.00.vtu"/>
+   <DataSet timestep="6" group="" part="0" file="nitrate006.00.vtu"/>
+   <DataSet timestep="7" group="" part="0" file="nitrate007.00.vtu"/>
+   <DataSet timestep="8" group="" part="0" file="nitrate008.00.vtu"/>
+   <DataSet timestep="9" group="" part="0" file="nitrate009.00.vtu"/>
+   <DataSet timestep="10" group="" part="0" file="nitrate010.00.vtu"/>
+   <DataSet timestep="11" group="" part="0" file="nitrate011.00.vtu"/>
+   <DataSet timestep="12" group="" part="0" file="nitrate012.00.vtu"/>
+   <DataSet timestep="13" group="" part="0" file="nitrate013.00.vtu"/>
+   <DataSet timestep="14" group="" part="0" file="nitrate014.00.vtu"/>
+   <DataSet timestep="15" group="" part="0" file="nitrate015.00.vtu"/>
+   <DataSet timestep="16" group="" part="0" file="nitrate016.00.vtu"/>
+   <DataSet timestep="17" group="" part="0" file="nitrate017.00.vtu"/>
+   <DataSet timestep="18" group="" part="0" file="nitrate018.00.vtu"/>
+   <DataSet timestep="19" group="" part="0" file="nitrate019.00.vtu"/>
+   <DataSet timestep="20" group="" part="0" file="nitrate020.00.vtu"/>
    </Collection>
   </VTKFile>
