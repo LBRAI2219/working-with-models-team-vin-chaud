@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+ <VTKFile type="Collection" version="0.1">
+  <Collection>
+   <DataSet timestep="0" group="" part="0" file="roots000.00.vtu"/>
+   <DataSet timestep="1" group="" part="0" file="roots001.00.vtu"/>
+   <DataSet timestep="2" group="" part="0" file="roots002.00.vtu"/>
+   <DataSet timestep="3" group="" part="0" file="roots003.00.vtu"/>
+   <DataSet timestep="4" group="" part="0" file="roots004.00.vtu"/>
+   <DataSet timestep="5" group="" part="0" file="roots005.00.vtu"/>
+   <DataSet timestep="6" group="" part="0" file="roots006.00.vtu"/>
+   <DataSet timestep="7" group="" part="0" file="roots007.00.vtu"/>
+   <DataSet timestep="8" group="" part="0" file="roots008.00.vtu"/>
+   <DataSet timestep="9" group="" part="0" file="roots009.00.vtu"/>
+   <DataSet timestep="10" group="" part="0" file="roots010.00.vtu"/>
+   <DataSet timestep="11" group="" part="0" file="roots011.00.vtu"/>
+   <DataSet timestep="12" group="" part="0" file="roots012.00.vtu"/>
+   <DataSet timestep="13" group="" part="0" file="roots013.00.vtu

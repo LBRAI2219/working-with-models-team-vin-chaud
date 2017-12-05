@@ -54,8 +54,8 @@
 	
 	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeNitrateBasic.xml" />
 	
-    <!--SimulaIncludeFile fileName="templates/plantTemplate.IncludeWaterModule.xml" />
-	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeNitrate3D.xml"/>
+    <SimulaIncludeFile fileName="templates/plantTemplate.IncludeWaterModule.xml" />
+	<!--<SimulaIncludeFile fileName="templates/plantTemplate.IncludeNitrate3D.xml"/>
 	<SimulaIncludeFile fileName="templates/plantTemplate.IncludePotassium3D.xml" />
 	<SimulaIncludeFile fileName="templates/configurationCarbon.xml" />
 	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeRootHairs.xml" />
