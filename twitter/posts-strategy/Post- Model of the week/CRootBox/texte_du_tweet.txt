@@ -1,11 +1,11 @@
-CRootBox is a root architecture model. It has a object oriented implementation in C++ with python binding that give a great flexibility of uses.
-For example it allows you to simulate:
+CRootBox is a root architecture model. It has an object oriented implementation in C++ with python binding that give a great flexibility of uses.
+For example, it allows you to simulate:
 -free growth of individual root
 -growth of roots in a container
 -field scale simulation
--root growth with stactic soil condition
+-root growth with static soil condition
 -water uptake and flow in roots and soil by coupling CRootBox with Soil Physics
-They've also created a database with the parameters of their simulation in unconfined space.
+They've also created a database with the parameters of their simulation in an unconfined space.
 
 credits: https://plant-root-soil-interactions-modelling.github.io/CRootBox/
 https://www.biorxiv.org/content/early/2017/05/19/139980
