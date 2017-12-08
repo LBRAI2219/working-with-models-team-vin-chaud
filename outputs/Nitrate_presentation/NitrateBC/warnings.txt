@@ -1,9 +1,13 @@
-Simulation took (hours:minutes:seconds): 0:16:10
+Simulation took (hours:minutes:seconds): 1:4:16
 THE MODEL PUT OUT WARNINGS:
-BarberCushman: competition effective.	40370519x
-BarberCushmanExplicit: adjusting Ci to less than 10% of original Ci	20134x
-BarberCushmanExplicit: getting negative values for uptake, returning 0	2686x
-BarberCushmanExplicit: min timestep does not allow CFL criteria to be met for at least one compartment. A smaller min dt is needed or a larger dr.	6x
-BarberCushmanExplicit: using miniminum timestep and not meeting tolerance criteria. Results might be instable	18376786x
-SimulaTable:: extrapolation at end of table radiusDepletionZone	234602x
+BarberCushman: competition effective.	38198632x
+BarberCushmanExplicit: adjusting Ci to less than 10% of original Ci	20496x
+BarberCushmanExplicit: getting negative values for uptake, returning 0	2243x
+BarberCushmanExplicit: min timestep does not allow CFL criteria to be met for at least one compartment. A smaller min dt is needed or a larger dr.	10x
+BarberCushmanExplicit: using miniminum timestep and not meeting tolerance criteria. Results might be instable	20396311x
+CarbonCostOfBiologicalNitrogenFixation: cost not simulated for nitrogen fixation is not simulated	1x
+PhotosynthesisLintulV2: no stress impact factor found	1x
+RootGrowthDirection::postIntegrationCorrection: maxx boundary broken	1x
+SimulaTable:: extrapolation at end of table radiusDepletionZone	211398x
 VTU: root segments with 0 diameter replaced with small diameter	2x
+WaterMassBalanceTest: mass balance is off by more than 1% of 20745.333458 ml initial water in column	20x

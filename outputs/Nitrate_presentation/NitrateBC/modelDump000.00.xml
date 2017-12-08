@@ -29,21 +29,39 @@
 0	0	0
 
 			</SimulaVariable>
+			<SimulaLink name="rootHairDensity" prettyName="root hair density"/>
+			<SimulaLink name="rootHairDiameter" prettyName="root hair diameter"/>
+			<SimulaLink name="rootHairLength" prettyName="root hair length"/>
+			<SimulaDerivative function="rootSegmentRootHairSurfaceArea" name="rootHairSurfaceArea" prettyName="root hair surface area" unit="cm2/cm"/>
 			<SimulaDerivative function="rootLength2Base" name="rootLength2Base" prettyName="root length to  base" unit="cm"/>
 			<SimulaVariable function="potentialSecondaryGrowth" integrationFunction="RungeKutta4" name="rootPotentialSecondaryGrowth" prettyName="root potential secondary growth" unit="cm">
 0	0	0
 
 			</SimulaVariable>
 			<SimulaDerivative function="rootSegmentAge" name="rootSegmentAge" prettyName="root segment age" unit="day"/>
+			<SimulaVariable function="carbonCostOfExudates" integrationFunction="RungeKutta4" name="rootSegmentCarbonCostOfExudates" prettyName="root segment carbon cost of exudates" unit="g">
+0	0	0
+
+			</SimulaVariable>
 			<SimulaDerivative function="rootSegmentDryWeight" name="rootSegmentDryWeight" prettyName="root segment dry weight" unit="g"/>
 			<SimulaDerivative function="rootSegmentLength" name="rootSegmentLength" prettyName="root segment length" unit="cm"/>
 			<SimulaVariable function="rootSegmentLength" integrationFunction="RungeKutta4" name="rootSegmentLengthDuration" prettyName="root segment length duration" unit="cm.day">
 0	0	0
 
 			</SimulaVariable>
+			<SimulaDerivative function="rootSegmentRespirationRate" name="rootSegmentRespiration" prettyName="root segment respiration" unit="g/day"/>
+			<SimulaVariable function="rootNodePotentialCarbonSinkForGrowth" integrationFunction="RungeKutta4" name="rootSegmentSecondaryPotentialCarbonSinkForGrowth" prettyName="root segment secondary potential carbon sink for growth" unit="g">
+0	0	0
+
+			</SimulaVariable>
 			<SimulaDerivative function="rootSegmentSurfaceArea" name="rootSegmentSurfaceArea" prettyName="root segment surface area" unit="cm2"/>
 			<SimulaDerivative function="rootSegmentVolume" name="rootSegmentVolume" prettyName="root segment volume" unit="cm3"/>
+			<SimulaVariable function="waterUptakeFromHopmans" integrationFunction="RungeKutta4" name="rootSegmentWaterUptake" prettyName="root segment water uptake" unit="cm3">
+0	0	0
+
+			</SimulaVariable>
 			<SimulaDerivative function="proximity" name="spatialRootDensity" prettyName="spatial root density" unit="cm/cm3"/>
+			<SimulaTable function="getValuesFromSWMS" garbageCollectionOff="true" interpolationMethod="step" name_column1="time" name_column2="volumetricWaterContentAtTheRootSurface" prettyName="volumetric water content at the root surface" unit_column1="day" unit_column2="cm3/cm3"/>
 		</SimulaBase>
 		<SimulaBase name="environment" prettyName="environment" unit="noUnit">
 
@@ -403,6 +421,9 @@
 				<SimulaConstant name="rootSegmentAge" prettyName="root segment age" type="double" unit="day">
 0
 				</SimulaConstant>
+				<SimulaConstant name="rootSegmentCarbonCostOfExudates" prettyName="root segment carbon cost of exudates" type="double" unit="g">
+0
+				</SimulaConstant>
 				<SimulaConstant name="rootSegmentDryWeight" prettyName="root segment dry weight" type="double" unit="g">
 0
 				</SimulaConstant>
@@ -412,10 +433,26 @@
 				<SimulaConstant name="rootSegmentLengthDuration" prettyName="root segment length duration" type="double" unit="cm.day">
 0
 				</SimulaConstant>
+				<SimulaVariable function="rootNodePotentialCarbonSinkForGrowth" integrationFunction="RungeKutta4" name="rootSegmentPotentialCarbonSinkForGrowth" prettyName="root segment potential carbon sink for growth" unit="g">
+0	0	0
+
+				</SimulaVariable>
+				<SimulaConstant name="rootSegmentRespiration" prettyName="root segment respiration" type="double" unit="g">
+0
+				</SimulaConstant>
+				<SimulaConstant name="rootSegmentSecondaryPotentialCarbonSinkForGrowth" prettyName="root segment secondary potential carbon sink for growth" type="double" unit="g">
+0
+				</SimulaConstant>
 				<SimulaConstant name="rootSegmentSurfaceArea" prettyName="root segment surface area" type="double" unit="cm2">
 0
 				</SimulaConstant>
 				<SimulaConstant name="rootSegmentVolume" prettyName="root segment volume" type="double" unit="cm3">
+0
+				</SimulaConstant>
+				<SimulaConstant name="rootSegmentWaterUptake" prettyName="root segment water uptake" type="double" unit="cm3">
+0
+				</SimulaConstant>
+				<SimulaConstant name="rootWaterUptake" prettyName="root water uptake" type="double" unit="cm3/cm">
 0
 				</SimulaConstant>
 			</SimulaPoint>
@@ -434,18 +471,61 @@
 				</SimulaVariable>
 				<SimulaDerivative function="rootSystemNutrientTotal" name="rootSystemOptimalNutrientContent" prettyName="root system optimal nutrient content" unit="umol"/>
 			</SimulaBase>
+			<SimulaVariable function="rootTotal.v2" integrationFunction="RungeKutta4" name="rootCarbonCostOfExudates" prettyName="root carbon cost of exudates" unit="g">
+0	0	0
+
+			</SimulaVariable>
 			<SimulaDerivative function="rootNutrientTotal" name="rootDryWeight" prettyName="root dry weight" unit="g"/>
 			<SimulaDerivative function="rootTotal.v2" name="rootLength" prettyName="root length" unit="cm"/>
+			<SimulaVariable function="rootNutrientTotal" integrationFunction="RungeKutta4" name="rootRespiration" prettyName="root respiration" unit="g">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="rootNutrientTotal" integrationFunction="RungeKutta4" name="rootSecondaryPotentialCarbonSinkForGrowth" prettyName="root secondary potential carbon sink for growth" unit="g">
+0	0	0
+
+			</SimulaVariable>
 			<SimulaDerivative function="rootTotal.v2" name="rootSurfaceArea" prettyName="root surface area" unit="cm2"/>
+			<SimulaVariable function="rootSystemNutrientTotal" integrationFunction="RungeKutta4" name="rootSystemCarbonCostOfExudates" prettyName="root system carbon cost of exudates" unit="g">
+0	0	0
+
+			</SimulaVariable>
 			<SimulaDerivative function="rootSystemNutrientTotal" name="rootSystemDryWeight" prettyName="root system dry weight" unit="g"/>
 			<SimulaDerivative function="rootSystemNutrientTotal" name="rootSystemLength" prettyName="root system length" unit="cm"/>
 			<SimulaVariable function="rootSystemNutrientTotal" integrationFunction="RungeKutta4" name="rootSystemLongitudinalGrowth" prettyName="root system longitudinal growth" unit="cm">
 0	0	0
 
 			</SimulaVariable>
+			<SimulaVariable function="rootSystemNutrientTotal" integrationFunction="RungeKutta4" name="rootSystemPotentialCarbonSinkForGrowth" prettyName="root system potential carbon sink for growth" unit="g">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="rootSystemNutrientTotal" integrationFunction="RungeKutta4" name="rootSystemPotentialCarbonSinkForGrowth;majorAxis" prettyName="root system potential carbon sink for growth;major axis" unit="g">
+0	0	0
+
+				<SimulaConstant name="includedRootClasses" prettyName="included root classes" type="string" unit="noUnit">
+hypocotyl, primaryRoot, seminal, nodalroots, nodalroots1,				nodalroots2, nodalroots3, nodalroots4, nodalroots5, braceroots,				braceroots1, braceroots2, braceroots3, basalWhorl1, basalWhorl2,				basalWhorl3, basalWhorl4
+				</SimulaConstant>
+			</SimulaVariable>
+			<SimulaVariable function="rootSystemNutrientTotal" integrationFunction="RungeKutta4" name="rootSystemRespiration" prettyName="root system respiration" unit="g">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="rootSystemNutrientTotal" integrationFunction="RungeKutta4" name="rootSystemSecondaryPotentialCarbonSinkForGrowth" prettyName="root system secondary potential carbon sink for growth" unit="g">
+0	0	0
+
+			</SimulaVariable>
 			<SimulaDerivative function="rootSystemNutrientTotal" name="rootSystemSurfaceArea" prettyName="root system surface area" unit="cm2"/>
 			<SimulaDerivative function="rootSystemNutrientTotal" name="rootSystemVolume" prettyName="root system volume" unit="cm3"/>
+			<SimulaVariable function="rootSystemNutrientTotal" integrationFunction="RungeKutta4" name="rootSystemWaterUptake" prettyName="root system water uptake" unit="cm3">
+0	0	0
+
+			</SimulaVariable>
 			<SimulaDerivative function="rootTotal.v2" name="rootVolume" prettyName="root volume" unit="cm3"/>
+			<SimulaVariable function="rootNutrientTotal" integrationFunction="RungeKutta4" name="rootWaterUptake" prettyName="root water uptake" unit="cm3">
+0	0	0
+
+			</SimulaVariable>
 		</SimulaBase>
 		<SimulaBase name="plantTemplate" prettyName="plant template" unit="noUnit">
 
@@ -455,6 +535,22 @@
 0.9
 				</SimulaConstant>
 			</SimulaDerivative>
+			<SimulaVariable function="carbonAllocation2Roots" integrationFunction="RungeKutta4" name="carbonAllocation2Roots" prettyName="carbon allocation to  roots" unit="g">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="carbonAllocation2Shoot" integrationFunction="RungeKutta4" name="carbonAllocation2Shoot" prettyName="carbon allocation to  shoot" unit="g">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="carbonAvailableForGrowth" integrationFunction="RungeKutta4" name="carbonAvailableForGrowth" prettyName="carbon available for growth" unit="g">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="carbonReserves" integrationFunction="Heuns" name="carbonReserves" prettyName="carbon reserves" unit="g">
+0	0	0
+
+			</SimulaVariable>
 			<SimulaDerivative function="carbonToDryWeightRatio" name="carbonToDryWeightRatio" prettyName="carbon to dry weight ratio" unit="100%"/>
 			<SimulaBase name="nitrate" prettyName="nitrate" unit="noUnit">
 
@@ -469,16 +565,94 @@
 				</SimulaVariable>
 				<SimulaDerivative function="plantTotal" name="plantOptimalNutrientContent" prettyName="plant optimal nutrient content" unit="umol"/>
 			</SimulaBase>
+			<SimulaDerivative function="plantCarbonBalance" name="plantCarbonBalance" prettyName="plant carbon balance" unit="g"/>
+			<SimulaVariable function="plantCarbonIncomeRate" integrationFunction="RungeKutta4" name="plantCarbonIncome" prettyName="plant carbon income" unit="g">
+0	0	0
+
+			</SimulaVariable>
 			<SimulaDerivative function="plantTotal" name="plantDryWeight" prettyName="plant dry weight" unit="g"/>
+			<SimulaVariable function="plantTotal" integrationFunction="RungeKutta4" name="plantPotentialCarbonSinkForGrowth" prettyName="plant potential carbon sink for growth" unit="g">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="plantTotal" integrationFunction="RungeKutta4" name="plantRespiration" prettyName="plant respiration" unit="g">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaDerivative function="relativeCarbonAllocation2RootsOneMinusShoot" name="relativeCarbonAllocation2Roots" prettyName="relative carbon allocation to  roots" unit="100%"/>
+			<SimulaDerivative function="relativeCarbonAllocation2ShootPotentialGrowth" name="relativeCarbonAllocation2Shoot" prettyName="relative carbon allocation to  shoot" unit="100%"/>
+			<SimulaVariable function="reservesSinkBased" integrationFunction="RungeKutta4" name="reserves" prettyName="reserves" unit="g">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="carbonCostOfBiologicalNitrogenFixation" integrationFunction="RungeKutta4" name="rootCarbonCostOfBiologicalNitrogenFixation" prettyName="root carbon cost of biological nitrogen fixation" unit="g">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="plantTotal" integrationFunction="RungeKutta4" name="rootCarbonCostOfExudates" prettyName="root carbon cost of exudates" unit="g">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="carbonCostOfNutrientUptake" integrationFunction="RungeKutta4" name="rootCarbonCostOfNutrientUptake" prettyName="root carbon cost of nutrient uptake" unit="g">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="sum" integrationFunction="RungeKutta4" name="rootCarbonCosts" prettyName="root carbon costs" unit="g">
+0	0	0
+
+				<SimulaConstant name="paths" prettyName="paths" type="string" unit="noUnit">
+rootCarbonCostOfExudates;rootCarbonCostOfNutrientUptake;rootCarbonCostOfBiologicalNitrogenFixation
+				</SimulaConstant>
+			</SimulaVariable>
 			<SimulaDerivative function="plantTotal" name="rootDryWeight" prettyName="root dry weight" unit="g"/>
+			<SimulaVariable function="rootGrowthScalingFactor" integrationFunction="RungeKutta4" name="rootGrowthScalingFactor" prettyName="root growth scaling factor" unit="100%">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="rootGrowthScalingFactor" integrationFunction="RungeKutta4" name="rootGrowthScalingFactor;majorAxis" prettyName="root growth scaling factor;major axis" unit="100%">
+0	0	0
+
+			</SimulaVariable>
 			<SimulaDerivative function="plantTotal" name="rootLength" prettyName="root length" unit="cm"/>
 			<SimulaVariable function="plantTotal" integrationFunction="RungeKutta4" name="rootLongitudinalGrowth" prettyName="root longitudinal growth" unit="cm">
 0	0	0
 
 			</SimulaVariable>
+			<SimulaVariable function="plantTotal" integrationFunction="RungeKutta4" name="rootPotentialCarbonSinkForGrowth" prettyName="root potential carbon sink for growth" unit="g">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="plantTotal" integrationFunction="RungeKutta4" name="rootPotentialCarbonSinkForGrowth;majorAxis" prettyName="root potential carbon sink for growth;major axis" unit="g">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="plantTotal" integrationFunction="RungeKutta4" name="rootRespiration" prettyName="root respiration" unit="g">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="plantTotal" integrationFunction="RungeKutta4" name="rootSecondaryPotentialCarbonSinkForGrowth" prettyName="root secondary potential carbon sink for growth" unit="g">
+0	0	0
+
+			</SimulaVariable>
 			<SimulaDerivative function="plantTotal" name="rootSurfaceArea" prettyName="root surface area" unit="cm2"/>
 			<SimulaDerivative function="plantTotal" name="rootVolume" prettyName="root volume" unit="cm3"/>
+			<SimulaVariable function="plantTotal" integrationFunction="RungeKutta4" name="rootWaterUptake" prettyName="root water uptake" unit="cm3">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="rootGrowthScalingFactor" integrationFunction="RungeKutta4" name="secondaryRootGrowthScalingFactor" prettyName="secondary root growth scaling factor" unit="100%">
+0	0	0
+
+			</SimulaVariable>
 			<SimulaDerivative function="plantTotal" name="shootDryWeight" prettyName="shoot dry weight" unit="g"/>
+			<SimulaVariable function="plantTotal" integrationFunction="RungeKutta4" name="shootPotentialCarbonSinkForGrowth" prettyName="shoot potential carbon sink for growth" unit="g">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="plantTotal" integrationFunction="RungeKutta4" name="shootRespiration" prettyName="shoot respiration" unit="g">
+0	0	0
+
+			</SimulaVariable>
 		</SimulaBase>
 		<SimulaBase name="plants" prettyName="plants" unit="noUnit">
 
@@ -490,6 +664,26 @@
 0.9
 					</SimulaConstant>
 				</SimulaDerivative>
+				<SimulaVariable function="carbonAllocation2Roots" integrationFunction="RungeKutta4" name="carbonAllocation2Roots" prettyName="carbon allocation to  roots" unit="g">
+0	0	0.00594985
+0.2	0.00140266	0.00807677
+
+				</SimulaVariable>
+				<SimulaVariable function="carbonAllocation2Shoot" integrationFunction="RungeKutta4" name="carbonAllocation2Shoot" prettyName="carbon allocation to  shoot" unit="g">
+0	0	0
+0.2	0	0
+
+				</SimulaVariable>
+				<SimulaVariable function="carbonAvailableForGrowth" integrationFunction="RungeKutta4" name="carbonAvailableForGrowth" prettyName="carbon available for growth" unit="g">
+0	0	0.00594985
+0.2	0.00140266	0.00807677
+
+				</SimulaVariable>
+				<SimulaVariable function="carbonReserves" integrationFunction="Heuns" name="carbonReserves" prettyName="carbon reserves" unit="g">
+0	0	0
+0.2	0	-0
+
+				</SimulaVariable>
 				<SimulaDerivative function="carbonToDryWeightRatio" name="carbonToDryWeightRatio" prettyName="carbon to dry weight ratio" unit="100%"/>
 				<SimulaBase name="nitrate" prettyName="nitrate" unit="noUnit">
 
@@ -501,11 +695,17 @@
 					<SimulaDerivative function="plantTotal" name="plantMinimalNutrientContent" prettyName="plant minimal nutrient content" unit="umol"/>
 					<SimulaVariable function="plantTotal" integrationFunction="RungeKutta4" name="plantNutrientUptake" prettyName="plant nutrient uptake" unit="umol">
 0	714	0
-0.2	714.057	0.569528
+0.2	714.057	0.570111
 
 					</SimulaVariable>
 					<SimulaDerivative function="plantTotal" name="plantOptimalNutrientContent" prettyName="plant optimal nutrient content" unit="umol"/>
 				</SimulaBase>
+				<SimulaDerivative function="plantCarbonBalance" name="plantCarbonBalance" prettyName="plant carbon balance" unit="g"/>
+				<SimulaVariable function="plantCarbonIncomeRate" integrationFunction="RungeKutta4" name="plantCarbonIncome" prettyName="plant carbon income" unit="g">
+0	0	0.00594985
+0.2	0.00143083	0.00835849
+
+				</SimulaVariable>
 				<SimulaDerivative function="plantTotal" name="plantDryWeight" prettyName="plant dry weight" unit="g"/>
 				<SimulaConstant name="plantPosition" prettyName="plant position" type="Coordinate" unit="cm">
 0	-5	0
@@ -534,18 +734,18 @@
 									<SimulaVariable function="barber_cushman_1981_nutrient_uptake_explicit" integrationFunction="BarberCushmanSolver" name="rootSegmentNutrientUptake" prettyName="root segment nutrient uptake" unit="umol">
 0	0	0
 0.02	0	0
-0.04	0.000479827	0.0479827
-0.076094	0.00307932	0.0960575
-0.1	0.00640116	0.181852
-0.121393	0.0106605	0.216346
-0.142786	0.0152925	0.216698
-0.148564	0.0167012	0.270908
-0.154342	0.0182963	0.281219
-0.165898	0.0215611	0.283821
-0.174293	0.0240209	0.302196
-0.182688	0.0266059	0.313657
-0.19587	0.0307529	0.315501
-0.2	0.032117	0.345134
+0.04	0.00051746	0.051746
+0.076094	0.00328489	0.101599
+0.1	0.00672126	0.185891
+0.121393	0.0110238	0.216346
+0.142786	0.0156845	0.219375
+0.148564	0.0171126	0.274973
+0.154342	0.0187313	0.285335
+0.165898	0.0220427	0.287774
+0.174293	0.0245339	0.305707
+0.182688	0.0271459	0.316584
+0.19587	0.031326	0.317592
+0.2	0.0326956	0.345717
 
 									</SimulaVariable>
 									<SimulaDerivative function="rootSegmentOptimalNutrientContent" name="rootSegmentOptimalNutrientContent" prettyName="root segment optimal nutrient content" unit="umol"/>
@@ -558,6 +758,10 @@
 0.2	0.400018	0.000175
 
 								</SimulaVariable>
+								<SimulaLink name="rootHairDensity" prettyName="root hair density"/>
+								<SimulaLink name="rootHairDiameter" prettyName="root hair diameter"/>
+								<SimulaLink name="rootHairLength" prettyName="root hair length"/>
+								<SimulaDerivative function="rootSegmentRootHairSurfaceArea" name="rootHairSurfaceArea" prettyName="root hair surface area" unit="cm2/cm"/>
 								<SimulaDerivative function="rootLength2Base" name="rootLength2Base" prettyName="root length to  base" unit="cm"/>
 								<SimulaVariable function="potentialSecondaryGrowth" integrationFunction="RungeKutta4" name="rootPotentialSecondaryGrowth" prettyName="root potential secondary growth" unit="cm">
 0	0.4	0
@@ -565,32 +769,38 @@
 
 								</SimulaVariable>
 								<SimulaDerivative function="rootSegmentAge" name="rootSegmentAge" prettyName="root segment age" unit="day"/>
+								<SimulaVariable function="carbonCostOfExudates" integrationFunction="RungeKutta4" name="rootSegmentCarbonCostOfExudates" prettyName="root segment carbon cost of exudates" unit="g">
+0	0	0
+0.2	0	0
+
+								</SimulaVariable>
 								<SimulaDerivative function="rootSegmentDryWeight" name="rootSegmentDryWeight" prettyName="root segment dry weight" unit="g"/>
 								<SimulaDerivative function="rootSegmentLength" name="rootSegmentLength" prettyName="root segment length" unit="cm"/>
 								<SimulaVariable function="rootSegmentLength" integrationFunction="RungeKutta4" name="rootSegmentLengthDuration" prettyName="root segment length duration" unit="cm.day">
 0	0	0
 
 								</SimulaVariable>
+								<SimulaDerivative function="rootSegmentRespirationRate" name="rootSegmentRespiration" prettyName="root segment respiration" unit="g/day"/>
+								<SimulaVariable function="rootNodePotentialCarbonSinkForGrowth" integrationFunction="RungeKutta4" name="rootSegmentSecondaryPotentialCarbonSinkForGrowth" prettyName="root segment secondary potential carbon sink for growth" unit="g">
+0	0	0
+0.2	3.56598e-08	5.5816e-07
+
+								</SimulaVariable>
 								<SimulaDerivative function="rootSegmentSurfaceArea" name="rootSegmentSurfaceArea" prettyName="root segment surface area" unit="cm2"/>
 								<SimulaDerivative function="rootSegmentVolume" name="rootSegmentVolume" prettyName="root segment volume" unit="cm3"/>
+								<SimulaVariable function="waterUptakeFromHopmans" integrationFunction="RungeKutta4" name="rootSegmentWaterUptake" prettyName="root segment water uptake" unit="cm3">
+0	0	0
+0.2	0	0
+
+								</SimulaVariable>
 								<SimulaDerivative function="proximity" name="spatialRootDensity" prettyName="spatial root density" unit="cm/cm3"/>
+								<SimulaTable function="getValuesFromSWMS" interpolationMethod="step" name_column1="time" name_column2="volumetricWaterContentAtTheRootSurface" prettyName="volumetric water content at the root surface" unit_column1="day" unit_column2="cm3/cm3"/>
 							</SimulaConstant>
 						</SimulaBase>
 						<SimulaPoint function="rootGrowthDirection" garbageCollectionOff="true" integrationFunction="RungeKutta4" name="growthpoint" prettyName="growthpoint" unit="cm">
-0	0	0	0	0.0710062	0.996626	0.0411748	
-0.02	0.00104271	0.0203656	0.000560474	0.0518732	1.03822	0.0317823	
-0.04	0.00173872	0.0415509	0.000934393	0.0317447	1.07943	0.0146975	
-0.076094	0.00260472	0.0818242	0.00130332	0.017358	1.15203	0.00774695	
-0.1	0.00279363	0.109938	0.0015388	0.00816021	1.19996	0.00565578	
-0.121393	0.00296342	0.136067	0.00164997	0.0071338	1.24276	0.00337812	
-0.142786	0.00306766	0.163111	0.0016919	0.00699771	1.28555	0.000507296	
-0.148564	0.00310252	0.170572	0.00168616	0.00170865	1.2971	-0.00762405	
-0.154342	0.00311297	0.1781	0.00166114	0.00209494	1.30868	0.000975161	
-0.165898	0.00315152	0.193357	0.00167638	-0.00332402	1.33179	0.00130575	
-0.174293	0.0031183	0.204608	0.00169824	-0.0101104	1.34854	-0.00424374	
-0.182688	0.00309558	0.215999	0.00164531	-0.001639	1.36537	0.00188326	
-0.19587	0.00306966	0.234173	0.00165012	-0.00523354	1.39172	-0.00647101	
-0.2	0.00306605	0.239937	0.00162455	-0.0019434	1.39995	-0.0114243	
+0	0	0	0	0.0837037	0.995573	0.0427536	
+0.1	0.00631815	0.10977	0.00327513	0.0604162	1.19803	0.0328412	
+0.2	0.0109629	0.239655	0.00611711	0.0384702	1.39926	0.024218	
 
 							<SimulaBase name="nitrate" prettyName="nitrate" unit="noUnit">
 
@@ -616,40 +826,20 @@
 							<SimulaDerivative function="rootDiameter" name="rootDiameter" prettyName="root diameter" unit="cm"/>
 							<SimulaVariable function="scaledRootGrowthRate" garbageCollectionOff="true" integrationFunction="RungeKutta4" name="rootLongitudinalGrowth" prettyName="root longitudinal growth" unit="cm">
 0	0	1
-0.02	0.0204	1.04
-0.04	0.0416	1.08
-0.076094	0.0818844	1.15219
 0.1	0.11	1.2
-0.121393	0.136129	1.24279
-0.142786	0.163174	1.28557
-0.148564	0.170635	1.29713
-0.154342	0.178163	1.30868
-0.165898	0.19342	1.3318
-0.174293	0.204671	1.34859
-0.182688	0.216063	1.36538
-0.19587	0.234236	1.39174
 0.2	0.24	1.4
 
 							</SimulaVariable>
 							<SimulaVariable function="potentialRootGrowthRate" integrationFunction="RungeKutta4" name="rootPotentialLongitudinalGrowth" prettyName="root potential longitudinal growth" unit="cm">
 0	0	1
-0.02	0.0204	1.04
-0.04	0.0416	1.08
-0.076094	0.0818844	1.15219
-0.1	0.11	1.2
-0.121393	0.136129	1.24279
-0.142786	0.163174	1.28557
-0.148564	0.170635	1.29713
-0.154342	0.178163	1.30868
-0.165898	0.19342	1.3318
-0.174293	0.204671	1.34859
-0.182688	0.216063	1.36538
-0.19587	0.234236	1.39174
 0.2	0.24	1.4
 
 							</SimulaVariable>
 							<SimulaDerivative function="rootDiameter" name="rootPotentialSecondaryGrowth" prettyName="root potential secondary growth" unit="cm"/>
 							<SimulaConstant name="rootSegmentAge" prettyName="root segment age" type="double" unit="day">
+0
+							</SimulaConstant>
+							<SimulaConstant name="rootSegmentCarbonCostOfExudates" prettyName="root segment carbon cost of exudates" type="double" unit="g">
 0
 							</SimulaConstant>
 							<SimulaConstant name="rootSegmentDryWeight" prettyName="root segment dry weight" type="double" unit="g">
@@ -661,6 +851,17 @@
 							<SimulaConstant name="rootSegmentLengthDuration" prettyName="root segment length duration" type="double" unit="cm.day">
 0
 							</SimulaConstant>
+							<SimulaVariable function="rootNodePotentialCarbonSinkForGrowth" integrationFunction="RungeKutta4" name="rootSegmentPotentialCarbonSinkForGrowth" prettyName="root segment potential carbon sink for growth" unit="g">
+0	0	0.00531557
+0.2	0.00127574	0.0074418
+
+							</SimulaVariable>
+							<SimulaConstant name="rootSegmentRespiration" prettyName="root segment respiration" type="double" unit="g">
+0
+							</SimulaConstant>
+							<SimulaConstant name="rootSegmentSecondaryPotentialCarbonSinkForGrowth" prettyName="root segment secondary potential carbon sink for growth" type="double" unit="g">
+0
+							</SimulaConstant>
 							<SimulaConstant name="rootSegmentSpecificWeight" prettyName="root segment specific weight" type="double" unit="g/cm3">
 0
 							</SimulaConstant>
@@ -670,27 +871,53 @@
 							<SimulaConstant name="rootSegmentVolume" prettyName="root segment volume" type="double" unit="cm3">
 0
 							</SimulaConstant>
+							<SimulaConstant name="rootSegmentWaterUptake" prettyName="root segment water uptake" type="double" unit="cm3">
+0
+							</SimulaConstant>
+							<SimulaConstant name="rootWaterUptake" prettyName="root water uptake" type="double" unit="cm3/cm">
+0
+							</SimulaConstant>
 						</SimulaPoint>
 						<SimulaBase name="nitrate" prettyName="nitrate" unit="noUnit">
 
 							<SimulaDerivative function="rootTotal.v2" name="rootMinimalNutrientContent" prettyName="root minimal nutrient content" unit="umol"/>
 							<SimulaVariable function="rootTotal.v2" integrationFunction="RungeKutta4" name="rootNutrientUptake" prettyName="root nutrient uptake" unit="umol">
 0	0	0
-0.2	0.0357513	0.345134
+0.2	0.0363094	0.345717
 
 							</SimulaVariable>
 							<SimulaDerivative function="rootTotal.v2" name="rootOptimalNutrientContent" prettyName="root optimal nutrient content" unit="umol"/>
 							<SimulaDerivative function="rootSystemTotal" name="rootSystemMinimalNutrientContent" prettyName="root system minimal nutrient content" unit="umol"/>
 							<SimulaVariable function="rootSystemTotal" integrationFunction="RungeKutta4" name="rootSystemNutrientUptake" prettyName="root system nutrient uptake" unit="umol">
 0	0	0
-0.2	0.0345134	0.345134
+0.2	0.0345717	0.345717
 
 							</SimulaVariable>
 							<SimulaDerivative function="rootSystemTotal" name="rootSystemOptimalNutrientContent" prettyName="root system optimal nutrient content" unit="umol"/>
 						</SimulaBase>
+						<SimulaVariable function="rootTotal.v2" integrationFunction="RungeKutta4" name="rootCarbonCostOfExudates" prettyName="root carbon cost of exudates" unit="g">
+0	0	0
+0.2	0	0
+
+						</SimulaVariable>
 						<SimulaDerivative function="rootTotal" name="rootDryWeight" prettyName="root dry weight" unit="g"/>
 						<SimulaDerivative function="rootTotal.v2" name="rootLength" prettyName="root length" unit="cm"/>
+						<SimulaVariable function="rootTotal" integrationFunction="RungeKutta4" name="rootRespiration" prettyName="root respiration" unit="g">
+0	0	0
+0.2	2.3193e-05	0.000240994
+
+						</SimulaVariable>
+						<SimulaVariable function="rootTotal" integrationFunction="RungeKutta4" name="rootSecondaryPotentialCarbonSinkForGrowth" prettyName="root secondary potential carbon sink for growth" unit="g">
+0	0	0
+0.2	5.5816e-08	5.5816e-07
+
+						</SimulaVariable>
 						<SimulaDerivative function="rootTotal.v2" name="rootSurfaceArea" prettyName="root surface area" unit="cm2"/>
+						<SimulaVariable function="rootSystemTotal" integrationFunction="RungeKutta4" name="rootSystemCarbonCostOfExudates" prettyName="root system carbon cost of exudates" unit="g">
+0	0	0
+0.2	0	0
+
+						</SimulaVariable>
 						<SimulaDerivative function="rootSystemTotal" name="rootSystemDryWeight" prettyName="root system dry weight" unit="g"/>
 						<SimulaDerivative function="rootSystemTotal" name="rootSystemLength" prettyName="root system length" unit="cm"/>
 						<SimulaVariable function="rootSystemTotal" integrationFunction="RungeKutta4" name="rootSystemLongitudinalGrowth" prettyName="root system longitudinal growth" unit="cm">
@@ -698,12 +925,45 @@
 0.2	0.24	1.4
 
 						</SimulaVariable>
+						<SimulaVariable function="rootSystemTotal" integrationFunction="RungeKutta4" name="rootSystemPotentialCarbonSinkForGrowth" prettyName="root system potential carbon sink for growth" unit="g">
+0	0	0.00531557
+0.2	0.00127574	0.0074418
+
+						</SimulaVariable>
+						<SimulaVariable function="rootSystemTotal" integrationFunction="RungeKutta4" name="rootSystemPotentialCarbonSinkForGrowth;majorAxis" prettyName="root system potential carbon sink for growth;major axis" unit="g">
+0	0	0.00531557
+0.2	0.00127574	0.0074418
+
+							<SimulaConstant name="includedRootClasses" prettyName="included root classes" type="string" unit="noUnit">
+hypocotyl, primaryRoot, seminal, nodalroots, nodalroots1,				nodalroots2, nodalroots3, nodalroots4, nodalroots5, braceroots,				braceroots1, braceroots2, braceroots3, basalWhorl1, basalWhorl2,				basalWhorl3, basalWhorl4
+							</SimulaConstant>
+						</SimulaVariable>
+						<SimulaVariable function="rootSystemTotal" integrationFunction="RungeKutta4" name="rootSystemRespiration" prettyName="root system respiration" unit="g">
+0	0	0
+0.2	2.40994e-05	0.000240994
+
+						</SimulaVariable>
+						<SimulaVariable function="rootSystemTotal" integrationFunction="RungeKutta4" name="rootSystemSecondaryPotentialCarbonSinkForGrowth" prettyName="root system secondary potential carbon sink for growth" unit="g">
+0	0	0
+0.2	5.5816e-08	5.5816e-07
+
+						</SimulaVariable>
 						<SimulaDerivative function="rootSystemTotal" name="rootSystemSurfaceArea" prettyName="root system surface area" unit="cm2"/>
 						<SimulaDerivative function="rootSystemTotal" name="rootSystemVolume" prettyName="root system volume" unit="cm3"/>
+						<SimulaVariable function="rootSystemTotal" integrationFunction="RungeKutta4" name="rootSystemWaterUptake" prettyName="root system water uptake" unit="cm3">
+0	0	0
+0.2	0	0
+
+						</SimulaVariable>
 						<SimulaConstant name="rootType" prettyName="root type" type="string" unit="noUnit">
 hypocotyl
 						</SimulaConstant>
 						<SimulaDerivative function="rootTotal.v2" name="rootVolume" prettyName="root volume" unit="cm3"/>
+						<SimulaVariable function="rootTotal" integrationFunction="RungeKutta4" name="rootWaterUptake" prettyName="root water uptake" unit="cm3">
+0	0	0
+0.2	0	0
+
+						</SimulaVariable>
 					</SimulaConstant>
 					<SimulaConstant name="primaryRoot" prettyName="primary root" type="Coordinate" unit="cm">
 0	0	0
@@ -750,6 +1010,10 @@ hypocotyl
 0.2	0.09001	0.0001
 
 								</SimulaVariable>
+								<SimulaLink name="rootHairDensity" prettyName="root hair density"/>
+								<SimulaLink name="rootHairDiameter" prettyName="root hair diameter"/>
+								<SimulaLink name="rootHairLength" prettyName="root hair length"/>
+								<SimulaDerivative function="rootSegmentRootHairSurfaceArea" name="rootHairSurfaceArea" prettyName="root hair surface area" unit="cm2/cm"/>
 								<SimulaDerivative function="rootLength2Base" name="rootLength2Base" prettyName="root length to  base" unit="cm"/>
 								<SimulaVariable function="potentialSecondaryGrowth" integrationFunction="RungeKutta4" name="rootPotentialSecondaryGrowth" prettyName="root potential secondary growth" unit="cm">
 0	0.09	0
@@ -757,29 +1021,38 @@ hypocotyl
 
 								</SimulaVariable>
 								<SimulaDerivative function="rootSegmentAge" name="rootSegmentAge" prettyName="root segment age" unit="day"/>
+								<SimulaVariable function="carbonCostOfExudates" integrationFunction="RungeKutta4" name="rootSegmentCarbonCostOfExudates" prettyName="root segment carbon cost of exudates" unit="g">
+0	0	0
+0.2	8.88624e-07	8.8157e-06
+
+								</SimulaVariable>
 								<SimulaDerivative function="rootSegmentDryWeight" name="rootSegmentDryWeight" prettyName="root segment dry weight" unit="g"/>
 								<SimulaDerivative function="rootSegmentLength" name="rootSegmentLength" prettyName="root segment length" unit="cm"/>
 								<SimulaVariable function="rootSegmentLength" integrationFunction="RungeKutta4" name="rootSegmentLengthDuration" prettyName="root segment length duration" unit="cm.day">
 0	0	0
 
 								</SimulaVariable>
+								<SimulaDerivative function="rootSegmentRespirationRate" name="rootSegmentRespiration" prettyName="root segment respiration" unit="g/day"/>
+								<SimulaVariable function="rootNodePotentialCarbonSinkForGrowth" integrationFunction="RungeKutta4" name="rootSegmentSecondaryPotentialCarbonSinkForGrowth" prettyName="root segment secondary potential carbon sink for growth" unit="g">
+0	0	0
+0.2	9.39739e-09	1.40965e-07
+
+								</SimulaVariable>
 								<SimulaDerivative function="rootSegmentSurfaceArea" name="rootSegmentSurfaceArea" prettyName="root segment surface area" unit="cm2"/>
 								<SimulaDerivative function="rootSegmentVolume" name="rootSegmentVolume" prettyName="root segment volume" unit="cm3"/>
+								<SimulaVariable function="waterUptakeFromHopmans" integrationFunction="RungeKutta4" name="rootSegmentWaterUptake" prettyName="root segment water uptake" unit="cm3">
+0	0	0
+0.2	0	0
+
+								</SimulaVariable>
 								<SimulaDerivative function="proximity" name="spatialRootDensity" prettyName="spatial root density" unit="cm/cm3"/>
+								<SimulaTable function="getValuesFromSWMS" interpolationMethod="step" name_column1="time" name_column2="volumetricWaterContentAtTheRootSurface" prettyName="volumetric water content at the root surface" unit_column1="day" unit_column2="cm3/cm3"/>
 							</SimulaConstant>
 						</SimulaBase>
 						<SimulaPoint function="rootGrowthDirection" garbageCollectionOff="true" integrationFunction="RungeKutta4" name="growthpoint" prettyName="growthpoint" unit="cm">
-0	0	0	0	0.165874	-2.35102	0.0253827	
-0.0112976	0.00181377	-0.0265551	0.000781538	0.0760557	-2.35484	-0.0661083	
-0.0225952	0.00274767	-0.0531632	0.00032523	0.0793012	-2.35411	-0.0856406	
-0.0399089	0.00479648	-0.0938804	-0.00147193	0.0631486	-2.34976	-0.173402	
-0.0608165	0.00551913	-0.143025	-0.00503786	-0.0529776	-2.35572	-0.056726	
-0.0876764	0.00248945	-0.206206	-0.00769255	-0.0260007	-2.35635	0.049012	
-0.1	0.00182064	-0.235244	-0.00749	0.0333638	-2.35676	0.00117289	
-0.12686	0.00126666	-0.298532	-0.00902966	-0.0211705	-2.35669	-0.0315634	
-0.15372	0.00041962	-0.361827	-0.00800826	-0.0550828	-2.35531	0.070284	
-0.18058	-0.002012	-0.425078	-0.00682547	-0.155004	-2.35183	-0.0176899	
-0.2	-0.00503154	-0.47074	-0.00783207	-0.141419	-2.3516	0.0735646	
+0	0	0	0	0.229444	-2.33576	0.216859	
+0.1	0.0179236	-0.234315	0.01816	0.211597	-2.33897	0.199708	
+0.2	0.0425577	-0.467714	0.0399009	0.310816	-2.32717	0.207632	
 
 							<SimulaBase name="nitrate" prettyName="nitrate" unit="noUnit">
 
@@ -805,34 +1078,20 @@ hypocotyl
 							<SimulaDerivative function="rootDiameter" name="rootDiameter" prettyName="root diameter" unit="cm"/>
 							<SimulaVariable function="scaledRootGrowthRate" garbageCollectionOff="true" integrationFunction="RungeKutta4" name="rootLongitudinalGrowth" prettyName="root longitudinal growth" unit="cm">
 0	0	2.357
-0.0112976	0.0266284	2.357
-0.0225952	0.0532568	2.357
-0.0399089	0.0940652	2.357
-0.0608165	0.143344	2.357
-0.0876764	0.206653	2.357
 0.1	0.2357	2.357
-0.12686	0.299009	2.357
-0.15372	0.362318	2.357
-0.18058	0.425627	2.357
 0.2	0.4714	2.357
 
 							</SimulaVariable>
 							<SimulaVariable function="potentialRootGrowthRate" integrationFunction="RungeKutta4" name="rootPotentialLongitudinalGrowth" prettyName="root potential longitudinal growth" unit="cm">
 0	0	2.357
-0.0112976	0.0266284	2.357
-0.0225952	0.0532568	2.357
-0.0399089	0.0940652	2.357
-0.0608165	0.143344	2.357
-0.0876764	0.206653	2.357
-0.1	0.2357	2.357
-0.12686	0.299009	2.357
-0.15372	0.362318	2.357
-0.18058	0.425627	2.357
 0.2	0.4714	2.357
 
 							</SimulaVariable>
 							<SimulaDerivative function="rootDiameter" name="rootPotentialSecondaryGrowth" prettyName="root potential secondary growth" unit="cm"/>
 							<SimulaConstant name="rootSegmentAge" prettyName="root segment age" type="double" unit="day">
+0
+							</SimulaConstant>
+							<SimulaConstant name="rootSegmentCarbonCostOfExudates" prettyName="root segment carbon cost of exudates" type="double" unit="g">
 0
 							</SimulaConstant>
 							<SimulaConstant name="rootSegmentDryWeight" prettyName="root segment dry weight" type="double" unit="g">
@@ -844,6 +1103,17 @@ hypocotyl
 							<SimulaConstant name="rootSegmentLengthDuration" prettyName="root segment length duration" type="double" unit="cm.day">
 0
 							</SimulaConstant>
+							<SimulaVariable function="rootNodePotentialCarbonSinkForGrowth" integrationFunction="RungeKutta4" name="rootSegmentPotentialCarbonSinkForGrowth" prettyName="root segment potential carbon sink for growth" unit="g">
+0	0	0.000634271
+0.2	0.000126854	0.000634271
+
+							</SimulaVariable>
+							<SimulaConstant name="rootSegmentRespiration" prettyName="root segment respiration" type="double" unit="g">
+0
+							</SimulaConstant>
+							<SimulaConstant name="rootSegmentSecondaryPotentialCarbonSinkForGrowth" prettyName="root segment secondary potential carbon sink for growth" type="double" unit="g">
+0
+							</SimulaConstant>
 							<SimulaConstant name="rootSegmentSpecificWeight" prettyName="root segment specific weight" type="double" unit="g/cm3">
 0
 							</SimulaConstant>
@@ -851,6 +1121,12 @@ hypocotyl
 0
 							</SimulaConstant>
 							<SimulaConstant name="rootSegmentVolume" prettyName="root segment volume" type="double" unit="cm3">
+0
+							</SimulaConstant>
+							<SimulaConstant name="rootSegmentWaterUptake" prettyName="root segment water uptake" type="double" unit="cm3">
+0
+							</SimulaConstant>
+							<SimulaConstant name="rootWaterUptake" prettyName="root water uptake" type="double" unit="cm3/cm">
 0
 							</SimulaConstant>
 						</SimulaPoint>
@@ -871,9 +1147,29 @@ hypocotyl
 							</SimulaVariable>
 							<SimulaDerivative function="rootSystemTotal" name="rootSystemOptimalNutrientContent" prettyName="root system optimal nutrient content" unit="umol"/>
 						</SimulaBase>
+						<SimulaVariable function="rootTotal.v2" integrationFunction="RungeKutta4" name="rootCarbonCostOfExudates" prettyName="root carbon cost of exudates" unit="g">
+0	0	0
+0.2	8.8157e-07	8.8157e-06
+
+						</SimulaVariable>
 						<SimulaDerivative function="rootTotal" name="rootDryWeight" prettyName="root dry weight" unit="g"/>
 						<SimulaDerivative function="rootTotal.v2" name="rootLength" prettyName="root length" unit="cm"/>
+						<SimulaVariable function="rootTotal" integrationFunction="RungeKutta4" name="rootRespiration" prettyName="root respiration" unit="g">
+0	0	0
+0.2	2.44348e-06	2.39667e-05
+
+						</SimulaVariable>
+						<SimulaVariable function="rootTotal" integrationFunction="RungeKutta4" name="rootSecondaryPotentialCarbonSinkForGrowth" prettyName="root secondary potential carbon sink for growth" unit="g">
+0	0	0
+0.2	1.40965e-08	1.40965e-07
+
+						</SimulaVariable>
 						<SimulaDerivative function="rootTotal.v2" name="rootSurfaceArea" prettyName="root surface area" unit="cm2"/>
+						<SimulaVariable function="rootSystemTotal" integrationFunction="RungeKutta4" name="rootSystemCarbonCostOfExudates" prettyName="root system carbon cost of exudates" unit="g">
+0	0	0
+0.2	8.8157e-07	8.8157e-06
+
+						</SimulaVariable>
 						<SimulaDerivative function="rootSystemTotal" name="rootSystemDryWeight" prettyName="root system dry weight" unit="g"/>
 						<SimulaDerivative function="rootSystemTotal" name="rootSystemLength" prettyName="root system length" unit="cm"/>
 						<SimulaVariable function="rootSystemTotal" integrationFunction="RungeKutta4" name="rootSystemLongitudinalGrowth" prettyName="root system longitudinal growth" unit="cm">
@@ -881,28 +1177,83 @@ hypocotyl
 0.2	0.4714	2.357
 
 						</SimulaVariable>
+						<SimulaVariable function="rootSystemTotal" integrationFunction="RungeKutta4" name="rootSystemPotentialCarbonSinkForGrowth" prettyName="root system potential carbon sink for growth" unit="g">
+0	0	0.000634271
+0.2	0.000126854	0.000634271
+
+						</SimulaVariable>
+						<SimulaVariable function="rootSystemTotal" integrationFunction="RungeKutta4" name="rootSystemPotentialCarbonSinkForGrowth;majorAxis" prettyName="root system potential carbon sink for growth;major axis" unit="g">
+0	0	0.000634271
+0.2	0.000126854	0.000634271
+
+							<SimulaConstant name="includedRootClasses" prettyName="included root classes" type="string" unit="noUnit">
+hypocotyl, primaryRoot, seminal, nodalroots, nodalroots1,				nodalroots2, nodalroots3, nodalroots4, nodalroots5, braceroots,				braceroots1, braceroots2, braceroots3, basalWhorl1, basalWhorl2,				basalWhorl3, basalWhorl4
+							</SimulaConstant>
+						</SimulaVariable>
+						<SimulaVariable function="rootSystemTotal" integrationFunction="RungeKutta4" name="rootSystemRespiration" prettyName="root system respiration" unit="g">
+0	0	0
+0.2	2.39667e-06	2.39667e-05
+
+						</SimulaVariable>
+						<SimulaVariable function="rootSystemTotal" integrationFunction="RungeKutta4" name="rootSystemSecondaryPotentialCarbonSinkForGrowth" prettyName="root system secondary potential carbon sink for growth" unit="g">
+0	0	0
+0.2	1.40965e-08	1.40965e-07
+
+						</SimulaVariable>
 						<SimulaDerivative function="rootSystemTotal" name="rootSystemSurfaceArea" prettyName="root system surface area" unit="cm2"/>
 						<SimulaDerivative function="rootSystemTotal" name="rootSystemVolume" prettyName="root system volume" unit="cm3"/>
+						<SimulaVariable function="rootSystemTotal" integrationFunction="RungeKutta4" name="rootSystemWaterUptake" prettyName="root system water uptake" unit="cm3">
+0	0	0
+0.2	0	0
+
+						</SimulaVariable>
 						<SimulaConstant name="rootType" prettyName="root type" type="string" unit="noUnit">
 primaryRoot
 						</SimulaConstant>
 						<SimulaDerivative function="rootTotal.v2" name="rootVolume" prettyName="root volume" unit="cm3"/>
+						<SimulaVariable function="rootTotal" integrationFunction="RungeKutta4" name="rootWaterUptake" prettyName="root water uptake" unit="cm3">
+0	0	0
+0.2	0	0
+
+						</SimulaVariable>
 					</SimulaConstant>
 					<SimulaConstant name="shoot" prettyName="shoot" type="Coordinate" unit="cm">
 0	0	0
 						<SimulaLink name="areaPerPlant" prettyName="area per plant"/>
+						<SimulaVariable function="carbonAllocation2Leafs" integrationFunction="RungeKutta4" name="carbonAllocation2Leafs" prettyName="carbon allocation to  leafs" unit="g">
+0	0	0
+0.2	0	0
+
+						</SimulaVariable>
+						<SimulaVariable function="carbonAllocation2Stems" integrationFunction="RungeKutta4" name="carbonAllocation2Stems" prettyName="carbon allocation to  stems" unit="g">
+0	0	0
+0.2	0	0
+
+						</SimulaVariable>
 						<SimulaLink name="extinctionCoefficient" prettyName="extinction coefficient"/>
-						<SimulaVariable function="potentialLeafGrowthRate" integrationFunction="RungeKutta4" name="leafArea" prettyName="leaf area" unit="cm2">
+						<SimulaVariable function="leafArea" integrationFunction="RungeKutta4" name="leafArea" prettyName="leaf area" unit="cm2">
 0	0	0
 0.2	0	0
 
 						</SimulaVariable>
 						<SimulaDerivative function="leafAreaIndex" name="leafAreaIndex" prettyName="leaf area index" unit="cm2/cm2"/>
+						<SimulaDerivative function="leafAreaReductionCoefficient" name="leafAreaReductionCoefficient" prettyName="leaf area reduction coefficient" unit="cm2/cm2"/>
 						<SimulaVariable function="leafDryWeight.v2" integrationFunction="RungeKutta4" name="leafDryWeight" prettyName="leaf dry weight" unit="g">
 0	0	0
 0.2	0	0
 
 						</SimulaVariable>
+						<SimulaVariable function="leafPotentialCarbonSinkForGrowth" integrationFunction="RungeKutta4" name="leafPotentialCarbonSinkForGrowth" prettyName="leaf potential carbon sink for growth" unit="g">
+0	0	0
+0.2	0	0
+
+						</SimulaVariable>
+						<SimulaVariable function="leafRespirationRate" integrationFunction="RungeKutta4" name="leafRespiration" prettyName="leaf respiration" unit="g">
+0	0	0
+0.2	0	0
+
+						</SimulaVariable>
+						<SimulaDerivative function="lightInterception" name="lightInterception" prettyName="light interception" unit="umol/cm2/day"/>
 						<SimulaBase name="nitrate" prettyName="nitrate" unit="noUnit">
 
 							<SimulaLink name="leafMinimalNutrientConcentration" prettyName="leaf minimal nutrient concentration"/>
@@ -920,30 +1271,149 @@ primaryRoot
 							<SimulaLink name="stemOptimalNutrientConcentration" prettyName="stem optimal nutrient concentration"/>
 							<SimulaDerivative function="shootOptimalNutrientContent" name="stemOptimalNutrientContent" prettyName="stem optimal nutrient content" unit="umol"/>
 						</SimulaBase>
+						<SimulaVariable function="photosynthesisLintulV2" integrationFunction="RungeKutta4" name="photosynthesis" prettyName="photosynthesis" unit="g">
+0	0	0
+0.2	0	0
+
+						</SimulaVariable>
+						<SimulaVariable function="potentialLeafGrowthRate" integrationFunction="RungeKutta4" name="potentialLeafArea" prettyName="potential leaf area" unit="cm2">
+0	0	0
+0.2	0	0
+
+						</SimulaVariable>
+						<SimulaVariable function="simplePotentialTranspiration" integrationFunction="RungeKutta4" name="potentialTranspiration" prettyName="potential transpiration" unit="cm3">
+0	0	0
+0.2	0	0
+
+						</SimulaVariable>
+						<SimulaDerivative function="relativeCarbonAllocation2LeafsFromInputFile" name="relativeCarbonAllocation2Leafs" prettyName="relative carbon allocation to  leafs" unit="100%"/>
+						<SimulaDerivative function="relativeCarbonAllocation2StemsOneMinusLeafs" name="relativeCarbonAllocation2Stems" prettyName="relative carbon allocation to  stems" unit="100%"/>
 						<SimulaVariable function="stemDryWeight" integrationFunction="RungeKutta4" name="stemDryWeight" prettyName="stem dry weight" unit="g">
+0	0	0
+0.2	0	0
+
+						</SimulaVariable>
+						<SimulaVariable function="stemPotentialCarbonSinkForGrowth" integrationFunction="RungeKutta4" name="stemPotentialCarbonSinkForGrowth" prettyName="stem potential carbon sink for growth" unit="g">
+0	0	0
+0.2	0	0
+
+						</SimulaVariable>
+						<SimulaVariable function="stemRespirationRate" integrationFunction="RungeKutta4" name="stemRespiration" prettyName="stem respiration" unit="g">
 0	0	0
 0.2	0	0
 
 						</SimulaVariable>
 					</SimulaConstant>
 				</SimulaConstant>
+				<SimulaVariable function="plantTotal" integrationFunction="RungeKutta4" name="plantPotentialCarbonSinkForGrowth" prettyName="plant potential carbon sink for growth" unit="g">
+0	0	0.00594985
+0.2	0.00140266	0.00807677
+
+				</SimulaVariable>
+				<SimulaVariable function="plantTotal" integrationFunction="RungeKutta4" name="plantRespiration" prettyName="plant respiration" unit="g">
+0	0	0
+0.2	2.6496e-05	0.00026496
+
+				</SimulaVariable>
 				<SimulaConstant name="plantType" prettyName="plant type" type="string" unit="noUnit">
 Bean-Carioca-SimRoot4
 				</SimulaConstant>
 				<SimulaConstant name="plantingTime" prettyName="planting time" type="double" unit="day">
 0
 				</SimulaConstant>
+				<SimulaDerivative function="relativeCarbonAllocation2RootsOneMinusShoot" name="relativeCarbonAllocation2Roots" prettyName="relative carbon allocation to  roots" unit="100%"/>
+				<SimulaDerivative function="relativeCarbonAllocation2ShootPotentialGrowth" name="relativeCarbonAllocation2Shoot" prettyName="relative carbon allocation to  shoot" unit="100%"/>
+				<SimulaVariable function="reservesSinkBased" integrationFunction="RungeKutta4" name="reserves" prettyName="reserves" unit="g">
+0	0.2	-0.0132219
+0.2	0.19682	-0.0185744
+
+				</SimulaVariable>
+				<SimulaVariable function="carbonCostOfBiologicalNitrogenFixation" integrationFunction="RungeKutta4" name="rootCarbonCostOfBiologicalNitrogenFixation" prettyName="root carbon cost of biological nitrogen fixation" unit="g">
+0	0	0
+0.2	0	0
+
+				</SimulaVariable>
+				<SimulaVariable function="plantTotal" integrationFunction="RungeKutta4" name="rootCarbonCostOfExudates" prettyName="root carbon cost of exudates" unit="g">
+0	0	0
+0.2	8.8157e-07	8.8157e-06
+
+				</SimulaVariable>
+				<SimulaVariable function="carbonCostOfNutrientUptake" integrationFunction="RungeKutta4" name="rootCarbonCostOfNutrientUptake" prettyName="root carbon cost of nutrient uptake" unit="g">
+0	0	0
+0.2	7.93595e-07	7.93595e-06
+
+				</SimulaVariable>
+				<SimulaVariable function="sum" integrationFunction="RungeKutta4" name="rootCarbonCosts" prettyName="root carbon costs" unit="g">
+0	0	0
+0.2	1.67517e-06	1.67517e-05
+
+					<SimulaConstant name="paths" prettyName="paths" type="string" unit="noUnit">
+rootCarbonCostOfExudates;rootCarbonCostOfNutrientUptake;rootCarbonCostOfBiologicalNitrogenFixation
+					</SimulaConstant>
+				</SimulaVariable>
 				<SimulaDerivative function="plantTotal" name="rootDryWeight" prettyName="root dry weight" unit="g"/>
+				<SimulaVariable function="rootGrowthScalingFactor" integrationFunction="RungeKutta4" name="rootGrowthScalingFactor" prettyName="root growth scaling factor" unit="100%">
+0	1	0
+
+				</SimulaVariable>
+				<SimulaVariable function="rootGrowthScalingFactor" integrationFunction="RungeKutta4" name="rootGrowthScalingFactor;majorAxis" prettyName="root growth scaling factor;major axis" unit="100%">
+0	1	0
+0.1	1	0
+0.2	1	0
+
+				</SimulaVariable>
 				<SimulaDerivative function="plantTotal" name="rootLength" prettyName="root length" unit="cm"/>
 				<SimulaVariable function="plantTotal" integrationFunction="RungeKutta4" name="rootLongitudinalGrowth" prettyName="root longitudinal growth" unit="cm">
 0	0	3.357
 0.2	0.7114	3.757
 
 				</SimulaVariable>
+				<SimulaVariable function="plantTotal" integrationFunction="RungeKutta4" name="rootPotentialCarbonSinkForGrowth" prettyName="root potential carbon sink for growth" unit="g">
+0	0	0.00594985
+0.2	0.00140266	0.00807677
+
+				</SimulaVariable>
+				<SimulaVariable function="plantTotal" integrationFunction="RungeKutta4" name="rootPotentialCarbonSinkForGrowth;majorAxis" prettyName="root potential carbon sink for growth;major axis" unit="g">
+0	0	0.00594985
+0.2	0.00140259	0.00807608
+
+				</SimulaVariable>
+				<SimulaVariable function="plantTotal" integrationFunction="RungeKutta4" name="rootRespiration" prettyName="root respiration" unit="g">
+0	0	0
+0.2	2.6496e-05	0.00026496
+
+				</SimulaVariable>
+				<SimulaVariable function="plantTotal" integrationFunction="RungeKutta4" name="rootSecondaryPotentialCarbonSinkForGrowth" prettyName="root secondary potential carbon sink for growth" unit="g">
+0	0	0
+0.2	6.99125e-08	6.99125e-07
+
+				</SimulaVariable>
 				<SimulaDerivative function="plantTotal" name="rootSurfaceArea" prettyName="root surface area" unit="cm2"/>
 				<SimulaDerivative function="plantTotal" name="rootVolume" prettyName="root volume" unit="cm3"/>
+				<SimulaVariable function="plantTotal" integrationFunction="RungeKutta4" name="rootWaterUptake" prettyName="root water uptake" unit="cm3">
+0	0	0
+0.2	0	0
+
+				</SimulaVariable>
+				<SimulaVariable function="rootGrowthScalingFactor" integrationFunction="RungeKutta4" name="secondaryRootGrowthScalingFactor" prettyName="secondary root growth scaling factor" unit="100%">
+0	1	0
+0.1	1	0
+0.2	1	0
+
+				</SimulaVariable>
 				<SimulaDerivative function="plantTotal" name="shootDryWeight" prettyName="shoot dry weight" unit="g"/>
+				<SimulaVariable function="plantTotal" integrationFunction="RungeKutta4" name="shootPotentialCarbonSinkForGrowth" prettyName="shoot potential carbon sink for growth" unit="g">
+0	0	0
+0.2	0	0
+
+				</SimulaVariable>
+				<SimulaVariable function="plantTotal" integrationFunction="RungeKutta4" name="shootRespiration" prettyName="shoot respiration" unit="g">
+0	0	0
+0.2	0	0
+
+				</SimulaVariable>
 			</SimulaBase>
+			<SimulaDerivative function="sumOverAllPlants" name="rootWaterUptake" prettyName="root water uptake" unit="cm3"/>
 		</SimulaBase>
 		<SimulaBase name="rootTypeParameters" prettyName="root type parameters" unit="noUnit">
 
@@ -3722,16 +4192,34 @@ Bean-Carioca-SimRoot4
 		<SimulaBase name="shootTemplate" prettyName="shoot template" unit="noUnit">
 
 			<SimulaLink name="areaPerPlant" prettyName="area per plant"/>
+			<SimulaVariable function="carbonAllocation2Leafs" integrationFunction="RungeKutta4" name="carbonAllocation2Leafs" prettyName="carbon allocation to  leafs" unit="g">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="carbonAllocation2Stems" integrationFunction="RungeKutta4" name="carbonAllocation2Stems" prettyName="carbon allocation to  stems" unit="g">
+0	0	0
+
+			</SimulaVariable>
 			<SimulaLink name="extinctionCoefficient" prettyName="extinction coefficient"/>
-			<SimulaVariable function="constantLeafGrowthRate" integrationFunction="RungeKutta4" name="leafArea" prettyName="leaf area" unit="cm2">
+			<SimulaVariable function="leafArea" integrationFunction="RungeKutta4" name="leafArea" prettyName="leaf area" unit="cm2">
 0	0	0
 
 			</SimulaVariable>
 			<SimulaDerivative function="leafAreaIndex" name="leafAreaIndex" prettyName="leaf area index" unit="cm2/cm2"/>
+			<SimulaDerivative function="leafAreaReductionCoefficient" name="leafAreaReductionCoefficient" prettyName="leaf area reduction coefficient" unit="cm2/cm2"/>
 			<SimulaVariable function="leafDryWeight.v2" integrationFunction="RungeKutta4" name="leafDryWeight" prettyName="leaf dry weight" unit="g">
 0	0	0
 
 			</SimulaVariable>
+			<SimulaVariable function="leafPotentialCarbonSinkForGrowth" integrationFunction="RungeKutta4" name="leafPotentialCarbonSinkForGrowth" prettyName="leaf potential carbon sink for growth" unit="g">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="leafRespirationRate" integrationFunction="RungeKutta4" name="leafRespiration" prettyName="leaf respiration" unit="g">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaDerivative function="lightInterception" name="lightInterception" prettyName="light interception" unit="umol/cm2/day"/>
 			<SimulaBase name="nitrate" prettyName="nitrate" unit="noUnit">
 
 				<SimulaLink name="leafMinimalNutrientConcentration" prettyName="leaf minimal nutrient concentration"/>
@@ -3749,7 +4237,29 @@ Bean-Carioca-SimRoot4
 				<SimulaLink name="stemOptimalNutrientConcentration" prettyName="stem optimal nutrient concentration"/>
 				<SimulaDerivative function="leafMinimalNutrientContent" name="stemOptimalNutrientContent" prettyName="stem optimal nutrient content" unit="umol"/>
 			</SimulaBase>
+			<SimulaVariable function="photosynthesisLintulV2" integrationFunction="RungeKutta4" name="photosynthesis" prettyName="photosynthesis" unit="g">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="constantLeafGrowthRate" integrationFunction="RungeKutta4" name="potentialLeafArea" prettyName="potential leaf area" unit="cm2">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="simplePotentialTranspiration" integrationFunction="RungeKutta4" name="potentialTranspiration" prettyName="potential transpiration" unit="cm3">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaDerivative function="relativeCarbonAllocation2LeafsFromInputFile" name="relativeCarbonAllocation2Leafs" prettyName="relative carbon allocation to  leafs" unit="100%"/>
+			<SimulaDerivative function="relativeCarbonAllocation2StemsOneMinusLeafs" name="relativeCarbonAllocation2Stems" prettyName="relative carbon allocation to  stems" unit="100%"/>
 			<SimulaVariable function="stemDryWeight" integrationFunction="RungeKutta4" name="stemDryWeight" prettyName="stem dry weight" unit="g">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="stemPotentialCarbonSinkForGrowth" integrationFunction="RungeKutta4" name="stemPotentialCarbonSinkForGrowth" prettyName="stem potential carbon sink for growth" unit="g">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="stemRespirationRate" integrationFunction="RungeKutta4" name="stemRespiration" prettyName="stem respiration" unit="g">
 0	0	0
 
 			</SimulaVariable>
@@ -3795,6 +4305,9 @@ Bean-Carioca-SimRoot4
 				<SimulaConstant name="rootSegmentAge" prettyName="root segment age" type="double" unit="day">
 0
 				</SimulaConstant>
+				<SimulaConstant name="rootSegmentCarbonCostOfExudates" prettyName="root segment carbon cost of exudates" type="double" unit="g">
+0
+				</SimulaConstant>
 				<SimulaConstant name="rootSegmentDryWeight" prettyName="root segment dry weight" type="double" unit="g">
 0
 				</SimulaConstant>
@@ -3804,6 +4317,16 @@ Bean-Carioca-SimRoot4
 				<SimulaConstant name="rootSegmentLengthDuration" prettyName="root segment length duration" type="double" unit="cm.day">
 0
 				</SimulaConstant>
+				<SimulaVariable function="rootNodePotentialCarbonSinkForGrowth" integrationFunction="RungeKutta4" name="rootSegmentPotentialCarbonSinkForGrowth" prettyName="root segment potential carbon sink for growth" unit="g">
+0	0	0
+
+				</SimulaVariable>
+				<SimulaConstant name="rootSegmentRespiration" prettyName="root segment respiration" type="double" unit="g">
+0
+				</SimulaConstant>
+				<SimulaConstant name="rootSegmentSecondaryPotentialCarbonSinkForGrowth" prettyName="root segment secondary potential carbon sink for growth" type="double" unit="g">
+0
+				</SimulaConstant>
 				<SimulaConstant name="rootSegmentSpecificWeight" prettyName="root segment specific weight" type="double" unit="g/cm3">
 0
 				</SimulaConstant>
@@ -3811,6 +4334,12 @@ Bean-Carioca-SimRoot4
 0
 				</SimulaConstant>
 				<SimulaConstant name="rootSegmentVolume" prettyName="root segment volume" type="double" unit="cm3">
+0
+				</SimulaConstant>
+				<SimulaConstant name="rootSegmentWaterUptake" prettyName="root segment water uptake" type="double" unit="cm3">
+0
+				</SimulaConstant>
+				<SimulaConstant name="rootWaterUptake" prettyName="root water uptake" type="double" unit="cm3/cm">
 0
 				</SimulaConstant>
 			</SimulaPoint>
@@ -3829,18 +4358,61 @@ Bean-Carioca-SimRoot4
 				</SimulaVariable>
 				<SimulaDerivative function="rootSystemNutrientTotal" name="rootSystemOptimalNutrientContent" prettyName="root system optimal nutrient content" unit="umol"/>
 			</SimulaBase>
+			<SimulaVariable function="rootTotal.v2" integrationFunction="RungeKutta4" name="rootCarbonCostOfExudates" prettyName="root carbon cost of exudates" unit="g">
+0	0	0
+
+			</SimulaVariable>
 			<SimulaDerivative function="rootNutrientTotal" name="rootDryWeight" prettyName="root dry weight" unit="g"/>
 			<SimulaDerivative function="rootTotal.v2" name="rootLength" prettyName="root length" unit="cm"/>
+			<SimulaVariable function="rootNutrientTotal" integrationFunction="RungeKutta4" name="rootRespiration" prettyName="root respiration" unit="g">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="rootNutrientTotal" integrationFunction="RungeKutta4" name="rootSecondaryPotentialCarbonSinkForGrowth" prettyName="root secondary potential carbon sink for growth" unit="g">
+0	0	0
+
+			</SimulaVariable>
 			<SimulaDerivative function="rootTotal.v2" name="rootSurfaceArea" prettyName="root surface area" unit="cm2"/>
+			<SimulaVariable function="rootSystemNutrientTotal" integrationFunction="RungeKutta4" name="rootSystemCarbonCostOfExudates" prettyName="root system carbon cost of exudates" unit="g">
+0	0	0
+
+			</SimulaVariable>
 			<SimulaDerivative function="rootSystemNutrientTotal" name="rootSystemDryWeight" prettyName="root system dry weight" unit="g"/>
 			<SimulaDerivative function="rootSystemNutrientTotal" name="rootSystemLength" prettyName="root system length" unit="cm"/>
 			<SimulaVariable function="rootSystemNutrientTotal" integrationFunction="RungeKutta4" name="rootSystemLongitudinalGrowth" prettyName="root system longitudinal growth" unit="cm">
 0	0	0
 
 			</SimulaVariable>
+			<SimulaVariable function="rootSystemNutrientTotal" integrationFunction="RungeKutta4" name="rootSystemPotentialCarbonSinkForGrowth" prettyName="root system potential carbon sink for growth" unit="g">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="rootSystemNutrientTotal" integrationFunction="RungeKutta4" name="rootSystemPotentialCarbonSinkForGrowth;majorAxis" prettyName="root system potential carbon sink for growth;major axis" unit="g">
+0	0	0
+
+				<SimulaConstant name="includedRootClasses" prettyName="included root classes" type="string" unit="noUnit">
+hypocotyl, primaryRoot, seminal, nodalroots, nodalroots1,				nodalroots2, nodalroots3, nodalroots4, nodalroots5, braceroots,				braceroots1, braceroots2, braceroots3, basalWhorl1, basalWhorl2,				basalWhorl3, basalWhorl4
+				</SimulaConstant>
+			</SimulaVariable>
+			<SimulaVariable function="rootSystemNutrientTotal" integrationFunction="RungeKutta4" name="rootSystemRespiration" prettyName="root system respiration" unit="g">
+0	0	0
+
+			</SimulaVariable>
+			<SimulaVariable function="rootSystemNutrientTotal" integrationFunction="RungeKutta4" name="rootSystemSecondaryPotentialCarbonSinkForGrowth" prettyName="root system secondary potential carbon sink for growth" unit="g">
+0	0	0
+
+			</SimulaVariable>
 			<SimulaDerivative function="rootSystemNutrientTotal" name="rootSystemSurfaceArea" prettyName="root system surface area" unit="cm2"/>
 			<SimulaDerivative function="rootSystemNutrientTotal" name="rootSystemVolume" prettyName="root system volume" unit="cm3"/>
+			<SimulaVariable function="rootSystemNutrientTotal" integrationFunction="RungeKutta4" name="rootSystemWaterUptake" prettyName="root system water uptake" unit="cm3">
+0	0	0
+
+			</SimulaVariable>
 			<SimulaDerivative function="rootTotal.v2" name="rootVolume" prettyName="root volume" unit="cm3"/>
+			<SimulaVariable function="rootNutrientTotal" integrationFunction="RungeKutta4" name="rootWaterUptake" prettyName="root water uptake" unit="cm3">
+0	0	0
+
+			</SimulaVariable>
 		</SimulaBase>
 		<SimulaBase name="simulationControls" prettyName="simulation controls" unit="noUnit">
 
@@ -3992,7 +4564,62 @@ primaryRoot, hypocotyl,
 				</SimulaBase>
 			</SimulaBase>
 		</SimulaBase>
-		<SimulaBase name="soil" prettyName="soil" unit="noUnit"/>
+		<SimulaBase name="soil" prettyName="soil" unit="noUnit">
+
+			<SimulaExternal function="Swms3d" name="Swms3d" prettyName="Swms3d" unit="noUnit"/>
+			<SimulaBase name="water" prettyName="water" unit="noUnit">
+
+				<SimulaVariable function="useDerivative" integrationFunction="RungeKutta4" name="bottomBoundaryFlux" prettyName="bottom boundary flux" unit="cm3">
+0	0	0
+
+					<SimulaConstant name="path" prettyName="path" type="string" unit="noUnit">
+bottomBoundaryFluxRate
+					</SimulaConstant>
+				</SimulaVariable>
+				<SimulaTable function="getValuesFromSWMS" garbageCollectionOff="true" interpolationMethod="step" name_column1="time" name_column2="bottomBoundaryFluxRate" prettyName="bottom boundary flux rate" unit_column1="day" unit_column2="cm3/day">
+0	0
+
+				</SimulaTable>
+				<SimulaDerivative function="waterMassBalanceTest" name="massBalanceError" prettyName="mass balance error" unit="cm3"/>
+				<SimulaTable function="useDerivative" garbageCollectionOff="true" interpolationMethod="step" name_column1="time" name_column2="relativeMassBalanceError" prettyName="relative mass balance error" unit_column1="day" unit_column2="100%">
+0	0
+
+					<SimulaConstant name="path" prettyName="path" type="string" unit="noUnit">
+massBalanceError
+					</SimulaConstant>
+				</SimulaTable>
+				<SimulaVariable function="useDerivative" integrationFunction="RungeKutta4" name="topBoundaryFlux" prettyName="top boundary flux" unit="cm3">
+0	0	0
+
+					<SimulaConstant name="path" prettyName="path" type="string" unit="noUnit">
+topBoundaryFluxRate
+					</SimulaConstant>
+				</SimulaVariable>
+				<SimulaTable function="getValuesFromSWMS" garbageCollectionOff="true" interpolationMethod="step" name_column1="time" name_column2="topBoundaryFluxRate" prettyName="top boundary flux rate" unit_column1="day" unit_column2="cm3/day">
+0	0
+
+				</SimulaTable>
+				<SimulaVariable function="useDerivative" integrationFunction="RungeKutta4" name="totalSink" prettyName="total sink" unit="cm3">
+0	0	0
+
+					<SimulaConstant name="path" prettyName="path" type="string" unit="noUnit">
+totalSinkRate
+					</SimulaConstant>
+				</SimulaVariable>
+				<SimulaTable function="getValuesFromSWMS" garbageCollectionOff="true" interpolationMethod="step" name_column1="time" name_column2="totalSinkRate" prettyName="total sink rate" unit_column1="day" unit_column2="cm3/day">
+0	-0
+
+				</SimulaTable>
+				<SimulaTable function="getValuesFromSWMS" garbageCollectionOff="true" interpolationMethod="step" name_column1="time" name_column2="totalWaterChangeInColumn" prettyName="total water change in column" unit_column1="day" unit_column2="cm3">
+0	0
+
+				</SimulaTable>
+				<SimulaTable function="getValuesFromSWMS" garbageCollectionOff="true" interpolationMethod="step" name_column1="time" name_column2="totalWaterInColumn" prettyName="total water in column" unit_column1="day" unit_column2="cm3">
+0	20745.3
+
+				</SimulaTable>
+			</SimulaBase>
+		</SimulaBase>
 	</SimulaConstant>
 </SimulationModel>
 

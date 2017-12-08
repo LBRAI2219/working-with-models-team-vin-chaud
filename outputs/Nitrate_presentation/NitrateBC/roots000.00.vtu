@@ -78,6 +78,18 @@
            <DataArray type="Float32" Name="rootDiameter" NumberOfComponents="1" format="ascii">
  0.000e+00
            </DataArray>
+           <DataArray type="Float32" Name="rootHairDensity" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="rootHairDiameter" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="rootHairLength" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="rootHairSurfaceArea" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
            <DataArray type="Float32" Name="rootLength2Base" NumberOfComponents="1" format="ascii">
  0.000e+00
            </DataArray>
@@ -85,6 +97,9 @@
  0.000e+00
            </DataArray>
            <DataArray type="Float32" Name="rootSegmentAge" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="rootSegmentCarbonCostOfExudates" NumberOfComponents="1" format="ascii">
  0.000e+00
            </DataArray>
            <DataArray type="Float32" Name="rootSegmentDryWeight" NumberOfComponents="1" format="ascii">
@@ -96,13 +111,25 @@
            <DataArray type="Float32" Name="rootSegmentLengthDuration" NumberOfComponents="1" format="ascii">
  0.000e+00
            </DataArray>
+           <DataArray type="Float32" Name="rootSegmentRespiration" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="rootSegmentSecondaryPotentialCarbonSinkForGrowth" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
            <DataArray type="Float32" Name="rootSegmentSurfaceArea" NumberOfComponents="1" format="ascii">
  0.000e+00
            </DataArray>
            <DataArray type="Float32" Name="rootSegmentVolume" NumberOfComponents="1" format="ascii">
  0.000e+00
            </DataArray>
+           <DataArray type="Float32" Name="rootSegmentWaterUptake" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
            <DataArray type="Float32" Name="spatialRootDensity" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="volumetricWaterContentAtTheRootSurface" NumberOfComponents="1" format="ascii">
  0.000e+00
            </DataArray>
          </CellData>
