@@ -1,0 +1,300 @@
+<?xml version="1.0"?>
+<VTKFile type="UnstructuredGrid" version="0.1" byte_order="LittleEndian">
+   <UnstructuredGrid>
+      <Piece NumberOfPoints="160" NumberOfCells="14">
+         <Points>
+            <DataArray type="Float32" Name="Position" NumberOfComponents="3" format="ascii">
+-0.141	-5.003	0.143
+-0.029	-5.002	0.199
+0.093	-5.001	0.178
+0.180	-4.999	0.089
+0.198	-4.998	-0.033
+0.141	-4.997	-0.143
+0.029	-4.998	-0.199
+-0.093	-4.999	-0.178
+-0.180	-5.001	-0.089
+-0.198	-5.002	0.033
+-0.148	-4.252	0.150
+-0.037	-4.252	0.206
+0.085	-4.250	0.185
+0.172	-4.249	0.097
+0.191	-4.248	-0.025
+0.134	-4.248	-0.135
+0.023	-4.249	-0.191
+-0.099	-4.250	-0.171
+-0.186	-4.251	-0.082
+-0.205	-4.252	0.040
+-0.152	-3.561	0.151
+-0.042	-3.561	0.207
+0.080	-3.560	0.187
+0.168	-3.559	0.099
+0.186	-3.559	-0.023
+0.130	-3.559	-0.133
+0.019	-3.560	-0.189
+-0.103	-3.560	-0.169
+-0.190	-3.561	-0.081
+-0.209	-3.561	0.041
+-0.160	-2.401	0.152
+-0.049	-2.400	0.208
+0.073	-2.400	0.188
+0.160	-2.399	0.101
+0.179	-2.399	-0.022
+0.123	-2.400	-0.132
+0.013	-2.400	-0.188
+-0.109	-2.401	-0.168
+-0.197	-2.401	-0.081
+-0.216	-2.401	0.042
+-0.161	-1.800	0.149
+-0.051	-1.800	0.206
+0.071	-1.800	0.187
+0.159	-1.800	0.099
+0.179	-1.801	-0.023
+0.123	-1.801	-0.133
+0.012	-1.800	-0.189
+-0.110	-1.800	-0.170
+-0.197	-1.800	-0.083
+-0.217	-1.800	0.039
+-0.158	-1.200	0.150
+-0.048	-1.200	0.206
+0.074	-1.200	0.187
+0.162	-1.201	0.099
+0.182	-1.201	-0.023
+0.126	-1.201	-0.133
+0.016	-1.200	-0.189
+-0.106	-1.200	-0.170
+-0.194	-1.200	-0.083
+-0.214	-1.200	0.039
+-0.158	-0.300	0.147
+-0.047	-0.300	0.204
+0.075	-0.300	0.184
+0.162	-0.300	0.097
+0.182	-0.300	-0.025
+0.125	-0.300	-0.135
+0.015	-0.301	-0.191
+-0.107	-0.301	-0.172
+-0.194	-0.301	-0.085
+-0.214	-0.300	0.037
+-0.158	-0.000	0.147
+-0.048	0.000	0.203
+0.074	0.000	0.184
+0.162	0.000	0.096
+0.181	0.000	-0.026
+0.125	-0.000	-0.136
+0.015	-0.000	-0.192
+-0.108	-0.001	-0.173
+-0.195	-0.001	-0.085
+-0.214	-0.001	0.037
+0.035	-5.006	-0.029
+0.045	-5.005	-0.003
+0.038	-5.002	0.024
+0.017	-4.999	0.042
+-0.011	-4.996	0.044
+-0.035	-4.994	0.029
+-0.045	-4.995	0.003
+-0.038	-4.998	-0.024
+-0.017	-5.001	-0.042
+0.011	-5.004	-0.044
+-0.035	-5.707	0.022
+-0.025	-5.706	0.048
+-0.031	-5.703	0.075
+-0.053	-5.700	0.093
+-0.080	-5.697	0.095
+-0.104	-5.696	0.080
+-0.115	-5.697	0.054
+-0.108	-5.700	0.027
+-0.087	-5.703	0.009
+-0.059	-5.706	0.007
+-0.097	-6.409	0.082
+-0.086	-6.408	0.108
+-0.093	-6.405	0.135
+-0.114	-6.401	0.152
+-0.142	-6.398	0.154
+-0.166	-6.398	0.139
+-0.176	-6.399	0.113
+-0.169	-6.402	0.086
+-0.148	-6.405	0.069
+-0.120	-6.408	0.067
+-0.169	-7.111	0.145
+-0.159	-7.109	0.171
+-0.166	-7.106	0.198
+-0.188	-7.102	0.215
+-0.215	-7.098	0.216
+-0.238	-7.097	0.201
+-0.248	-7.098	0.175
+-0.241	-7.101	0.148
+-0.220	-7.106	0.131
+-0.192	-7.109	0.130
+-0.267	-7.807	0.211
+-0.257	-7.807	0.237
+-0.265	-7.805	0.264
+-0.286	-7.800	0.281
+-0.314	-7.796	0.282
+-0.337	-7.793	0.267
+-0.346	-7.793	0.241
+-0.339	-7.796	0.214
+-0.318	-7.800	0.197
+-0.290	-7.805	0.196
+-0.385	-8.503	0.227
+-0.375	-8.505	0.253
+-0.382	-8.503	0.280
+-0.404	-8.499	0.298
+-0.431	-8.495	0.299
+-0.454	-8.491	0.284
+-0.464	-8.489	0.258
+-0.457	-8.490	0.231
+-0.435	-8.494	0.214
+-0.408	-8.499	0.212
+-0.511	-9.198	0.216
+-0.502	-9.200	0.242
+-0.509	-9.199	0.269
+-0.530	-9.195	0.286
+-0.558	-9.190	0.287
+-0.580	-9.186	0.272
+-0.590	-9.184	0.246
+-0.583	-9.185	0.219
+-0.562	-9.189	0.202
+-0.534	-9.194	0.200
+-0.598	-9.662	0.226
+-0.589	-9.663	0.252
+-0.596	-9.661	0.279
+-0.618	-9.657	0.296
+-0.645	-9.652	0.297
+-0.668	-9.648	0.281
+-0.677	-9.647	0.255
+-0.670	-9.649	0.228
+-0.648	-9.653	0.211
+-0.621	-9.658	0.210
+		    </DataArray>
+         </Points>
+         <Cells>
+            <DataArray type="Int32" Name="connectivity" NumberOfComponents="1" format="ascii">
+ 0 10 1 11 2 12 3 13 4 14 5 15 6 16 7 17 8 18 9 19 0 10
+ 10 20 11 21 12 22 13 23 14 24 15 25 16 26 17 27 18 28 19 29 10 20
+ 20 30 21 31 22 32 23 33 24 34 25 35 26 36 27 37 28 38 29 39 20 30
+ 30 40 31 41 32 42 33 43 34 44 35 45 36 46 37 47 38 48 39 49 30 40
+ 40 50 41 51 42 52 43 53 44 54 45 55 46 56 47 57 48 58 49 59 40 50
+ 50 60 51 61 52 62 53 63 54 64 55 65 56 66 57 67 58 68 59 69 50 60
+ 60 70 61 71 62 72 63 73 64 74 65 75 66 76 67 77 68 78 69 79 60 70
+ 80 90 81 91 82 92 83 93 84 94 85 95 86 96 87 97 88 98 89 99 80 90
+ 90 100 91 101 92 102 93 103 94 104 95 105 96 106 97 107 98 108 99 109 90 100
+ 100 110 101 111 102 112 103 113 104 114 105 115 106 116 107 117 108 118 109 119 100 110
+ 110 120 111 121 112 122 113 123 114 124 115 125 116 126 117 127 118 128 119 129 110 120
+ 120 130 121 131 122 132 123 133 124 134 125 135 126 136 127 137 128 138 129 139 120 130
+ 130 140 131 141 132 142 133 143 134 144 135 145 136 146 137 147 138 148 139 149 130 140
+ 140 150 141 151 142 152 143 153 144 154 145 155 146 156 147 157 148 158 149 159 140 150
+
+            </DataArray>
+            <DataArray type="Int32" Name="offsets" NumberOfComponents="1" format="ascii">
+ 22 44 66 88 110 132 154 176 198 220 242 264 286 308
+            </DataArray>
+            <DataArray type="UInt8"  Name="types" NumberOfComponents="1" format="ascii">
+6 6 6 6 6 6 6 6 6 6 6 6 6 6
+            </DataArray>
+         </Cells>
+         <CellData>
+           <DataArray type="Float32" Name="combinedRootClassID" NumberOfComponents="1" format="ascii">
+ -2.000e+00 -2.000e+00 -2.000e+00 -2.000e+00 -2.000e+00 -2.000e+00 -2.000e+00 -4.000e+00 -4.000e+00 -4.000e+00 -4.000e+00 -4.000e+00 -4.000e+00 -4.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="nitrate/Cmin" NumberOfComponents="1" format="ascii">
+ 1.000e-03 1.000e-03 1.000e-03 1.000e-03 1.000e-03 1.000e-03 1.000e-03 1.000e-03 1.000e-03 1.000e-03 1.000e-03 1.000e-03 1.000e-03 1.000e-03
+           </DataArray>
+           <DataArray type="Float32" Name="nitrate/Imax" NumberOfComponents="1" format="ascii">
+ 1.900e+00 1.900e+00 1.900e+00 1.900e+00 1.900e+00 1.900e+00 1.900e+00 1.900e+00 1.900e+00 1.900e+00 1.900e+00 1.900e+00 1.900e+00 1.900e+00
+           </DataArray>
+           <DataArray type="Float32" Name="nitrate/Km" NumberOfComponents="1" format="ascii">
+ 1.610e-02 1.610e-02 1.610e-02 1.610e-02 1.610e-02 1.610e-02 1.610e-02 1.610e-02 1.610e-02 1.610e-02 1.610e-02 1.610e-02 1.610e-02 1.610e-02
+           </DataArray>
+           <DataArray type="Float32" Name="nitrate/minimalNutrientConcentration" NumberOfComponents="1" format="ascii">
+ 6.000e+02 6.000e+02 6.000e+02 6.000e+02 6.000e+02 6.000e+02 6.000e+02 6.000e+02 6.000e+02 6.000e+02 6.000e+02 6.000e+02 6.000e+02 6.000e+02
+           </DataArray>
+           <DataArray type="Float32" Name="nitrate/nutrientConcentrationAtTheRootSurface" NumberOfComponents="1" format="ascii">
+ 9.393e-01 9.408e-01 9.670e-01 1.014e+00 1.018e+00 1.044e+00 9.070e-01 9.393e-01 9.261e-01 9.281e-01 9.421e-01 1.027e+00 1.142e+00 1.239e+00
+           </DataArray>
+           <DataArray type="Float32" Name="nitrate/optimalNutrientConcentration" NumberOfComponents="1" format="ascii">
+ 1.200e+03 1.200e+03 1.200e+03 1.200e+03 1.200e+03 1.200e+03 1.200e+03 1.200e+03 1.200e+03 1.200e+03 1.200e+03 1.200e+03 1.200e+03 1.200e+03
+           </DataArray>
+           <DataArray type="Float32" Name="nitrate/rootSegmentMinimalNutrientContent" NumberOfComponents="1" format="ascii">
+ 5.362e+00 4.914e+00 8.247e+00 4.258e+00 4.256e+00 6.381e+00 2.126e+00 2.594e-01 2.578e-01 2.565e-01 2.554e-01 2.546e-01 2.541e-01 1.692e-01
+           </DataArray>
+           <DataArray type="Float32" Name="nitrate/rootSegmentNutrientUptake" NumberOfComponents="1" format="ascii">
+ 0.000e+00 5.444e-01 4.399e-01 3.075e-01 2.329e-01 1.635e-01 4.069e-02 0.000e+00 5.720e-01 4.636e-01 3.603e-01 2.614e-01 1.500e-01 3.750e-02
+           </DataArray>
+           <DataArray type="Float32" Name="nitrate/rootSegmentOptimalNutrientContent" NumberOfComponents="1" format="ascii">
+ 1.072e+01 9.829e+00 1.649e+01 8.517e+00 8.512e+00 1.276e+01 4.253e+00 5.188e-01 5.156e-01 5.130e-01 5.108e-01 5.092e-01 5.081e-01 3.384e-01
+           </DataArray>
+           <DataArray type="Float32" Name="parentRootClassID" NumberOfComponents="1" format="ascii">
+ -3.000e+00 -3.000e+00 -3.000e+00 -3.000e+00 -3.000e+00 -3.000e+00 -3.000e+00 -3.000e+00 -3.000e+00 -3.000e+00 -3.000e+00 -3.000e+00 -3.000e+00 -3.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="plantID" NumberOfComponents="1" format="ascii">
+ 3.000e+00 3.000e+00 3.000e+00 3.000e+00 3.000e+00 3.000e+00 3.000e+00 3.000e+00 3.000e+00 3.000e+00 3.000e+00 3.000e+00 3.000e+00 3.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="plantTypeID" NumberOfComponents="1" format="ascii">
+ 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="rootCircumference" NumberOfComponents="1" format="ascii">
+ 1.262e+00 1.260e+00 1.259e+00 1.258e+00 1.257e+00 1.257e+00 1.257e+00 2.859e-01 2.850e-01 2.843e-01 2.837e-01 2.832e-01 2.829e-01 2.828e-01
+           </DataArray>
+           <DataArray type="Float32" Name="rootClassID" NumberOfComponents="1" format="ascii">
+ -2.000e+00 -2.000e+00 -2.000e+00 -2.000e+00 -2.000e+00 -2.000e+00 -2.000e+00 -4.000e+00 -4.000e+00 -4.000e+00 -4.000e+00 -4.000e+00 -4.000e+00 -4.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="rootDiameter" NumberOfComponents="1" format="ascii">
+ 4.018e-01 4.010e-01 4.006e-01 4.003e-01 4.002e-01 4.001e-01 4.000e-01 9.100e-02 9.072e-02 9.049e-02 9.030e-02 9.016e-02 9.006e-02 9.001e-02
+           </DataArray>
+           <DataArray type="Float32" Name="rootHairDensity" NumberOfComponents="1" format="ascii">
+ 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 2.000e+03 2.000e+03 2.000e+03 2.000e+03 2.000e+03 2.000e+03 2.000e+03
+           </DataArray>
+           <DataArray type="Float32" Name="rootHairDiameter" NumberOfComponents="1" format="ascii">
+ 5.000e-04 5.000e-04 5.000e-04 5.000e-04 5.000e-04 5.000e-04 5.000e-04 5.000e-04 5.000e-04 5.000e-04 5.000e-04 5.000e-04 5.000e-04 5.000e-04
+           </DataArray>
+           <DataArray type="Float32" Name="rootHairLength" NumberOfComponents="1" format="ascii">
+ 3.000e-02 1.500e-02 6.000e-03 0.000e+00 0.000e+00 0.000e+00 0.000e+00 3.000e-02 2.100e-02 1.200e-02 3.000e-03 0.000e+00 0.000e+00 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="rootHairSurfaceArea" NumberOfComponents="1" format="ascii">
+ 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 9.425e-02 6.597e-02 3.770e-02 9.425e-03 0.000e+00 0.000e+00 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="rootLength2Base" NumberOfComponents="1" format="ascii">
+ 0.000e+00 7.500e-01 1.440e+00 2.600e+00 3.200e+00 3.800e+00 4.700e+00 0.000e+00 7.071e-01 1.414e+00 2.121e+00 2.828e+00 3.535e+00 4.243e+00
+           </DataArray>
+           <DataArray type="Float32" Name="rootPotentialSecondaryGrowth" NumberOfComponents="1" format="ascii">
+ 4.018e-01 4.010e-01 4.006e-01 4.003e-01 4.002e-01 4.001e-01 4.000e-01 9.100e-02 9.072e-02 9.049e-02 9.030e-02 9.016e-02 9.006e-02 9.001e-02
+           </DataArray>
+           <DataArray type="Float32" Name="rootSegmentAge" NumberOfComponents="1" format="ascii">
+ 2.000e+00 1.500e+00 1.200e+00 8.000e-01 6.000e-01 4.000e-01 1.000e-01 2.000e+00 1.700e+00 1.400e+00 1.100e+00 8.000e-01 5.000e-01 2.000e-01
+           </DataArray>
+           <DataArray type="Float32" Name="rootSegmentCarbonCostOfExudates" NumberOfComponents="1" format="ascii">
+ 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 2.203e-05 1.872e-05 1.547e-05 1.193e-05 8.390e-06 4.565e-06 8.886e-07
+           </DataArray>
+           <DataArray type="Float32" Name="rootSegmentDryWeight" NumberOfComponents="1" format="ascii">
+ 8.937e-03 8.191e-03 1.375e-02 7.097e-03 7.093e-03 1.063e-02 3.544e-03 4.323e-04 4.297e-04 4.275e-04 4.257e-04 4.244e-04 4.234e-04 2.820e-04
+           </DataArray>
+           <DataArray type="Float32" Name="rootSegmentLength" NumberOfComponents="1" format="ascii">
+ 7.500e-01 6.900e-01 1.160e+00 6.000e-01 6.000e-01 9.000e-01 3.000e-01 7.071e-01 7.071e-01 7.071e-01 7.071e-01 7.071e-01 7.071e-01 4.714e-01
+           </DataArray>
+           <DataArray type="Float32" Name="rootSegmentLengthDuration" NumberOfComponents="1" format="ascii">
+ 1.295e+00 9.313e-01 1.155e+00 4.200e-01 3.000e-01 2.300e-01 2.983e-02 1.312e+00 1.100e+00 8.878e-01 6.757e-01 4.635e-01 2.514e-01 4.714e-02
+           </DataArray>
+           <DataArray type="Float32" Name="rootSegmentRespiration" NumberOfComponents="1" format="ascii">
+ 3.575e-04 4.300e-04 8.247e-04 4.968e-04 5.320e-04 8.508e-04 3.101e-04 1.729e-05 2.041e-05 2.351e-05 2.661e-05 2.970e-05 3.282e-05 2.397e-05
+           </DataArray>
+           <DataArray type="Float32" Name="rootSegmentSecondaryPotentialCarbonSinkForGrowth" NumberOfComponents="1" format="ascii">
+ 2.690e-05 1.469e-05 1.367e-05 3.443e-06 1.768e-06 7.326e-07 1.163e-08 3.647e-06 2.558e-06 1.665e-06 9.637e-07 4.550e-07 1.375e-07 9.397e-09
+           </DataArray>
+           <DataArray type="Float32" Name="rootSegmentSurfaceArea" NumberOfComponents="1" format="ascii">
+ 9.466e-01 8.692e-01 1.460e+00 7.545e-01 7.543e-01 1.131e+00 3.770e-01 2.021e-01 2.015e-01 2.010e-01 2.006e-01 2.003e-01 2.001e-01 1.333e-01
+           </DataArray>
+           <DataArray type="Float32" Name="rootSegmentVolume" NumberOfComponents="1" format="ascii">
+ 9.507e-02 8.714e-02 1.462e-01 7.550e-02 7.546e-02 1.131e-01 3.770e-02 4.599e-03 4.571e-03 4.547e-03 4.529e-03 4.514e-03 4.505e-03 3.000e-03
+           </DataArray>
+           <DataArray type="Float32" Name="rootSegmentWaterUptake" NumberOfComponents="1" format="ascii">
+ 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="spatialRootDensity" NumberOfComponents="1" format="ascii">
+ 3.376e-01 1.688e-01 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00 3.438e-01 1.790e-01 0.000e+00 0.000e+00 0.000e+00 0.000e+00 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="volumetricWaterContentAtTheRootSurface" NumberOfComponents="1" format="ascii">
+ 1.820e-01 1.820e-01 1.819e-01 1.818e-01 1.817e-01 1.817e-01 1.816e-01 1.820e-01 1.821e-01 1.822e-01 1.822e-01 1.823e-01 1.823e-01 1.824e-01
+           </DataArray>
+         </CellData>
+      </Piece>
+   </UnstructuredGrid>
+</VTKFile>

@@ -1,0 +1,3 @@
+Simulation took (hours:minutes:seconds): 0:22:43
+THE MODEL PUT OUT WARNINGS:
+Mesh::matchNodes: Ignoring root node outside FEM grid below the surface	446x
