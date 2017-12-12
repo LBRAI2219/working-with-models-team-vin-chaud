@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<VTKFile type="UnstructuredGrid" version="0.1" byte_order="LittleEndian">
+   <UnstructuredGrid>
+      <Piece NumberOfPoints="20" NumberOfCells="1">
+         <Points>
+            <DataArray type="Float32" Name="Position" NumberOfComponents="3" format="ascii">
+0.000	0.010	0.000
+-0.006	0.008	0.000
+-0.010	0.003	0.000
+-0.010	-0.003	0.000
+-0.006	-0.008	0.000
+-0.000	-0.010	0.000
+0.006	-0.008	0.000
+0.010	-0.003	0.000
+0.010	0.003	0.000
+0.006	0.008	0.000
+0.000	0.010	0.000
+-0.006	0.008	0.000
+-0.010	0.003	0.000
+-0.010	-0.003	0.000
+-0.006	-0.008	0.000
+-0.000	-0.010	0.000
+0.006	-0.008	0.000
+0.010	-0.003	0.000
+0.010	0.003	0.000
+0.006	0.008	0.000
+		    </DataArray>
+         </Points>
+         <Cells>
+            <DataArray type="Int32" Name="connectivity" NumberOfComponents="1" format="ascii">
+ 0 10 1 11 2 12 3 13 4 14 5 15 6 16 7 17 8 18 9 19 0 10
+
+            </DataArray>
+            <DataArray type="Int32" Name="offsets" NumberOfComponents="1" format="ascii">
+ 22
+            </DataArray>
+            <DataArray type="UInt8"  Name="types" NumberOfComponents="1" format="ascii">
+6
+            </DataArray>
+         </Cells>
+         <CellData>
+           <DataArray type="Float32" Name="combinedRootClassID" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="parentRootClassID" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="phosphorus/Imax" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="phosphorus/Km" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="phosphorus/minimalNutrientConcentration" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="phosphorus/nutrientConcentrationAtTheRootSurface" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="phosphorus/optimalNutrientConcentration" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="phosphorus/radiusDepletionZone" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="phosphorus/rootSegmentMinimalNutrientContent" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="phosphorus/rootSegmentNutrientUptake" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="phosphorus/rootSegmentOptimalNutrientContent" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="plantID" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="plantTypeID" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="rootCircumference" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="rootClassID" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="rootDiameter" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="rootLength2Base" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="rootPotentialSecondaryGrowth" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="rootSegmentAge" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="rootSegmentDryWeight" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="rootSegmentLength" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="rootSegmentLengthDuration" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="rootSegmentSurfaceArea" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="rootSegmentVolume" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+           <DataArray type="Float32" Name="spatialRootDensity" NumberOfComponents="1" format="ascii">
+ 0.000e+00
+           </DataArray>
+         </CellData>
+      </Piece>
+   </UnstructuredGrid>
+</VTKFile>

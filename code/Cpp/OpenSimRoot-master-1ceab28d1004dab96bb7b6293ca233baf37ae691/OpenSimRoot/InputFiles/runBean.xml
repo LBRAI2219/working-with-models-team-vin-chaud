@@ -45,18 +45,19 @@
 	<SimulaIncludeFile fileName="templates/plantTemplateFullModel.xml" />
 	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeGeometry.xml" />
 	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeDryweight.xml" />
-	<SimulaIncludeFile fileName="templates/plantTemplate.IncludePhosphorusBC.xml" />
+	<!--<SimulaIncludeFile fileName="templates/plantTemplate.IncludePhosphorusBC.xml" /> -->
+	<SimulaIncludeFile fileName="../tests/modules/SimpleCropModel.xml"/>
 	<!--
 	If leaving out water and nitrate, enable this to have a rough estimate of carbon cost of nitrate fixation and uptake
 	-->
 	<!-- 
 	SimulaIncludeFile fileName="templates/plantTemplate.IncludeNitrateBasic.xml" /
 	-->
-    <!--SimulaIncludeFile fileName="templates/plantTemplate.IncludeWaterModule.xml" />
-	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeNitrate3D.xml" />
-	<SimulaIncludeFile fileName="templates/plantTemplate.IncludePotassium3D.xml" />
-	<SimulaIncludeFile fileName="templates/configurationCarbon.xml" />
-	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeRootHairs.xml" />
+        <SimulaIncludeFile fileName="templates/plantTemplate.IncludeWaterModule.xml" />
+	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeNitrate3D.xml" /> <!--
+	<SimulaIncludeFile fileName="templates/plantTemplate.IncludePotassium3D.xml" /> -->
+	<SimulaIncludeFile fileName="templates/configurationCarbon.xml" /> 
+	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeRootHairs.xml" /> <!--
 	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeRootLengthProfile.xml" />
 	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeAerenchyma.xml" />
 	<SimulaIncludeFile fileName="templates/plantTemplate.IncludeStress.xml" /-->
