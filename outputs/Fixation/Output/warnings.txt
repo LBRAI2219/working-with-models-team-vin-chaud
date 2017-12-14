@@ -1,0 +1,5 @@
+Simulation took (hours:minutes:seconds): 0:21:52
+THE MODEL PUT OUT WARNINGS:
+CarbonCostOfBiologicalNitrogenFixation: cost not simulated for nitrogen fixation is not simulated	1x
+Mesh::matchNodes: Ignoring root node outside FEM grid below the surface	502x
+SoluteMassBalanceTest: mass balance is of by more than 1% of initial 6975.991606 umol in column.	2x
