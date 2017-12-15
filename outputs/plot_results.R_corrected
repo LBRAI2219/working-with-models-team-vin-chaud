@@ -10,14 +10,12 @@ setwd(path) # Tell R where work
 rs = read_tsv("Nitrates_cc/cc_normale/output/tabled_output.tab")
 rs$simulation = "1" # Add a column to differentiate the different simulations
 
-rs2 = read_tsv("Nitrates_cc/cc_x0.5/output/tabled_output.tab")
-rs2$simulation = "x0.5" # Add a column to differentiate the different simulations
+rs2 = read_tsv("Fixation/output/tabled_output.tab")
+rs2$simulation = "fixation_off" # Add a column to differentiate the different simulations
 
-rs3 = read_tsv("Nitrates_cc/cc_x2/output/tabled_output.tab")
-rs3$simulation = "x2" # Add a column to differentiate the different simulations
 
 # Combine the data
-rs = rbind(rs, rs2, rs3)
+rs = rbind(rs, rs2)
 
 unique(rs$name)
 
@@ -30,7 +28,7 @@ rs %>%
   ggplot(aes(time, value, colour=simulation)) + 
   geom_point() + 
   geom_line() +
-  theme_classic() +
-  ggsave("Nitrates_cc/nutrient_evolution.jpg")
+  theme_classic() 
+  ggsave("Fixation/Fixation_off.jpg")
 
 
