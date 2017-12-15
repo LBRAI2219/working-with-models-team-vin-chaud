@@ -1,10 +1,10 @@
-install.packages(tidyverse)
-library(tidyverse)
+install.packages("tidyverse")
+library("tidyverse")
 
 # Remove the "space" in the tab files
 
 # Load the data
-path = "~/Desktop/working-with-models-team-vin-chaud/outputs/"
+path = "/home/brieuc/Documents/GitHub/working-with-models-team-vin-chaud/outputs/"
 setwd(path) # Tell R where work
 
 rs = read_tsv("nitrate = 100/tabled_output.tab")
@@ -26,7 +26,7 @@ unique(rs$name)
 rs %>%
   filter(name == "plantNutrientUptake") %>%
   filter(path == "//plants/bean/nitrate") %>%
-  filter(time >= 18) %>%
+  #filter(time >= 18) %>%
   ggplot(aes(time, value, colour=simulation)) + 
     geom_point() + 
     geom_line()

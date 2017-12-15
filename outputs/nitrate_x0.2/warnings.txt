@@ -1,4 +1,0 @@
-Simulation took (hours:minutes:seconds): 0:20:2
-THE MODEL PUT OUT WARNINGS:
-MichaelisMenten: no roothairs found. Using root surface area without that of root hairs	22874x
-SimulaTable:: extrapolation at end of table nutrientConcentrationAtTheRootSurface	4621x

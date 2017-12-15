@@ -1,5 +1,4 @@
 # Outputs
 
-This is where you store the different results you create with the model. It can be data files, figures, etc. 
-
-Organise this folder as you want, as long as it is understandable.
+One folder for one test and if the test compare differents parameters or module, we've put each in a folder to keep the inputfiles with the outputs  
+A link to the wiki where we show and explain the results is in the README.md of each folder
