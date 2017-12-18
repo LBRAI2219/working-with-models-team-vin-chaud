@@ -1,0 +1,4 @@
+Simulation took (hours:minutes:seconds): 0:24:19
+THE MODEL PUT OUT WARNINGS:
+Mesh::matchNodes: Ignoring root node outside FEM grid below the surface	581x
+SoluteMassBalanceTest: mass balance is of by more than 1% of initial 349.066334 umol in column.	38x
