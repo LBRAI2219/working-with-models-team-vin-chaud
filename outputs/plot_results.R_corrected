@@ -20,7 +20,7 @@ rs3$simulation = "cc_x0.05"
 # Combine the data
 rs = rbind(rs, rs2, rs3)
 
-unique(rs$name)
+unique(rs$name)C
 
 
 # Plot the data
