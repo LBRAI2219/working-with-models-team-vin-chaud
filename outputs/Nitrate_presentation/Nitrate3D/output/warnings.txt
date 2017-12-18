@@ -1,0 +1,4 @@
+Simulation took (hours:minutes:seconds): 1:40:16
+THE MODEL PUT OUT WARNINGS:
+PhotosynthesisLintulV2: no stress impact factor found	1x
+WaterMassBalanceTest: mass balance is off by more than 1% of 20745.333458 ml initial water in column	2x
