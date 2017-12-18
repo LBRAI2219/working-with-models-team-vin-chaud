@@ -1,10 +1,10 @@
-install.packages(tidyverse)
+install.packages("tidyverse")
 library(tidyverse)
 
 # Remove the "space" in the tab files
 
 # Load the data
-path = "C:/Users/arumm/Desktop/working-with-models-team-vin-chaud/working-with-models-team-vin-chaud/outputs"
+path = "/working-with-models-team-vin-chaud/working-with-models-team-vin-chaud/outputs"
 setwd(path) # Tell R where work
 
 rs = read_tsv("Nitrates_cc/cc_normale/output/tabled_output.tab")
