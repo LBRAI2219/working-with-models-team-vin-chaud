@@ -17,7 +17,7 @@ rs2$simulation = "fixation_off" # Add a column to differentiate the different si
 # Combine the data
 rs = rbind(rs, rs2)
 
-unique(rs$name)
+unique(rs$name)C
 
 
 # Plot the data
