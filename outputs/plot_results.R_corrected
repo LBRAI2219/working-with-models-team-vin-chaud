@@ -8,30 +8,33 @@ path = "/home/brieuc/Documents/GitHub/working-with-models-team-vin-chaud/outputs
 setwd(path) # Tell R where work
 
 rs = read_tsv("Nitrates_cc/cc_normale/output/tabled_output.tab")
-rs$simulation = "cc_normale" # Add a column to differentiate the different simulations
+rs$simulation = "cc normale" # Add a column to differentiate the different simulations
 
 rs2 = read_tsv("Nitrates_cc/cc_x0.5/output/tabled_output.tab")
-rs2$simulation = "cc_x0.5" # Add a column to differentiate the different simulations
+rs2$simulation = "cc x0.5" # Add a column to differentiate the different simulations
 
-rs3 = read_tsv("Fixation/cc_x0.05/output_with fix/tabled_output.tab")
-rs3$simulation = "cc_x0.05"
+rs3 = read_tsv("Nitrates_cc/cc_x2/output/tabled_output.tab")
+rs3$simulation = "cc x2"
 
 
 # Combine the data
 rs = rbind(rs, rs2, rs3)
 
-unique(rs$name)C
+unique(rs$name)
 
 
 # Plot the data
 rs %>%
-  filter(name == "plantNutrientFixation") %>%
+  filter(name == "plantNutrientUptake") %>%
   filter(path == "//plants/bean/nitrate") %>%
   #filter(time >= 18) %>%
   ggplot(aes(time, value, colour=simulation)) + 
   geom_point() + 
   geom_line() +
-  theme_classic() 
-  ggsave("Fixation/Fixation_comp.jpg")
+  theme_classic() +
+  xlab("Time (days)") +
+  ylab("Nitrate uptake (µmol)") + 
+  ggtitle("Comparison of nitrate uptake with environement concentration")
+  ggsave("Nitrates_cc/nutrient_evolution.jpg")
 
 
